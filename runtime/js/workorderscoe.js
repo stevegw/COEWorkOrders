@@ -116,7 +116,25 @@ class WorkOrderscoe {
 
     }
 
+    getAffectedParts = function  (step , workinstructions) {
+
+        // let partsList = workinstructions[step-1].PartsList;
+        // let propertyname = partsList[0].MetadataPropertyName;
+        // let uniquepartid = partsList[0].MetadataID;
+        // let displayname = partsList[0].DisplayName;
+        // let modelName =   partsList[0].ModelName; //this.modelid;
+
+        let affectedParts = [];
+        workinstructions[step-1].PartsList.forEach(element => {
+            affectedParts.push ({"model":element.ModelName,"path":element.MetadataID});
+        });
+
+        return affectedParts;
+
+        //return {"model" : modelName , "path" : uniquepartid  };
+    }
     
+
     getSelectStepPart = function  (step , workinstructions) {
 
         let partsList = workinstructions[step-1].PartsList;
@@ -262,7 +280,7 @@ class WorkOrderscoe {
                 InstructionTextLabelPanel.innerHTML = workinstructions[currentStep-1].StepDetail;//"This is the work instruction text";  
                 InstructionStepPanel.innerHTML = currentStep +" OF " + steps; 
 
-                this.vuforiaScope.affectedpartsField = this.getSelectStepPart(currentStep , workinstructions);
+                this.vuforiaScope.affectedpartsField = this.getAffectedParts(currentStep , workinstructions);
                 this.vuforiaScope.$parent.fireEvent('workinstructionselected');
                 this.vuforiaScope.$parent.$applyAsync();
 
@@ -285,7 +303,7 @@ class WorkOrderscoe {
         UIContainerWI.appendChild(InstructionPanel);
         PanelSelector.appendChild(UIContainerWI);
         // fire currect step selected
-        this.vuforiaScope.affectedpartsField = this.getSelectStepPart(currentStep, workinstructions);
+        this.vuforiaScope.affectedpartsField = this.getAffectedParts( currentStep, workinstructions);
         this.vuforiaScope.$parent.fireEvent('workinstructionselected');
         this.vuforiaScope.$parent.$applyAsync();
     }
