@@ -2,11 +2,9 @@
 
 class WorkOrderscoe {
 
-    constructor( vuforiaScope, data,  actionid, width, height , top , left , modelid ) {
+    constructor( vuforiaScope, width, height , top , left , modelid ) {
         // Not using the topoffset, leftoffset yet
         this.vuforiaScope  = vuforiaScope;
-        this.data = data;
-        this.actionid = actionid;
         this.width = width;
         this.height = height;
         this.top = top;
@@ -15,12 +13,12 @@ class WorkOrderscoe {
     }
 
 
-    doAction = function (actionid) {
+    doAction = function (actionid , workorders , workinstructions) {
         if (actionid == 'GetWorkOrders') {
-            this.getWorkOrders (this.data); 
+            this.getWorkOrders (workorders); 
         }
         else if (actionid == 'GetWorkInstructions') {
-           this.getWorkInstructionsSteps (this.data); 
+           this.getWorkInstructionsSteps (workinstructions); 
         }
         else  {
             // add more functions here with else if 
@@ -28,7 +26,7 @@ class WorkOrderscoe {
 
     }
 
-    getWorkOrders = function () {
+    getWorkOrders = function (workorders) {
 
         let PanelQuery = 'body > ion-side-menus > ion-side-menu-content > ion-nav-view > ion-view > ion-content > twx-widget > twx-widget-content > \n' +
 		'twx-container-content > twx-widget:nth-child(2) > twx-widget-content > div > twx-container-content';
@@ -61,7 +59,7 @@ class WorkOrderscoe {
 
 
         //let selectArray = ["W0001", "W0002", "W0003", "W0004"];
-        let selectArray = this.data;
+        let selectArray = workorders;
 
         let WorkOrderList = document.createElement("select");
         WorkOrderList.id = "workorderslist";
@@ -119,9 +117,9 @@ class WorkOrderscoe {
     }
 
     
-    getSelectStepPart = function  (step) {
+    getSelectStepPart = function  (step , workinstructions) {
 
-        let partsList = this.data[step-1].PartsList;
+        let partsList = workinstructions[step-1].PartsList;
         let propertyname = partsList[0].MetadataPropertyName;
         let uniquepartid = partsList[0].MetadataID;
         let displayname = partsList[0].DisplayName;
@@ -130,7 +128,7 @@ class WorkOrderscoe {
         return {"model" : modelName , "path" : uniquepartid  };
     }
 
-    getWorkInstructionsSteps = function () {
+    getWorkInstructionsSteps = function (workinstructions) {
 
 
 
@@ -153,6 +151,8 @@ class WorkOrderscoe {
         InstructionPanel.className = 'instructionpanel';  
         InstructionPanel.style.width = this.width;
         InstructionPanel.style.height = this.height; 
+        InstructionPanel.style.top = "50px";
+        InstructionPanel.style.left = this.left;
       
         var InstructionContentPanel = document.createElement('div');
         InstructionContentPanel.id = 'instruction-content-panel';   
@@ -189,7 +189,7 @@ class WorkOrderscoe {
         InstructionStepPanel.id = 'instruction-step-panel'; 
         InstructionStepPanel.className = 'instructionsteppanel';   
         
-        let steps = this.data.length ;
+        let steps = workinstructions.length ;
         let currentStep = 1; 
         InstructionStepPanel.innerHTML = currentStep +" OF " + steps; 
 
@@ -199,13 +199,13 @@ class WorkOrderscoe {
 
         var InstructionHeaderLabelPanel = document.createElement('div');
         InstructionHeaderLabelPanel.id = 'instruction-header-label-panel';  
-        InstructionHeaderLabelPanel.innerHTML = this.data[currentStep-1].StepType;//"This is the header text"; 
+        InstructionHeaderLabelPanel.innerHTML = workinstructions[currentStep-1].StepType;//"This is the header text"; 
         InstructionHeaderLabelPanel.className ='instructionheaderlabelpanel';
 
         var InstructionTextLabelPanel = document.createElement('div');
         InstructionTextLabelPanel.id = 'instruction-text-label-panel'; 
         InstructionTextLabelPanel.className = 'instructiontextlabelpanel'; 
-        InstructionTextLabelPanel.innerHTML = this.data[currentStep-1].StepDetail;//"This is the work instruction text"; 
+        InstructionTextLabelPanel.innerHTML = workinstructions[currentStep-1].StepDetail;//"This is the work instruction text"; 
 
         var InstructionActionPanel = document.createElement('div');
         InstructionActionPanel.id = 'instruction-action-panel'; 
@@ -223,16 +223,17 @@ class WorkOrderscoe {
                 if (currentStep != 1 ) { 
                     currentStep--;
                 } else {
-                    currentStep = this.data.length ;
+                    currentStep = workinstructions.length ;
                 }
 
-                InstructionHeaderLabelPanel.innerHTML = this.data[currentStep-1].StepType;//"This is the header text";
-                InstructionTextLabelPanel.innerHTML = this.data[currentStep-1].StepDetail;//"This is the work instruction text";  
+                InstructionHeaderLabelPanel.innerHTML = workinstructions[currentStep-1].StepType;//"This is the header text";
+                InstructionTextLabelPanel.innerHTML = workinstructions[currentStep-1].StepDetail;//"This is the work instruction text";  
                 InstructionStepPanel.innerHTML = currentStep +" OF " + steps; 
                 
-                this.vuforiaScope.outgoingdataField = this.getSelectStepPart(currentStep);
-                this.vuforiaScope.$parent.fireEvent('clicked');
+                this.vuforiaScope.outgoingdataField = this.getSelectStepPart(currentStep, workinstructions);
+                this.vuforiaScope.$parent.fireEvent('workinstructionselected');
                 this.vuforiaScope.$parent.$applyAsync();
+
 
             } catch (ex) {
 
@@ -251,18 +252,18 @@ class WorkOrderscoe {
 
             try { 
 
-                if (currentStep -1  < this.data.length -1 ) { 
+                if (currentStep -1  < workinstructions.length -1 ) { 
                     currentStep++;
                 } else {
                     currentStep = 1;
                 }
 
-                InstructionHeaderLabelPanel.innerHTML = this.data[currentStep-1].StepType;//"This is the header text";
-                InstructionTextLabelPanel.innerHTML = this.data[currentStep-1].StepDetail;//"This is the work instruction text";  
+                InstructionHeaderLabelPanel.innerHTML = workinstructions[currentStep-1].StepType;//"This is the header text";
+                InstructionTextLabelPanel.innerHTML = workinstructions[currentStep-1].StepDetail;//"This is the work instruction text";  
                 InstructionStepPanel.innerHTML = currentStep +" OF " + steps; 
 
-                this.vuforiaScope.outgoingdataField = this.getSelectStepPart(currentStep);
-                this.vuforiaScope.$parent.fireEvent('clicked');
+                this.vuforiaScope.affectedpartsField = this.getSelectStepPart(currentStep , workinstructions);
+                this.vuforiaScope.$parent.fireEvent('workinstructionselected');
                 this.vuforiaScope.$parent.$applyAsync();
 
             } catch (ex) {
@@ -284,8 +285,8 @@ class WorkOrderscoe {
         UIContainerWI.appendChild(InstructionPanel);
         PanelSelector.appendChild(UIContainerWI);
         // fire currect step selected
-        this.vuforiaScope.outgoingdataField = this.getSelectStepPart(currentStep);
-        this.vuforiaScope.$parent.fireEvent('clicked');
+        this.vuforiaScope.affectedpartsField = this.getSelectStepPart(currentStep, workinstructions);
+        this.vuforiaScope.$parent.fireEvent('workinstructionselected');
         this.vuforiaScope.$parent.$applyAsync();
     }
 

@@ -41,15 +41,16 @@
           isBindingSource: false,
           showInput: false
         },
+
         {
-          name: 'outgoingdata',
-          label: 'some return data',
+          name: 'affectedparts',
+          label: 'Affected Parts data',
           datatype: 'string',
           default: '',
           isBindingTarget: false,
           isBindingSource: true,
           showInput: false
-        },  
+        },   
         {
           name: 'actionid',
           label: 'Some action ID',
@@ -156,10 +157,6 @@
           label: 'Display WorkInstructions'
         },
         {
-          name: 'start',
-          label: 'Start'
-        },
-        {
           name: 'stop',
           label: 'Stop'
         }
@@ -167,6 +164,14 @@
 
       // List of events that will displayed in the widget properties panel
       events: [
+        {
+          name: 'workordersreceieved',
+          label: 'Work Orders Receieved'
+        },
+        {
+          name: 'workinstructionsreceieved',
+          label: 'Work Instructions Receieved'
+        },
         {
           name: 'workorderselected',
           label: 'Work Order Selected'
@@ -192,7 +197,7 @@
       },
 
       runtimeTemplate: function (props) {
-        var tmpl = '<div ng-workorderscoe  workorders-field="me.workorders" workinstructions-field="me.workinstructions"  selectedwo-field="me.selectedwo" selectedwi-field="me.selectedwi" modelid-field={{me.modelid}} actionid-field={{me.actionid}} autolaunch-field={{me.autolaunch}}  incomingid-field={{me.incomingid}} width-field={{me.width}} height-field={{me.height}} topoffset-field={{me.topoffset}} leftoffset-field={{me.leftoffset}}  delegate-field="delegate"></div>' ; 
+        var tmpl = '<div ng-workorderscoe  workorders-field="me.workorders" workinstructions-field="me.workinstructions"   affectedparts-field="me.affectedparts"       selectedwo-field="me.selectedwo" selectedwi-field="me.selectedwi" modelid-field={{me.modelid}} actionid-field={{me.actionid}} autolaunch-field={{me.autolaunch}}  incomingid-field={{me.incomingid}} width-field={{me.width}} height-field={{me.height}} topoffset-field={{me.topoffset}} leftoffset-field={{me.leftoffset}}  delegate-field="delegate"></div>' ; 
         return tmpl;
       }
     };

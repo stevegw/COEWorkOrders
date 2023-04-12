@@ -15,6 +15,7 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
       scope: {
         workordersField : '=',
         workinstructionsField : '=',
+        affectedpartsField: '=',
         actionidField : '@',
         autolaunchField: '@',
         widthField : '@',
@@ -30,18 +31,29 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
         var lastUpdated = 'unknown';
         let workorderscoe = undefined ;
 
+        
+
         scope.renderer = $window.cordova ? vuforia : $injector.get('threeJsTmlRenderer');
                      
         var executeWidget = function(actionid) {
           console.log('do the custom activities here');
           if (workorderscoe == undefined) {
             try {
-              workorderscoe = new WorkOrderscoe(scope,scope.workordersField , scope.actionidField , scope.widthField, scope.heightField , scope.topoffsetField ,scope.leftoffsetField , scope.modelidField);
+              workorderscoe = new WorkOrderscoe(scope, scope.widthField, scope.heightField , scope.topoffsetField ,scope.leftoffsetField , scope.modelidField);
             }catch(ex) {
               console.log('Creating the class WorkOrderscoe - somethimg when wrong! The exception >>'+ ex);
             }
           }
-          $timeout(workorderscoe.doAction(actionid),50); 
+
+
+          workorderscoe.doAction(actionid, scope.workordersField, scope.workinstructionsField);
+          
+          
+          // else {
+          //    
+
+          // }
+  
           
         };
         var start = function() {
@@ -61,9 +73,8 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
         scope.$watch('workordersField', function () {
           console.log('dataField='+ scope.workordersField);
           if (scope.workordersField != undefined && scope.workordersField != '') {
-            if (scope.autolaunchField == "true") {
-              start();
-            }
+            scope.$parent.fireEvent("workordersreceieved");
+            scope.$parent.$applyAsync();
           }
 
         });
@@ -71,10 +82,12 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
         scope.$watch('workinstructionsField', function () {
           console.log('dataField='+ scope.workinstructionsField);
           if (scope.workinstructionsField != undefined && scope.workinstructionsField != '') {
-            
+            scope.$parent.fireEvent("workinstructionsreceieved");
+            scope.$parent.$applyAsync();
           }
 
         });
+
 
         scope.$watch('delegateField', function (delegate) {
           if (delegate) {
@@ -83,11 +96,8 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
 
             };
             delegate.displaywi = function () {
-              executeWidget("GetWorkInstructions");
+              executeWidget("GetWorkInstructions") ;
               
-            };
-            delegate.start = function () { 
-              start(); 
             };
             delegate.stop = function () { 
               stop(); 
