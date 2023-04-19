@@ -16,11 +16,16 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
         workordersField : '=',
         workinstructionsField : '=',
         affectedpartsField: '=',
+        selectedwoField: '=',
+        selectedwiField: '=',
         actionidField : '@',
         autolaunchField: '@',
-        widthField : '@',
-        heightField : '@',
-        topoffsetField : '@',
+        wowidthField : '@',
+        woheightField : '@',
+        wobottomoffsetField : '@',
+        wiwidthField : '@',
+        wiheightField : '@',
+        wibottomoffsetField : '@',
         leftoffsetField : '@',
         modelidField : '@',
         delegateField: '='     // This a special field used to pass events like start 
@@ -39,7 +44,7 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
           console.log('do the custom activities here');
           if (workorderscoe == undefined) {
             try {
-              workorderscoe = new WorkOrderscoe(scope, scope.widthField, scope.heightField , scope.topoffsetField ,scope.leftoffsetField , scope.modelidField);
+              workorderscoe = new WorkOrderscoe(scope, scope.wowidthField, scope.woheightField , scope.wiwidthField, scope.wiheightField , scope.wobottomoffsetField , scope.wibottomoffsetField ,scope.leftoffsetField , scope.modelidField);
             }catch(ex) {
               console.log('Creating the class WorkOrderscoe - somethimg when wrong! The exception >>'+ ex);
             }

@@ -90,15 +90,6 @@
           isBindingTarget: true,
           isBindingSource: true,
           showInput: false
-        }, 
-        {
-          name: 'selectedvalue',
-          label: 'return Value',
-          datatype: 'string',
-          default: '',
-          isBindingTarget: true,
-          isBindingSource: true,
-          showInput: false
         },  
         {
           name: 'modelid',
@@ -110,8 +101,8 @@
           showInput: true
         },
         {
-          name: 'width',
-          label: 'width',
+          name: 'wowidth',
+          label: 'wo width',
           datatype: 'string',
           default: '40vw',
           isBindingTarget: true,
@@ -119,8 +110,8 @@
           showInput: true
         },
         {
-          name: 'height',
-          label: 'height',
+          name: 'woheight',
+          label: 'wo height',
           datatype: 'string',
           default: '60vh',
           isBindingTarget: true,
@@ -128,8 +119,36 @@
           showInput: true
         },
         {
-          name: 'topoffset',
-          label: 'top offset',
+          name: 'wiwidth',
+          label: 'wi width',
+          datatype: 'string',
+          default: '40vw',
+          isBindingTarget: true,
+          isBindingSource: false,
+          showInput: true
+        },
+        {
+          name: 'wiheight',
+          label: 'wi height',
+          datatype: 'string',
+          default: '60vh',
+          isBindingTarget: true,
+          isBindingSource: false,
+          showInput: true
+        },
+
+        {
+          name: 'wobottomoffset',
+          label: 'wo bottom offset',
+          datatype: 'string',
+          default: '1px',
+          isBindingTarget: true,
+          isBindingSource: false,
+          showInput: true
+        },
+        {
+          name: 'wibottomoffset',
+          label: 'wi bottom offset',
           datatype: 'string',
           default: '50px',
           isBindingTarget: true,
@@ -187,7 +206,7 @@
       ],
 
       dependencies: {
-        files         : ['js/workorderscoe-ng.js','js/workorderscoe.js', 'images/workorderscoe_close.png' ,'images/workorderscoe_expand.png'],
+        files         : ['js/workorderscoe-ng.js','js/workorderscoe.js', 'images/workorderscoe_wo.png', 'images/images/workorderscoe_wi.png' , 'images/workorderscoe_close.png' ,'images/workorderscoe_expand.png'],
         angularModules: ['workorderscoe-ng']
       },
 
@@ -197,7 +216,7 @@
       },
 
       runtimeTemplate: function (props) {
-        var tmpl = '<div ng-workorderscoe  workorders-field="me.workorders" workinstructions-field="me.workinstructions"   affectedparts-field="me.affectedparts"       selectedwo-field="me.selectedwo" selectedwi-field="me.selectedwi" modelid-field={{me.modelid}} actionid-field={{me.actionid}} autolaunch-field={{me.autolaunch}}  incomingid-field={{me.incomingid}} width-field={{me.width}} height-field={{me.height}} topoffset-field={{me.topoffset}} leftoffset-field={{me.leftoffset}}  delegate-field="delegate"></div>' ; 
+        var tmpl = '<div ng-workorderscoe  workorders-field="me.workorders" workinstructions-field="me.workinstructions"   affectedparts-field="me.affectedparts"  selectedwo-field="me.selectedwo" selectedwi-field="me.selectedwi" modelid-field={{me.modelid}} actionid-field={{me.actionid}} autolaunch-field={{me.autolaunch}}  incomingid-field={{me.incomingid}} wowidth-field={{me.wowidth}} woheight-field={{me.woheight}} wiwidth-field={{me.wiwidth}} wiheight-field={{me.wiheight}} wobottomoffset-field={{me.wobottomoffset}} wibottomoffset-field={{me.wibottomoffset}} leftoffset-field={{me.leftoffset}}  delegate-field="delegate"></div>' ; 
         return tmpl;
       }
     };
