@@ -13,6 +13,7 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
     return {
       restrict: 'EA',
       scope: {
+        workpackageField : '=',
         workordersField : '=',
         workinstructionsField : '=',
         affectedpartsField: '=',
@@ -41,7 +42,7 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
         scope.renderer = $window.cordova ? vuforia : $injector.get('threeJsTmlRenderer');
                      
         var executeWidget = function(actionid) {
-          console.log('do the custom activities here');
+          console.log('Working on action ' + actionid);
           if (workorderscoe == undefined) {
             try {
               workorderscoe = new WorkOrderscoe(scope, scope.wowidthField, scope.woheightField , scope.wiwidthField, scope.wiheightField , scope.wobottomoffsetField , scope.wibottomoffsetField ,scope.leftoffsetField , scope.modelidField);
@@ -51,7 +52,7 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
           }
 
 
-          workorderscoe.doAction(actionid, scope.workordersField, scope.workinstructionsField);
+          workorderscoe.doAction(actionid, scope.workpackageField,  scope.workordersField, scope.workinstructionsField);
           
           
           // else {
@@ -61,11 +62,11 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
   
           
         };
-        var start = function() {
-          console.log('Starting');
-          scope.$parent.fireEvent('started');
-          executeWidget();
-        }
+        // var start = function() {
+        //   console.log('Starting');
+        //   scope.$parent.fireEvent('started');
+        //   executeWidget();
+        // }
         var stop = function() {
           console.log('Stopping');
           scope.$parent.fireEvent('stopped');
@@ -73,10 +74,22 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
    
           }
         }
+        //
+        // workPackageField has both a WO id and Title plus WorkInstrunction steps 
+        // Step 0 holds all the details of the Work Order 
+        // This is to makes it easy to work with and step through from baisc work order summary to each step
+        //
+        scope.$watch('workpackageField', function () {
+          console.log('dataField='+ scope.workpackageField);
+          if (scope.workpackageField != undefined && scope.workpackageField != '') {
+            scope.$parent.fireEvent("workpackagereceieved");
+            scope.$parent.$applyAsync();
+          }
 
+        });
 
         scope.$watch('workordersField', function () {
-          console.log('dataField='+ scope.workordersField);
+          console.log('workordersField='+ scope.workordersField);
           if (scope.workordersField != undefined && scope.workordersField != '') {
             scope.$parent.fireEvent("workordersreceieved");
             scope.$parent.$applyAsync();
@@ -85,7 +98,7 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
         });
 
         scope.$watch('workinstructionsField', function () {
-          console.log('dataField='+ scope.workinstructionsField);
+          console.log('workinstructionsField='+ scope.workinstructionsField);
           if (scope.workinstructionsField != undefined && scope.workinstructionsField != '') {
             scope.$parent.fireEvent("workinstructionsreceieved");
             scope.$parent.$applyAsync();
@@ -96,6 +109,10 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
 
         scope.$watch('delegateField', function (delegate) {
           if (delegate) {
+            delegate.displaywp = function () {
+              executeWidget("GetWorkPackage");
+
+            };
             delegate.displaywo = function () {
               executeWidget("GetWorkOrders");
 

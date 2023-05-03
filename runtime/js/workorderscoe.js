@@ -22,14 +22,18 @@ class WorkOrderscoe {
     }
 
 
-    doAction = function (actionid , workorders , workinstructions) {
+    doAction = function (actionid , workpackage , workorders , workinstructions) {
 
         let PanelQuery = 'body > ion-side-menus > ion-side-menu-content > ion-nav-view > ion-view > ion-content > twx-widget > twx-widget-content > \n' +
 		'twx-container-content > twx-widget:nth-child(2) > twx-widget-content > div > twx-container-content';
         let PanelSelector = document.querySelector(PanelQuery); 
 
+        if (actionid == 'GetWorkPackage') {
+            let selectedWOIndex = 0; // for now allows select first work order when starting
+            this.getWorkPackage (workpackage , selectedWOIndex , PanelSelector); 
+        }
 
-        if (actionid == 'GetWorkOrders') {
+        else if (actionid == 'GetWorkOrders') {
             this.getWorkOrders (workorders ,PanelSelector); 
         }
         else if (actionid == 'GetWorkInstructions') {
@@ -49,8 +53,253 @@ class WorkOrderscoe {
 
     }
 
+    getWorkPackage = function (workpackage, selectedWOIndex,  panelSelector) {
+
+
+        let currentStep = 0; 
+        let steps = workpackage[selectedWOIndex].WorkInstructions.length ;
+
+        let WPContainer = document.createElement('div');
+        WPContainer.id = 'wi-uicontainer';
+        WPContainer.className = 'wi-uicontainer'; 
+        //UIContainerWI.style.width = "1px";
+        //WPContainer.style.height = this.height;
+        WPContainer.style.bottom = this.wibottom;
+        //UIContainerWI.style.left = this.left;
+
+        let WPInstructionsPanel = document.createElement('div');
+        WPInstructionsPanel.id = 'wi-instructionpanel';
+        WPInstructionsPanel.className = 'wi-instructionpanel'; 
+
+        WPContainer.appendChild(WPInstructionsPanel);
+
+        let WPHeaderContainer = document.createElement('div');
+        WPHeaderContainer.id = 'wi-headercontainer';
+        WPHeaderContainer.className = 'wi-headercontainer'; 
+        
+        let WPInstructionSteps = document.createElement('div');
+        WPInstructionSteps.id = 'wi-instructionsteps';
+        WPInstructionSteps.className = 'wi-instructionsteps'; 
+        WPInstructionSteps.innerHTML = (currentStep + 1) +" OF " + (steps + 1);
+
+        let WPCloseButton = document.createElement('img');
+        WPCloseButton.src = "extensions/images/workorderscoe_close.png"; 
+        WPCloseButton.id = 'wi-closebutton';
+        WPCloseButton.className = 'wi-closebutton'; 
+        WPCloseButton.addEventListener("click",  () => { 
+            try { 
+                //this.markupCanvas.vuforiaScope.$parent.fireEvent('markCancelled');
+            } catch (ex) {
+
+            }
+            panelSelector.removeChild(WPContainer);
+        });
+
+        WPHeaderContainer.appendChild(WPInstructionSteps);
+        WPHeaderContainer.appendChild(WPCloseButton);
+
+        let WPDetailsContainer = document.createElement('div');
+        WPDetailsContainer.id = 'wi-details';
+        WPDetailsContainer.className = 'wi-details'; 
+
+        let WPDetailsLabel1 = document.createElement('div');
+        WPDetailsLabel1.id = 'wi-label1';
+        WPDetailsLabel1.className = 'wi-label1'; 
+        WPDetailsLabel1.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep].Label1
+
+        let WPDetailsLabel2 = document.createElement('div');
+        WPDetailsLabel2.id = 'wi-label2';
+        WPDetailsLabel2.className = 'wi-label2'; 
+        WPDetailsLabel2.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep].Label2
+
+        let WPDetailsLabel3 = document.createElement('div');
+        WPDetailsLabel3.id = 'wi-label3';
+        WPDetailsLabel3.className = 'wi-label3'; 
+        WPDetailsLabel3.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep].Label3
+
+        WPDetailsContainer.appendChild(WPDetailsLabel1);
+        WPDetailsContainer.appendChild(WPDetailsLabel2);
+        WPDetailsContainer.appendChild(WPDetailsLabel3);
+
+        let WPText = document.createElement('div');
+        WPText.id = 'wi-text';
+        WPText.className = 'wi-text'; 
+        WPText.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep].StepDetail;
+
+        let WPBackForwardContainer = document.createElement('div');
+        WPBackForwardContainer.id = 'wi-backforwardcontainer';
+        WPBackForwardContainer.className = 'wi-backforwardcontainer'; 
+
+        let WPBackButton = document.createElement('img');
+        WPBackButton.id = 'wi-backbutton';
+        WPBackButton.className = 'wi-backbutton'; 
+        WPBackButton.src = "extensions/images/workorderscoe_back.png"; 
+
+        if (currentStep == 0)  {
+            WPBackButton.style.visibility = "hidden";
+        }
+        WPBackButton.addEventListener("click",  () => { 
+            try { 
+
+
+                if (currentStep > 0 ) { 
+                    currentStep--;
+                } 
+                if (currentStep === 0)  {
+                    WPBackButton.style.visibility = "hidden";
+                }
+
+                WPInstructionSteps.innerHTML = (currentStep + 1) +" OF " + (steps + 1); 
+                WPDetailsLabel1.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep].Label1;
+                WPDetailsLabel2.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep].Label2;
+                WPDetailsLabel3.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep].Label3;
+                WPText.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep].StepDetail;        
+
+                this.vuforiaScope.affectedpartsField = this.getAffectedParts(currentStep , workpackage[selectedWOIndex].WorkInstructions);
+                this.vuforiaScope.$parent.fireEvent('workinstructionselected');
+                this.vuforiaScope.$parent.$applyAsync();
+
+            } catch (ex) {
+                console.log("Error in click event back button >>" + ex);
+            }
+    
+        });
+
+        let WPForwardButton = document.createElement('img');
+        WPForwardButton.id = 'wi-nextbutton';
+        WPForwardButton.className = 'wi-nextbutton'; 
+        WPForwardButton.src = "extensions/images/workorderscoe_next.png"; 
+        WPForwardButton.addEventListener("click",  () => { 
+
+            try { 
+
+
+
+                if (currentStep   < workpackage[selectedWOIndex].WorkInstructions.length -1 ) { 
+                    currentStep++;
+                    WPBackButton.style.visibility = "visible";
+                } else {
+                    currentStep = 0;
+                    WPBackButton.style.visibility = "hidden";
+                }
+
+                WPInstructionSteps.innerHTML = (currentStep + 1) +" OF " + (steps + 1); 
+                WPDetailsLabel1.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep].Label1;
+                WPDetailsLabel2.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep].Label2;
+                WPDetailsLabel3.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep].Label3;    
+                WPText.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep].StepDetail; 
+
+                this.vuforiaScope.affectedpartsField = this.getAffectedParts(currentStep , workpackage[selectedWOIndex].WorkInstructions);
+                this.vuforiaScope.$parent.fireEvent('workinstructionselected');
+                this.vuforiaScope.$parent.$applyAsync();
+
+            } catch (ex) {
+                console.log("Error in click event forward button >>" + ex);
+            }
+    
+        });
+
+        WPBackForwardContainer.appendChild(WPBackButton);
+        WPBackForwardContainer.appendChild(WPForwardButton);
+
+        let WPButtonBarContainer = document.createElement('div');
+        WPButtonBarContainer.id = 'wi-buttonbarcontainer';
+        WPButtonBarContainer.className = 'wi-buttonbarcontainer'; 
+
+        let WOButton = document.createElement('img');
+        WOButton.id = 'wo-workorders-img';
+        WOButton.className = 'wo-workorders-img'; 
+        WOButton.src = "extensions/images/workorderscoe_wo.png"; 
+
+
+        let WOSelectcontainerContainer = document.createElement('div');
+        WOSelectcontainerContainer.id = 'wo-selectcontainer';
+        WOSelectcontainerContainer.className = 'wo-selectcontainer'; 
+
+        let WorkOrderLabel = document.createElement("label");
+        WorkOrderLabel.className = 'wo-selectlabel'; 
+        //WorkOrderLabel.innerHTML = "Work Order:";
+
+        let WorkOrderList = document.createElement("select");
+        WorkOrderList.id = "wo-picklistpanel";
+        WorkOrderList.className = 'wo-picklistpanel'; 
+        let listscope = this.vuforiaScope;
+        function listSelection (e) {
+            //alert('value ' + this.value);
+
+
+            selectedWOIndex = this.value;
+            listscope.selectedwoField =  workpackage[selectedWOIndex].WorkID;
+            listscope.$parent.fireEvent('workorderselected');
+            listscope.$parent.$applyAsync();
+
+            console.log("selected WorkID " + workpackage[selectedWOIndex].WorkID);
+            currentStep = 0; 
+            steps = workpackage[selectedWOIndex].WorkInstructions.length ;
+            WPInstructionSteps.innerHTML = (currentStep +1) +" OF " + (steps + 1); 
+            WPDetailsLabel1.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep].Label1;
+            WPDetailsLabel2.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep].Label2;
+            WPDetailsLabel3.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep].Label3;
+            WPText.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep].StepDetail;        
+
+
+
+
+        }
+        
+        //Create and append the options
+        for (var i = 0; i < workpackage.length; i++) {
+        var option = document.createElement("option");
+        option.value = i;
+        option.text = workpackage[i].Title;
+        WorkOrderList.appendChild(option);
+
+        }
+
+        WorkOrderList.addEventListener("change",  listSelection );
+
+        WOSelectcontainerContainer.appendChild(WorkOrderLabel);
+        WOSelectcontainerContainer.appendChild(WorkOrderList);
+
+        WPButtonBarContainer.appendChild(WOButton);
+        WPButtonBarContainer.appendChild(WOSelectcontainerContainer);
+
+
+        WPInstructionsPanel.appendChild(WPHeaderContainer);
+        WPInstructionsPanel.appendChild(WPDetailsContainer);
+        WPInstructionsPanel.appendChild(WPText);
+        WPInstructionsPanel.appendChild(WPBackForwardContainer);
+        WPInstructionsPanel.appendChild(WPButtonBarContainer);
+
+        panelSelector.appendChild(WPContainer);
+
+        return WPContainer;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
     getWorkOrders = function (workorders , panelSelector) {
 
+        
 
         this.WorkOrders = workorders; 
         let UIContainerWO = document.createElement('div');
@@ -124,7 +373,7 @@ class WorkOrderscoe {
         CloseButton.style.width = "40px";
         CloseButton.style.bottom = this.wobottom;
         CloseButton.style.left = this.left; 
-        CloseButton.src = "extensions/images/widgetcoe_close.png";
+        CloseButton.src = "extensions/images/workorders_close.png";
         CloseButton.addEventListener("click",  () => { 
 
             try { 
@@ -189,6 +438,19 @@ class WorkOrderscoe {
 
     getWorkOrderSummary = function (panelSelector ,uiContainerWI) {
  
+        let found =  document.getElementById("wos-uicontainer");
+
+        if (found != undefined) {
+            panelSelector.removeChild(found);
+        }
+
+        let found2 =  document.getElementById("wi-uicontainer");
+
+        if (found2 != undefined) {
+            panelSelector.removeChild(found2);
+        }
+
+
         let selectedIndex = 0;
         for (var i = 0; i < this.WorkOrders.length; i++) {
             
@@ -200,56 +462,82 @@ class WorkOrderscoe {
         }
 
 
-        let UIContainerWOS = document.createElement('div');
-        UIContainerWOS.id = 'wi-uicontainer';
-        UIContainerWOS.className = 'wi-uicontainer'; 
-        UIContainerWOS.style.width = "1px";
-        UIContainerWOS.style.height = "1px";
-        UIContainerWOS.style.bottom = this.wibottom;
-        UIContainerWOS.style.left = this.left;
+
+
+
+
+
+
+
+
+        let WOContainer = document.createElement('div');
+        WOContainer.id = 'wo-uicontainer';
+        WOContainer.className = 'wo-uicontainer'; 
+        WOContainer.style.bottom = this.wibottom;
+        WOContainer.style.left = this.left;
 
         var WOSummaryPanel = document.createElement('div');
-        WOSummaryPanel.id = 'wi-instruction-panel';   
-        WOSummaryPanel.className = 'wi-instructionpanel';  
-        WOSummaryPanel.style.width = this.wiwidth;
+        WOSummaryPanel.id = 'wo-summarypanel';   
+        WOSummaryPanel.className = 'wo-summarypanel';  
         WOSummaryPanel.style.height = this.wiheight; 
         WOSummaryPanel.style.bottom = this.wibottom;
         WOSummaryPanel.style.left = this.left;
 
-        var CloseButton = document.createElement('img');
-        CloseButton.className ="wi-closebutton";
+
+        let WOSummaryHeaderContainer = document.createElement('div');
+        WOSummaryHeaderContainer.id = 'wo-headercontainer';
+        WOSummaryHeaderContainer.className = 'wo-headercontainer'; 
+
+
+
+        var WOCloseButton = document.createElement('img');
+        WOCloseButton.className ="wi-closebutton";
         //CloseButton.style.bottom = this.wibottom;
-        CloseButton.style.right = "0px";
-        CloseButton.src = "extensions/images/widgetcoe_close.png";
-        CloseButton.addEventListener("click",  () => { 
+        WOCloseButton.style.right = "0px";
+        WOCloseButton.src = "extensions/images/workorderscoe_close.png";
+        WOCloseButton.addEventListener("click",  () => { 
             try { 
-                panelSelector.removeChild(WOSummaryTimeContainer);
+                panelSelector.removeChild(WOContainer);
             } catch (ex) {
 
             }
             
         });
 
-        var WOSummaryTitlePanel = document.createElement('div');
-        WOSummaryTitlePanel.id = 'wos-type';  
-        WOSummaryTitlePanel.innerHTML = "Work Order Summary for: " + this.WorkOrders[selectedIndex].Title;
-        WOSummaryTitlePanel.className ='wi-type';
+        var WOSummaryTitle = document.createElement('div');
+        WOSummaryTitle.id = 'wo-summarytitle';  
+        WOSummaryTitle.innerHTML = "Work Order Summary: " + this.WorkOrders[selectedIndex].Title;
+        WOSummaryTitle.className ='wo-summarytitle';
+
+        WOSummaryHeaderContainer.appendChild(WOSummaryTitle);
+        WOSummaryHeaderContainer.appendChild(WOCloseButton);
 
         var WOSummaryDetailPanel = document.createElement('div');
-        WOSummaryDetailPanel.id = 'wos-instructionsteps'; 
-        WOSummaryDetailPanel.className = 'wos-text';  
+        WOSummaryDetailPanel.id = 'wo-detailspanel'; 
+        WOSummaryDetailPanel.className = 'wo-detailspanel';  
         WOSummaryDetailPanel.innerHTML = this.WorkOrders[selectedIndex].Overview;  
 
+
+        let WOSummaryTimeContainer = document.createElement('div');
+        WOSummaryTimeContainer.id = 'wo-timecontainer';
+        WOSummaryTimeContainer.className = 'wo-timecontainer'; 
+
         var WOSummaryDifficultyPanel = document.createElement('div');
-        WOSummaryDifficultyPanel.id = 'wos-text-diff'; 
-        WOSummaryDifficultyPanel.className = 'wi-type'; 
-        WOSummaryDifficultyPanel.innerHTML = "Difficulty:" +this.WorkOrders[selectedIndex].Difficulty;
+        WOSummaryDifficultyPanel.id = 'wo-difficulty'; 
+        WOSummaryDifficultyPanel.className = 'wo-difficulty'; 
+        WOSummaryDifficultyPanel.innerHTML = "Level:" +this.WorkOrders[selectedIndex].Difficulty;
+
+        
+        var WOSummaryGotoStepsPanel = document.createElement('div');
+        WOSummaryGotoStepsPanel.id = 'wi-instructionsteps'; 
+        WOSummaryGotoStepsPanel.className = 'wi-type';  
+        WOSummaryGotoStepsPanel.style.right = "0px";
+        WOSummaryGotoStepsPanel.innerHTML = "Goto steps >";  
         
         var SelectButton = document.createElement('img');
-        SelectButton.className ="wi-closebutton";
-        //CloseButton.style.bottom = this.wibottom;
+        SelectButton.className ="wi-steps";
         SelectButton.style.right = "0px";
-        SelectButton.src = "extensions/images/workorderscoe_wi.png";
+        SelectButton.src = "extensions/images/workorderscoe_steps.png";
         SelectButton.addEventListener("click",  () => { 
             try { 
                 panelSelector.removeChild(UIContainerWOS);
@@ -260,23 +548,6 @@ class WorkOrderscoe {
 
             panelSelector.appendChild(uiContainerWI);
 
-            
-        });
-        
-        var WOSummaryTimePanel = document.createElement('div');
-        WOSummaryTimePanel.id = 'wos-text-time'; 
-        WOSummaryTimePanel.className = 'wi-type'; 
-        WOSummaryTimePanel.innerHTML = "Estimated Time:" +this.WorkOrders[selectedIndex].Time;   
-
-        let WOSummaryTimeContainer = document.createElement('div');
-        WOSummaryTimeContainer.id = 'wos-navcontainer';
-        WOSummaryTimeContainer.className = 'wi-navcontainer'; 
-
-        WOSummaryTimeContainer.appendChild(WOSummaryDifficultyPanel);
-
-        WOSummaryTimeContainer.appendChild(WOSummaryTimePanel);
-        WOSummaryTimeContainer.appendChild(SelectButton);
-
 
                 //panelSelector.appendChild(UIContainerWI);
         // fire currect step selected
@@ -284,90 +555,128 @@ class WorkOrderscoe {
         //this.vuforiaScope.$parent.fireEvent('workinstructionselected');
         //this.vuforiaScope.$parent.$applyAsync();
 
-        WOSummaryPanel.appendChild(CloseButton);
-        WOSummaryPanel.appendChild(WOSummaryTitlePanel);
+
+
+            
+        });
+        
+        var WOSummaryTimePanel = document.createElement('div');
+        WOSummaryTimePanel.id = 'wos-text-time'; 
+        WOSummaryTimePanel.className = 'wi-type'; 
+        WOSummaryTimePanel.innerHTML = "Est. Time:" +this.WorkOrders[selectedIndex].Time;   
+
+
+
+        WOSummaryTimeContainer.appendChild(WOSummaryDifficultyPanel);
+        WOSummaryTimeContainer.appendChild(WOSummaryTimePanel);
+        WOSummaryTimeContainer.appendChild(WOSummaryGotoStepsPanel);
+        WOSummaryTimeContainer.appendChild(SelectButton);
+
+        
+
+        WOSummaryPanel.appendChild(WOSummaryHeaderContainer);
+
+
+        //WOSummaryPanel.appendChild(WOSummaryTitlePanel);
         WOSummaryPanel.appendChild(WOSummaryDetailPanel);  
         WOSummaryPanel.appendChild(WOSummaryTimeContainer); 
         
-        UIContainerWOS.appendChild(WOSummaryPanel); 
+        WOContainer.appendChild(WOSummaryPanel); 
 
-        panelSelector.appendChild(UIContainerWOS);
+        let WOBackForwardContainer = document.createElement('div');
+        WOBackForwardContainer.id = 'wi-backforwardcontainer';
+        WOBackForwardContainer.className = 'wi-backforwardcontainer'; 
+
+        let WOBackButton = document.createElement('img');
+        WOBackButton.id = 'wi-backbutton';
+        WOBackButton.className = 'wi-backbutton'; 
+        WOBackButton.src = "extensions/images/workorderscoe_back.png"; 
+
+
+        let WOForwardButton = document.createElement('img');
+        WOForwardButton.id = 'wi-nextbutton';
+        WOForwardButton.className = 'wi-nextbutton'; 
+        WOForwardButton.src = "extensions/images/workorderscoe_next.png"; 
+
+
+        WOBackForwardContainer.appendChild(WOBackButton);
+        WOBackForwardContainer.appendChild(WOForwardButton);
+        WOContainer.appendChild(WOBackForwardContainer); 
+
+        panelSelector.appendChild(WOContainer);
+
+
 
 
 
     }
     getWorkInstructionsSteps = function (workinstructions ,panelSelector) {
 
-        let UIContainerWI = document.createElement('div');
-        UIContainerWI.id = 'wi-uicontainer';
-        UIContainerWI.className = 'wi-uicontainer'; 
-        UIContainerWI.style.width = "1px";
-        UIContainerWI.style.height = "1px";
-        UIContainerWI.style.bottom = this.wibottom;
-        UIContainerWI.style.left = this.left;
+        let currentStep = 1; 
+        let steps = workinstructions.length ;
 
-        var InstructionPanel = document.createElement('div');
-        InstructionPanel.id = 'wi-instruction-panel';   
-        InstructionPanel.className = 'wi-instructionpanel';  
-        InstructionPanel.style.width = this.wiwidth;
-        InstructionPanel.style.height = this.wiheight; 
-        InstructionPanel.style.bottom = this.wibottom;
-        InstructionPanel.style.left = this.left;
+        let WIContainer = document.createElement('div');
+        WIContainer.id = 'wi-uicontainer';
+        WIContainer.className = 'wi-uicontainer'; 
+        //UIContainerWI.style.width = "1px";
+        WIContainer.style.height = this.height;
+        WIContainer.style.bottom = this.wibottom;
+        //UIContainerWI.style.left = this.left;
 
-        let InstructionCloseContainer = document.createElement('div');
-        InstructionCloseContainer.id = 'wi-navcontainer';
-        InstructionCloseContainer.className = 'wi-closecontainer'; 
+        let WIInstructionsPanel = document.createElement('div');
+        WIInstructionsPanel.id = 'wi-instructionpanel';
+        WIInstructionsPanel.className = 'wi-instructionpanel'; 
 
+        WIContainer.appendChild(WIInstructionsPanel);
 
-      
-        var CloseButton = document.createElement('img');
-        CloseButton.className ="wi-closebutton";
-        //CloseButton.style.bottom = this.wibottom;
-        CloseButton.style.right = "0px";
-        CloseButton.src = "extensions/images/widgetcoe_close.png";
-        CloseButton.addEventListener("click",  () => { 
+        let WIHeaderContainer = document.createElement('div');
+        WIHeaderContainer.id = 'wi-headercontainer';
+        WIHeaderContainer.className = 'wi-headercontainer'; 
+        
+        let WIInstructionSteps = document.createElement('div');
+        WIInstructionSteps.id = 'wi-steps';
+        WIInstructionSteps.className = 'wi-steps'; 
+        WIInstructionSteps.innerHTML = currentStep +" OF " + steps; 
+
+        let WICloseButton = document.createElement('img');
+        WICloseButton.id = 'wi-closebutton';
+        WICloseButton.className = 'wi-closebutton'; 
+        WICloseButton.addEventListener("click",  () => { 
             try { 
                 //this.markupCanvas.vuforiaScope.$parent.fireEvent('markCancelled');
             } catch (ex) {
 
             }
-            panelSelector.removeChild(UIContainerWI);
+            panelSelector.removeChild(WIContainer);
         });
-       
 
-  
-        let currentStep = 1; 
-        var InstructionHeaderLabelPanel = document.createElement('div');
-        InstructionHeaderLabelPanel.id = 'wi-type';  
-        InstructionHeaderLabelPanel.innerHTML = workinstructions[currentStep-1].StepType;//"This is the header text"; 
-        InstructionHeaderLabelPanel.className ='wi-type';
 
-        var InstructionStepPanel = document.createElement('div');
-        InstructionStepPanel.id = 'wi-instructionsteps'; 
-        InstructionStepPanel.className = 'wi-steps';  
-        let steps = workinstructions.length ;
-        InstructionStepPanel.innerHTML = currentStep +" OF " + steps;  
+        let WIDetailsContainer = document.createElement('div');
+        WIDetailsContainer.id = 'wi-details';
+        WIDetailsContainer.className = 'wi-details'; 
 
-        var InstructionTextLabelPanel = document.createElement('div');
-        InstructionTextLabelPanel.id = 'wi-text'; 
-        InstructionTextLabelPanel.className = 'wi-text'; 
-        InstructionTextLabelPanel.innerHTML = workinstructions[currentStep-1].StepDetail;//"This is the work instruction text"; 
+        let WIDetailsType = document.createElement('div');
+        WIDetailsType.id = 'wi-type';
+        WIDetailsType.className = 'wi-text'; 
+        WIDetailsType.innerHTML = workinstructions[currentStep-1].StepType
 
-        let InstructionNavContainer = document.createElement('div');
-        InstructionNavContainer.id = 'wi-navcontainer';
-        InstructionNavContainer.className = 'wi-navcontainer'; 
+        let WIDetailsText = document.createElement('div');
+        WIDetailsText.id = 'wi-text';
+        WIDetailsText.className = 'wi-text'; 
+        WIDetailsText.innerHTML = workinstructions[currentStep-1].StepDetail;
 
-        var InstructionNavPanel = document.createElement('div');
-        InstructionNavPanel.id = 'wi-nav'; 
-        //InstructionNavPanel.className = 'wi-nav'; 
+        WIDetailsContainer.appendChild(WIDetailsType);
+        WIDetailsContainer.appendChild(WIDetailsText);
 
-        var BackButton = document.createElement('img');
-        BackButton.src = "extensions/images/widgetcoe_back.png";   
-        BackButton.className = 'wi-backbutton';   
-        BackButton.style.left = '0px'; 
+        let WIBackForwardContainer = document.createElement('div');
+        WIBackForwardContainer.id = 'wi-backforwardcontainer';
+        WIBackForwardContainer.className = 'wi-backforwardcontainer'; 
 
-        BackButton.addEventListener("click",  () => { 
-
+        let WIBackButton = document.createElement('img');
+        WIBackButton.id = 'wi-backbutton';
+        WIBackButton.className = 'wi-backbutton'; 
+        WIBackButton.src = "extensions/images/workorderscoe_back.png"; 
+        WIBackButton.addEventListener("click",  () => { 
             try { 
 
                 if (currentStep != 1 ) { 
@@ -375,28 +684,25 @@ class WorkOrderscoe {
                 } else {
                     currentStep = workinstructions.length ;
                 }
+                WIInstructionSteps.innerHTML = currentStep +" OF " + steps; 
+                WIDetailsType.innerHTML = workinstructions[currentStep-1].StepType;//"This is the header text";
+                WIDetailsText.innerHTML = workinstructions[currentStep-1].StepDetail;//"This is the work instruction text";  
 
-                InstructionHeaderLabelPanel.innerHTML = workinstructions[currentStep-1].StepType;//"This is the header text";
-                InstructionTextLabelPanel.innerHTML = workinstructions[currentStep-1].StepDetail;//"This is the work instruction text";  
-                InstructionStepPanel.innerHTML = currentStep +" OF " + steps; 
-                
-                this.vuforiaScope.outgoingdataField = this.getSelectStepPart(currentStep, workinstructions);
+                this.vuforiaScope.outgoingdataField = this.getAffectedParts(currentStep, workinstructions);
                 this.vuforiaScope.$parent.fireEvent('workinstructionselected');
                 this.vuforiaScope.$parent.$applyAsync();
-
 
             } catch (ex) {
 
             }
     
         });
-        
 
-        var NextButton = document.createElement('img');
-        NextButton.src = "extensions/images/widgetcoe_next.png";   
-        NextButton.className = 'wi-nextbutton';   
-        NextButton.style.right = '0px'; 
-        NextButton.addEventListener("click",  () => { 
+        let WIForwardButton = document.createElement('img');
+        WIForwardButton.id = 'wi-nextbutton';
+        WIForwardButton.className = 'wi-nextbutton'; 
+        WIForwardButton.src = "extensions/images/workorderscoe_next.png"; 
+        WIForwardButton.addEventListener("click",  () => { 
 
             try { 
 
@@ -406,9 +712,9 @@ class WorkOrderscoe {
                     currentStep = 1;
                 }
 
-                InstructionHeaderLabelPanel.innerHTML = workinstructions[currentStep-1].StepType;//"This is the header text";
-                InstructionTextLabelPanel.innerHTML = workinstructions[currentStep-1].StepDetail;//"This is the work instruction text";  
-                InstructionStepPanel.innerHTML = currentStep +" OF " + steps; 
+                WIInstructionSteps.innerHTML = currentStep +" OF " + steps; 
+                WIDetailsType.innerHTML = workinstructions[currentStep-1].StepType;//"This is the header text";
+                WIDetailsText.innerHTML = workinstructions[currentStep-1].StepDetail;//"This is the work instruction text";  
 
                 this.vuforiaScope.affectedpartsField = this.getAffectedParts(currentStep , workinstructions);
                 this.vuforiaScope.$parent.fireEvent('workinstructionselected');
@@ -419,27 +725,54 @@ class WorkOrderscoe {
             }
     
         });
+
+        WIBackForwardContainer.appendChild(WIBackButton);
+        WIBackForwardContainer.appendChild(WIForwardButton);
+
+        WIInstructionsPanel.appendChild(WIHeaderContainer);
+        WIInstructionsPanel.appendChild(WIDetailsContainer);
+        WIInstructionsPanel.appendChild(WIBackForwardContainer);
+
+
+        let WOButtonbar = document.createElement('div');
+        WOButtonbar.id = 'wo-buttonbarcontainer';
+        WOButtonbar.className = 'wo-buttonbarcontainer'; 
+
+        let WOButton = document.createElement('img');
+        WOButton.id = 'wo-workorders-img';
+        WOButton.className = 'wo-workorders-img'; 
+        WOButton.src = "extensions/images/workorderscoe_wo.png"; 
+
+
+        let WorkOrderLabel = document.createElement("label");
+        WorkOrderLabel.htmlFor = "Work Order:";
+
+        let WorkOrderList = document.createElement("select");
+        WorkOrderList.id = "workorderslist";
+        WorkOrderList.className = 'workorderpicklist'; 
+        let listscope = this.vuforiaScope;
+        function listSelection (e) {
+            //alert('value ' + this.value);
+
+            listscope.selectedwoField =  this.value;
+            listscope.$parent.fireEvent('workorderselected');
+            listscope.$parent.$applyAsync();
+        }
         
-        InstructionCloseContainer.appendChild(InstructionStepPanel);
-        InstructionCloseContainer.appendChild(CloseButton);
-  
-        //Append the button to the div  
-        InstructionNavContainer.appendChild(BackButton); 
-        InstructionNavContainer.appendChild(NextButton); 
+        let selectArray = [];
+        //Create and append the options
+        for (var i = 0; i < selectArray.length; i++) {
+        var option = document.createElement("option");
+        option.value = selectArray[i].WorkID;
+        option.text = selectArray[i].Title;
+        WorkOrderList.appendChild(option);
 
-        InstructionPanel.appendChild(InstructionCloseContainer);
-        InstructionPanel.appendChild(InstructionHeaderLabelPanel);  
-        InstructionPanel.appendChild(InstructionTextLabelPanel);  
-        InstructionPanel.appendChild(InstructionNavContainer);  
-        UIContainerWI.appendChild(InstructionPanel);
+        }
 
-
-        // this should probably reworked 
-
-        this.getWorkOrderSummary( panelSelector , UIContainerWI );
+        this.getWorkOrderSummary( panelSelector , WIContainer );
 
 
-        return UIContainerWI;
+        return WIContainer;
     }
 
 

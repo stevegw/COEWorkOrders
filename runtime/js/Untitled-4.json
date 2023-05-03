@@ -1,0 +1,3102 @@
+[
+    {
+        "Title": "Battery sensor Install ",
+        "WorkID": "WI000001",
+        "WorkInstructions": [
+            {
+                "StepNumber": "0.0",
+                "Label1": "Battery sensor Install ",
+                "Label3": "7.0",
+                "Label2": "Low",
+                "WorkID": "WI000001",
+                "StepDetail": "Gather Tools and Saftey instructions and install sensor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            },
+            {
+                "AffectedPartsID": "IKEHHYNSL6",
+                "StepNumber": "1.0",
+                "StepType": "Safety",
+                "Label1": "Safety",
+                "Label3": "...",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/5/23",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/20",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/17",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/11/44/8",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/8/35/14",
+                            "model": "EH4"
+                        }
+                    ]
+                },
+                "Label2": "...",
+                "PartsList": [
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "IKEHHYNSL6",
+                        "sourceType": "User",
+                        "MetadataID": "/5/23",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "IKEHHYNSL6/5/23",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.312Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "IKEHHYNSL6",
+                        "sourceType": "User",
+                        "MetadataID": "/5/20",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "IKEHHYNSL6/5/20",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.328Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "IKEHHYNSL6",
+                        "sourceType": "User",
+                        "MetadataID": "/5/17",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "IKEHHYNSL6/5/17",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.344Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "IKEHHYNSL6",
+                        "sourceType": "User",
+                        "MetadataID": "/5/11/44/8",
+                        "DisplayName": "COVER_RELAY.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "IKEHHYNSL6/5/11/44/8",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.359Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "IKEHHYNSL6",
+                        "sourceType": "User",
+                        "MetadataID": "/5/8/35/14",
+                        "DisplayName": "RECT.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "IKEHHYNSL6/5/8/35/14",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.375Z"
+                    }
+                ],
+                "WorkID": "WI000001",
+                "StepDetail": "stepDetail for step 1. Safety. Please make sure all safety option have been worked through."
+            },
+            {
+                "AffectedPartsID": "U3MM9HGMJF",
+                "StepNumber": "2.0",
+                "StepType": "Tool requirements",
+                "Label1": "Tool requirements",
+                "Label3": "...",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/5/20",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/23",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/17",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/11/44/8",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/8/35/14",
+                            "model": "EH4"
+                        }
+                    ]
+                },
+                "Label2": "...",
+                "PartsList": [
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "U3MM9HGMJF",
+                        "sourceType": "User",
+                        "MetadataID": "/5/20",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "U3MM9HGMJF/5/20",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.406Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "U3MM9HGMJF",
+                        "sourceType": "User",
+                        "MetadataID": "/5/23",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "U3MM9HGMJF/5/23",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.422Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "U3MM9HGMJF",
+                        "sourceType": "User",
+                        "MetadataID": "/5/17",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "U3MM9HGMJF/5/17",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.437Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "U3MM9HGMJF",
+                        "sourceType": "User",
+                        "MetadataID": "/5/11/44/8",
+                        "DisplayName": "COVER_RELAY.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "U3MM9HGMJF/5/11/44/8",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.453Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "U3MM9HGMJF",
+                        "sourceType": "User",
+                        "MetadataID": "/5/8/35/14",
+                        "DisplayName": "RECT.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "U3MM9HGMJF/5/8/35/14",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.469Z"
+                    }
+                ],
+                "WorkID": "WI000001",
+                "StepDetail": "stepDetail for step 2. The Tool requirements are. gloves,wench and flashlight. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            },
+            {
+                "AffectedPartsID": "HDSBHW44HJ",
+                "StepNumber": "3.0",
+                "StepType": "Evaluation",
+                "Label1": "Evaluation",
+                "Label3": "...",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/5/17",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/23",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/20",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/11/44/8",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/8/35/14",
+                            "model": "EH4"
+                        }
+                    ]
+                },
+                "Label2": "...",
+                "PartsList": [
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "HDSBHW44HJ",
+                        "sourceType": "User",
+                        "MetadataID": "/5/17",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "HDSBHW44HJ/5/17",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.500Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "HDSBHW44HJ",
+                        "sourceType": "User",
+                        "MetadataID": "/5/23",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "HDSBHW44HJ/5/23",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.516Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "HDSBHW44HJ",
+                        "sourceType": "User",
+                        "MetadataID": "/5/20",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "HDSBHW44HJ/5/20",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.531Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "HDSBHW44HJ",
+                        "sourceType": "User",
+                        "MetadataID": "/5/11/44/8",
+                        "DisplayName": "COVER_RELAY.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "HDSBHW44HJ/5/11/44/8",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.547Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "HDSBHW44HJ",
+                        "sourceType": "User",
+                        "MetadataID": "/5/8/35/14",
+                        "DisplayName": "RECT.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "HDSBHW44HJ/5/8/35/14",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.562Z"
+                    }
+                ],
+                "WorkID": "WI000001",
+                "StepDetail": "stepDetail for step 3. The evaluation is to explore if the component has been insatlled correctly. "
+            },
+            {
+                "AffectedPartsID": "BOUKLSB8BW",
+                "StepNumber": "4.0",
+                "StepType": "work to be done",
+                "Label1": "work to be done",
+                "Label3": "...",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/5/26",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/23",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/20",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/17",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/14/44/8",
+                            "model": "EH4"
+                        }
+                    ]
+                },
+                "Label2": "...",
+                "PartsList": [
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "BOUKLSB8BW",
+                        "sourceType": "User",
+                        "MetadataID": "/5/26",
+                        "DisplayName": "CONN_5_EB.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "BOUKLSB8BW/5/26",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.594Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "BOUKLSB8BW",
+                        "sourceType": "User",
+                        "MetadataID": "/5/23",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "BOUKLSB8BW/5/23",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.609Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "BOUKLSB8BW",
+                        "sourceType": "User",
+                        "MetadataID": "/5/20",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "BOUKLSB8BW/5/20",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.625Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "BOUKLSB8BW",
+                        "sourceType": "User",
+                        "MetadataID": "/5/17",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "BOUKLSB8BW/5/17",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.640Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "BOUKLSB8BW",
+                        "sourceType": "User",
+                        "MetadataID": "/5/14/44/8",
+                        "DisplayName": "COVER_RELAY.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "BOUKLSB8BW/5/14/44/8",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.656Z"
+                    }
+                ],
+                "WorkID": "WI000001",
+                "StepDetail": "stepDetail for step 4. The work required to be done is check off items 1,2,3. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            },
+            {
+                "AffectedPartsID": "LKEIQOQCPP",
+                "StepNumber": "5.0",
+                "StepType": "Inspection",
+                "Label1": "Inspection",
+                "Label3": "...",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/5/32",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/8/8",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/23",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/20",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/17",
+                            "model": "EH4"
+                        }
+                    ]
+                },
+                "Label2": "...",
+                "PartsList": [
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "LKEIQOQCPP",
+                        "sourceType": "User",
+                        "MetadataID": "/5/32",
+                        "DisplayName": "CONN_9_CM.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "LKEIQOQCPP/5/32",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.687Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "LKEIQOQCPP",
+                        "sourceType": "User",
+                        "MetadataID": "/5/8/8",
+                        "DisplayName": "POWER.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "LKEIQOQCPP/5/8/8",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.703Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "LKEIQOQCPP",
+                        "sourceType": "User",
+                        "MetadataID": "/5/23",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "LKEIQOQCPP/5/23",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.719Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "LKEIQOQCPP",
+                        "sourceType": "User",
+                        "MetadataID": "/5/20",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "LKEIQOQCPP/5/20",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.734Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "LKEIQOQCPP",
+                        "sourceType": "User",
+                        "MetadataID": "/5/17",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "LKEIQOQCPP/5/17",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.750Z"
+                    }
+                ],
+                "WorkID": "WI000001",
+                "StepDetail": "stepDetail for step 5 The final inspection to to review the work and checkoff all required items."
+            }
+        ],
+        "_isSelected": true
+    },
+    {
+        "Title": "Headlight Install",
+        "WorkID": "WI000002",
+        "WorkInstructions": [
+            {
+                "StepNumber": "0.0",
+                "Label1": "Headlight Install",
+                "Label3": "7.0",
+                "Label2": "Med",
+                "WorkID": "WI000002",
+                "StepDetail": "Gather Tools and Saftey instructions and install headelight Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            },
+            {
+                "AffectedPartsID": "FU6YBWM1MH",
+                "StepNumber": "1.0",
+                "StepType": "Safety",
+                "Label1": "Safety",
+                "Label3": "...",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/5/23",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/20",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/17",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/11/44/8",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/8/35/14",
+                            "model": "EH4"
+                        }
+                    ]
+                },
+                "Label2": "...",
+                "PartsList": [
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "FU6YBWM1MH",
+                        "sourceType": "User",
+                        "MetadataID": "/5/23",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "FU6YBWM1MH/5/23",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.798Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "FU6YBWM1MH",
+                        "sourceType": "User",
+                        "MetadataID": "/5/20",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "FU6YBWM1MH/5/20",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.813Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "FU6YBWM1MH",
+                        "sourceType": "User",
+                        "MetadataID": "/5/17",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "FU6YBWM1MH/5/17",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.829Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "FU6YBWM1MH",
+                        "sourceType": "User",
+                        "MetadataID": "/5/11/44/8",
+                        "DisplayName": "COVER_RELAY.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "FU6YBWM1MH/5/11/44/8",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.845Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "FU6YBWM1MH",
+                        "sourceType": "User",
+                        "MetadataID": "/5/8/35/14",
+                        "DisplayName": "RECT.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "FU6YBWM1MH/5/8/35/14",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.860Z"
+                    }
+                ],
+                "WorkID": "WI000002",
+                "StepDetail": "stepDetail for step 1. Safety. Please make sure all safety option have been worked through."
+            },
+            {
+                "AffectedPartsID": "XZZM5DE8PI",
+                "StepNumber": "2.0",
+                "StepType": "Tool requirements",
+                "Label1": "Tool requirements",
+                "Label3": "...",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/5/20",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/23",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/17",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/11/44/8",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/8/35/14",
+                            "model": "EH4"
+                        }
+                    ]
+                },
+                "Label2": "...",
+                "PartsList": [
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "XZZM5DE8PI",
+                        "sourceType": "User",
+                        "MetadataID": "/5/20",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "XZZM5DE8PI/5/20",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.891Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "XZZM5DE8PI",
+                        "sourceType": "User",
+                        "MetadataID": "/5/23",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "XZZM5DE8PI/5/23",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.907Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "XZZM5DE8PI",
+                        "sourceType": "User",
+                        "MetadataID": "/5/17",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "XZZM5DE8PI/5/17",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.923Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "XZZM5DE8PI",
+                        "sourceType": "User",
+                        "MetadataID": "/5/11/44/8",
+                        "DisplayName": "COVER_RELAY.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "XZZM5DE8PI/5/11/44/8",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.938Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "XZZM5DE8PI",
+                        "sourceType": "User",
+                        "MetadataID": "/5/8/35/14",
+                        "DisplayName": "RECT.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "XZZM5DE8PI/5/8/35/14",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.954Z"
+                    }
+                ],
+                "WorkID": "WI000002",
+                "StepDetail": "stepDetail for step 2. The Tool requirements are. gloves,wench and flashlight. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            },
+            {
+                "AffectedPartsID": "5BEBQ7YXK0",
+                "StepNumber": "3.0",
+                "StepType": "Evaluation",
+                "Label1": "Evaluation",
+                "Label3": "...",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/5/17",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/23",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/20",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/11/44/8",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/8/35/14",
+                            "model": "EH4"
+                        }
+                    ]
+                },
+                "Label2": "...",
+                "PartsList": [
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "5BEBQ7YXK0",
+                        "sourceType": "User",
+                        "MetadataID": "/5/17",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "5BEBQ7YXK0/5/17",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:47.985Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "5BEBQ7YXK0",
+                        "sourceType": "User",
+                        "MetadataID": "/5/23",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "5BEBQ7YXK0/5/23",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.001Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "5BEBQ7YXK0",
+                        "sourceType": "User",
+                        "MetadataID": "/5/20",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "5BEBQ7YXK0/5/20",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.016Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "5BEBQ7YXK0",
+                        "sourceType": "User",
+                        "MetadataID": "/5/11/44/8",
+                        "DisplayName": "COVER_RELAY.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "5BEBQ7YXK0/5/11/44/8",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.032Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "5BEBQ7YXK0",
+                        "sourceType": "User",
+                        "MetadataID": "/5/8/35/14",
+                        "DisplayName": "RECT.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "5BEBQ7YXK0/5/8/35/14",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.048Z"
+                    }
+                ],
+                "WorkID": "WI000002",
+                "StepDetail": "stepDetail for step 3. The evaluation is to explore if the component has been insatlled correctly. "
+            },
+            {
+                "AffectedPartsID": "VNL9ENIMUB",
+                "StepNumber": "4.0",
+                "StepType": "work to be done",
+                "Label1": "work to be done",
+                "Label3": "...",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/5/26",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/23",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/20",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/17",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/14/44/8",
+                            "model": "EH4"
+                        }
+                    ]
+                },
+                "Label2": "...",
+                "PartsList": [
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "VNL9ENIMUB",
+                        "sourceType": "User",
+                        "MetadataID": "/5/26",
+                        "DisplayName": "CONN_5_EB.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "VNL9ENIMUB/5/26",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.079Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "VNL9ENIMUB",
+                        "sourceType": "User",
+                        "MetadataID": "/5/23",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "VNL9ENIMUB/5/23",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.095Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "VNL9ENIMUB",
+                        "sourceType": "User",
+                        "MetadataID": "/5/20",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "VNL9ENIMUB/5/20",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.111Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "VNL9ENIMUB",
+                        "sourceType": "User",
+                        "MetadataID": "/5/17",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "VNL9ENIMUB/5/17",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.127Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "VNL9ENIMUB",
+                        "sourceType": "User",
+                        "MetadataID": "/5/14/44/8",
+                        "DisplayName": "COVER_RELAY.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "VNL9ENIMUB/5/14/44/8",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.142Z"
+                    }
+                ],
+                "WorkID": "WI000002",
+                "StepDetail": "stepDetail for step 4. The work required to be done is check off items 1,2,3. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            },
+            {
+                "AffectedPartsID": "Q4QB1YCXCY",
+                "StepNumber": "5.0",
+                "StepType": "Inspection",
+                "Label1": "Inspection",
+                "Label3": "...",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/5/32",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/8/8",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/23",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/20",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/17",
+                            "model": "EH4"
+                        }
+                    ]
+                },
+                "Label2": "...",
+                "PartsList": [
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "Q4QB1YCXCY",
+                        "sourceType": "User",
+                        "MetadataID": "/5/32",
+                        "DisplayName": "CONN_9_CM.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "Q4QB1YCXCY/5/32",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.174Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "Q4QB1YCXCY",
+                        "sourceType": "User",
+                        "MetadataID": "/5/8/8",
+                        "DisplayName": "POWER.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "Q4QB1YCXCY/5/8/8",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.189Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "Q4QB1YCXCY",
+                        "sourceType": "User",
+                        "MetadataID": "/5/23",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "Q4QB1YCXCY/5/23",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.205Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "Q4QB1YCXCY",
+                        "sourceType": "User",
+                        "MetadataID": "/5/20",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "Q4QB1YCXCY/5/20",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.221Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "Q4QB1YCXCY",
+                        "sourceType": "User",
+                        "MetadataID": "/5/17",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "Q4QB1YCXCY/5/17",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.236Z"
+                    }
+                ],
+                "WorkID": "WI000002",
+                "StepDetail": "stepDetail for step 5 The final inspection to to review the work and checkoff all required items."
+            }
+        ]
+    },
+    {
+        "Title": "Tail Light Install",
+        "WorkID": "WI000003",
+        "WorkInstructions": [
+            {
+                "StepNumber": "0.0",
+                "Label1": "Tail Light Install",
+                "Label3": "2.0",
+                "Label2": "Medium",
+                "WorkID": "WI000003",
+                "StepDetail": "Gather Tools and Saftey instructions and isnatll tail light Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            },
+            {
+                "AffectedPartsID": "PXUTAF3ITD",
+                "StepNumber": "1.0",
+                "StepType": "Safety",
+                "Label1": "Safety",
+                "Label3": "...",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/5/23",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/20",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/17",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/11/44/8",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/8/35/14",
+                            "model": "EH4"
+                        }
+                    ]
+                },
+                "Label2": "...",
+                "PartsList": [
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "PXUTAF3ITD",
+                        "sourceType": "User",
+                        "MetadataID": "/5/23",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "PXUTAF3ITD/5/23",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.283Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "PXUTAF3ITD",
+                        "sourceType": "User",
+                        "MetadataID": "/5/20",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "PXUTAF3ITD/5/20",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.299Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "PXUTAF3ITD",
+                        "sourceType": "User",
+                        "MetadataID": "/5/17",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "PXUTAF3ITD/5/17",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.314Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "PXUTAF3ITD",
+                        "sourceType": "User",
+                        "MetadataID": "/5/11/44/8",
+                        "DisplayName": "COVER_RELAY.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "PXUTAF3ITD/5/11/44/8",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.330Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "PXUTAF3ITD",
+                        "sourceType": "User",
+                        "MetadataID": "/5/8/35/14",
+                        "DisplayName": "RECT.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "PXUTAF3ITD/5/8/35/14",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.346Z"
+                    }
+                ],
+                "WorkID": "WI000003",
+                "StepDetail": "stepDetail for step 1. Safety. Please make sure all safety option have been worked through."
+            },
+            {
+                "AffectedPartsID": "AYLLW17YLS",
+                "StepNumber": "2.0",
+                "StepType": "Tool requirements",
+                "Label1": "Tool requirements",
+                "Label3": "...",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/5/20",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/23",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/17",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/11/44/8",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/8/35/14",
+                            "model": "EH4"
+                        }
+                    ]
+                },
+                "Label2": "...",
+                "PartsList": [
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "AYLLW17YLS",
+                        "sourceType": "User",
+                        "MetadataID": "/5/20",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "AYLLW17YLS/5/20",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.377Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "AYLLW17YLS",
+                        "sourceType": "User",
+                        "MetadataID": "/5/23",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "AYLLW17YLS/5/23",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.392Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "AYLLW17YLS",
+                        "sourceType": "User",
+                        "MetadataID": "/5/17",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "AYLLW17YLS/5/17",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.408Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "AYLLW17YLS",
+                        "sourceType": "User",
+                        "MetadataID": "/5/11/44/8",
+                        "DisplayName": "COVER_RELAY.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "AYLLW17YLS/5/11/44/8",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.424Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "AYLLW17YLS",
+                        "sourceType": "User",
+                        "MetadataID": "/5/8/35/14",
+                        "DisplayName": "RECT.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "AYLLW17YLS/5/8/35/14",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.439Z"
+                    }
+                ],
+                "WorkID": "WI000003",
+                "StepDetail": "stepDetail for step 2. The Tool requirements are. gloves,wench and flashlight. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            },
+            {
+                "AffectedPartsID": "EI3XJDXLA1",
+                "StepNumber": "3.0",
+                "StepType": "Evaluation",
+                "Label1": "Evaluation",
+                "Label3": "...",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/5/17",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/23",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/20",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/11/44/8",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/8/35/14",
+                            "model": "EH4"
+                        }
+                    ]
+                },
+                "Label2": "...",
+                "PartsList": [
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "EI3XJDXLA1",
+                        "sourceType": "User",
+                        "MetadataID": "/5/17",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "EI3XJDXLA1/5/17",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.471Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "EI3XJDXLA1",
+                        "sourceType": "User",
+                        "MetadataID": "/5/23",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "EI3XJDXLA1/5/23",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.486Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "EI3XJDXLA1",
+                        "sourceType": "User",
+                        "MetadataID": "/5/20",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "EI3XJDXLA1/5/20",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.502Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "EI3XJDXLA1",
+                        "sourceType": "User",
+                        "MetadataID": "/5/11/44/8",
+                        "DisplayName": "COVER_RELAY.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "EI3XJDXLA1/5/11/44/8",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.517Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "EI3XJDXLA1",
+                        "sourceType": "User",
+                        "MetadataID": "/5/8/35/14",
+                        "DisplayName": "RECT.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "EI3XJDXLA1/5/8/35/14",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.533Z"
+                    }
+                ],
+                "WorkID": "WI000003",
+                "StepDetail": "stepDetail for step 3. The evaluation is to explore if the component has been insatlled correctly. "
+            },
+            {
+                "AffectedPartsID": "PTEBVROCLV",
+                "StepNumber": "4.0",
+                "StepType": "work to be done",
+                "Label1": "work to be done",
+                "Label3": "...",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/5/26",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/23",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/20",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/17",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/14/44/8",
+                            "model": "EH4"
+                        }
+                    ]
+                },
+                "Label2": "...",
+                "PartsList": [
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "PTEBVROCLV",
+                        "sourceType": "User",
+                        "MetadataID": "/5/26",
+                        "DisplayName": "CONN_5_EB.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "PTEBVROCLV/5/26",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.564Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "PTEBVROCLV",
+                        "sourceType": "User",
+                        "MetadataID": "/5/23",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "PTEBVROCLV/5/23",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.580Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "PTEBVROCLV",
+                        "sourceType": "User",
+                        "MetadataID": "/5/20",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "PTEBVROCLV/5/20",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.596Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "PTEBVROCLV",
+                        "sourceType": "User",
+                        "MetadataID": "/5/17",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "PTEBVROCLV/5/17",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.611Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "PTEBVROCLV",
+                        "sourceType": "User",
+                        "MetadataID": "/5/14/44/8",
+                        "DisplayName": "COVER_RELAY.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "PTEBVROCLV/5/14/44/8",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.627Z"
+                    }
+                ],
+                "WorkID": "WI000003",
+                "StepDetail": "stepDetail for step 4. The work required to be done is check off items 1,2,3. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            },
+            {
+                "AffectedPartsID": "RBETIJOKJT",
+                "StepNumber": "5.0",
+                "StepType": "Inspection",
+                "Label1": "Inspection",
+                "Label3": "...",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/5/32",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/8/8",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/23",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/20",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/17",
+                            "model": "EH4"
+                        }
+                    ]
+                },
+                "Label2": "...",
+                "PartsList": [
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "RBETIJOKJT",
+                        "sourceType": "User",
+                        "MetadataID": "/5/32",
+                        "DisplayName": "CONN_9_CM.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "RBETIJOKJT/5/32",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.658Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "RBETIJOKJT",
+                        "sourceType": "User",
+                        "MetadataID": "/5/8/8",
+                        "DisplayName": "POWER.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "RBETIJOKJT/5/8/8",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.674Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "RBETIJOKJT",
+                        "sourceType": "User",
+                        "MetadataID": "/5/23",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "RBETIJOKJT/5/23",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.689Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "RBETIJOKJT",
+                        "sourceType": "User",
+                        "MetadataID": "/5/20",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "RBETIJOKJT/5/20",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.705Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "RBETIJOKJT",
+                        "sourceType": "User",
+                        "MetadataID": "/5/17",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "RBETIJOKJT/5/17",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.721Z"
+                    }
+                ],
+                "WorkID": "WI000003",
+                "StepDetail": "stepDetail for step 5 The final inspection to to review the work and checkoff all required items."
+            }
+        ]
+    },
+    {
+        "Title": "Rewire internal dashboard light",
+        "WorkID": "WI000004",
+        "WorkInstructions": [
+            {
+                "StepNumber": "0.0",
+                "Label1": "Rewire internal dashboard light",
+                "Label3": "1.0",
+                "Label2": "High",
+                "WorkID": "WI000004",
+                "StepDetail": "Gather Tools and Saftey instruction and rewire dashboard lightingLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            },
+            {
+                "AffectedPartsID": "73YZBYQLXV",
+                "StepNumber": "1.0",
+                "StepType": "Safety",
+                "Label1": "Safety",
+                "Label3": "...",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/5/23",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/20",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/17",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/11/44/8",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/8/35/14",
+                            "model": "EH4"
+                        }
+                    ]
+                },
+                "Label2": "...",
+                "PartsList": [
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "73YZBYQLXV",
+                        "sourceType": "User",
+                        "MetadataID": "/5/23",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "73YZBYQLXV/5/23",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.767Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "73YZBYQLXV",
+                        "sourceType": "User",
+                        "MetadataID": "/5/20",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "73YZBYQLXV/5/20",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.783Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "73YZBYQLXV",
+                        "sourceType": "User",
+                        "MetadataID": "/5/17",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "73YZBYQLXV/5/17",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.799Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "73YZBYQLXV",
+                        "sourceType": "User",
+                        "MetadataID": "/5/11/44/8",
+                        "DisplayName": "COVER_RELAY.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "73YZBYQLXV/5/11/44/8",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.814Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "73YZBYQLXV",
+                        "sourceType": "User",
+                        "MetadataID": "/5/8/35/14",
+                        "DisplayName": "RECT.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "73YZBYQLXV/5/8/35/14",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.830Z"
+                    }
+                ],
+                "WorkID": "WI000004",
+                "StepDetail": "stepDetail for step 1. Safety. Please make sure all safety option have been worked through."
+            },
+            {
+                "AffectedPartsID": "TOJFWFUG1R",
+                "StepNumber": "2.0",
+                "StepType": "Tool requirements",
+                "Label1": "Tool requirements",
+                "Label3": "...",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/5/20",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/23",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/17",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/11/44/8",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/8/35/14",
+                            "model": "EH4"
+                        }
+                    ]
+                },
+                "Label2": "...",
+                "PartsList": [
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "TOJFWFUG1R",
+                        "sourceType": "User",
+                        "MetadataID": "/5/20",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "TOJFWFUG1R/5/20",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.861Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "TOJFWFUG1R",
+                        "sourceType": "User",
+                        "MetadataID": "/5/23",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "TOJFWFUG1R/5/23",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.877Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "TOJFWFUG1R",
+                        "sourceType": "User",
+                        "MetadataID": "/5/17",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "TOJFWFUG1R/5/17",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.892Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "TOJFWFUG1R",
+                        "sourceType": "User",
+                        "MetadataID": "/5/11/44/8",
+                        "DisplayName": "COVER_RELAY.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "TOJFWFUG1R/5/11/44/8",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.908Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "TOJFWFUG1R",
+                        "sourceType": "User",
+                        "MetadataID": "/5/8/35/14",
+                        "DisplayName": "RECT.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "TOJFWFUG1R/5/8/35/14",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.924Z"
+                    }
+                ],
+                "WorkID": "WI000004",
+                "StepDetail": "stepDetail for step 2. The Tool requirements are. gloves,wench and flashlight. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            },
+            {
+                "AffectedPartsID": "WLVAM4IDD1",
+                "StepNumber": "3.0",
+                "StepType": "Evaluation",
+                "Label1": "Evaluation",
+                "Label3": "...",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/5/17",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/23",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/20",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/11/44/8",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/8/35/14",
+                            "model": "EH4"
+                        }
+                    ]
+                },
+                "Label2": "...",
+                "PartsList": [
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "WLVAM4IDD1",
+                        "sourceType": "User",
+                        "MetadataID": "/5/17",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "WLVAM4IDD1/5/17",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.955Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "WLVAM4IDD1",
+                        "sourceType": "User",
+                        "MetadataID": "/5/23",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "WLVAM4IDD1/5/23",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.971Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "WLVAM4IDD1",
+                        "sourceType": "User",
+                        "MetadataID": "/5/20",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "WLVAM4IDD1/5/20",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:48.986Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "WLVAM4IDD1",
+                        "sourceType": "User",
+                        "MetadataID": "/5/11/44/8",
+                        "DisplayName": "COVER_RELAY.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "WLVAM4IDD1/5/11/44/8",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.002Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "WLVAM4IDD1",
+                        "sourceType": "User",
+                        "MetadataID": "/5/8/35/14",
+                        "DisplayName": "RECT.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "WLVAM4IDD1/5/8/35/14",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.017Z"
+                    }
+                ],
+                "WorkID": "WI000004",
+                "StepDetail": "stepDetail for step 3. The evaluation is to explore if the component has been insatlled correctly. "
+            },
+            {
+                "AffectedPartsID": "GUCXJILQDA",
+                "StepNumber": "4.0",
+                "StepType": "work to be done",
+                "Label1": "work to be done",
+                "Label3": "...",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/5/26",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/23",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/20",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/17",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/14/44/8",
+                            "model": "EH4"
+                        }
+                    ]
+                },
+                "Label2": "...",
+                "PartsList": [
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "GUCXJILQDA",
+                        "sourceType": "User",
+                        "MetadataID": "/5/26",
+                        "DisplayName": "CONN_5_EB.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "GUCXJILQDA/5/26",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.049Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "GUCXJILQDA",
+                        "sourceType": "User",
+                        "MetadataID": "/5/23",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "GUCXJILQDA/5/23",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.064Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "GUCXJILQDA",
+                        "sourceType": "User",
+                        "MetadataID": "/5/20",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "GUCXJILQDA/5/20",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.080Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "GUCXJILQDA",
+                        "sourceType": "User",
+                        "MetadataID": "/5/17",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "GUCXJILQDA/5/17",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.096Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "GUCXJILQDA",
+                        "sourceType": "User",
+                        "MetadataID": "/5/14/44/8",
+                        "DisplayName": "COVER_RELAY.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "GUCXJILQDA/5/14/44/8",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.111Z"
+                    }
+                ],
+                "WorkID": "WI000004",
+                "StepDetail": "stepDetail for step 4. The work required to be done is check off items 1,2,3. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            },
+            {
+                "AffectedPartsID": "W37VGKSAHG",
+                "StepNumber": "5.0",
+                "StepType": "Inspection",
+                "Label1": "Inspection",
+                "Label3": "...",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/5/32",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/8/8",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/23",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/20",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/17",
+                            "model": "EH4"
+                        }
+                    ]
+                },
+                "Label2": "...",
+                "PartsList": [
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "W37VGKSAHG",
+                        "sourceType": "User",
+                        "MetadataID": "/5/32",
+                        "DisplayName": "CONN_9_CM.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "W37VGKSAHG/5/32",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.142Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "W37VGKSAHG",
+                        "sourceType": "User",
+                        "MetadataID": "/5/8/8",
+                        "DisplayName": "POWER.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "W37VGKSAHG/5/8/8",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.158Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "W37VGKSAHG",
+                        "sourceType": "User",
+                        "MetadataID": "/5/23",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "W37VGKSAHG/5/23",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.174Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "W37VGKSAHG",
+                        "sourceType": "User",
+                        "MetadataID": "/5/20",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "W37VGKSAHG/5/20",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.189Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "W37VGKSAHG",
+                        "sourceType": "User",
+                        "MetadataID": "/5/17",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "W37VGKSAHG/5/17",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.205Z"
+                    }
+                ],
+                "WorkID": "WI000004",
+                "StepDetail": "stepDetail for step 5 The final inspection to to review the work and checkoff all required items."
+            }
+        ]
+    },
+    {
+        "Title": "Inspect Brake Hydraulics",
+        "WorkID": "WI000005",
+        "WorkInstructions": [
+            {
+                "StepNumber": "0.0",
+                "Label1": "Inspect Brake Hydraulics",
+                "Label3": "8.0",
+                "Label2": "High",
+                "WorkID": "WI000005",
+                "StepDetail": "Gather Tools and Saftey instruction and do inspection Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            },
+            {
+                "AffectedPartsID": "4H1MAKF82F",
+                "StepNumber": "1.0",
+                "StepType": "Safety",
+                "Label1": "Safety",
+                "Label3": "...",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/5/23",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/20",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/17",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/11/44/8",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/8/35/14",
+                            "model": "EH4"
+                        }
+                    ]
+                },
+                "Label2": "...",
+                "PartsList": [
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "4H1MAKF82F",
+                        "sourceType": "User",
+                        "MetadataID": "/5/23",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "4H1MAKF82F/5/23",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.252Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "4H1MAKF82F",
+                        "sourceType": "User",
+                        "MetadataID": "/5/20",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "4H1MAKF82F/5/20",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.267Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "4H1MAKF82F",
+                        "sourceType": "User",
+                        "MetadataID": "/5/17",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "4H1MAKF82F/5/17",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.283Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "4H1MAKF82F",
+                        "sourceType": "User",
+                        "MetadataID": "/5/11/44/8",
+                        "DisplayName": "COVER_RELAY.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "4H1MAKF82F/5/11/44/8",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.299Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "4H1MAKF82F",
+                        "sourceType": "User",
+                        "MetadataID": "/5/8/35/14",
+                        "DisplayName": "RECT.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "4H1MAKF82F/5/8/35/14",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.314Z"
+                    }
+                ],
+                "WorkID": "WI000005",
+                "StepDetail": "stepDetail for step 1. Safety. Please make sure all safety option have been worked through."
+            },
+            {
+                "AffectedPartsID": "N0UNY6HLXI",
+                "StepNumber": "2.0",
+                "StepType": "Tool requirements",
+                "Label1": "Tool requirements",
+                "Label3": "...",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/5/20",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/23",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/17",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/11/44/8",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/8/35/14",
+                            "model": "EH4"
+                        }
+                    ]
+                },
+                "Label2": "...",
+                "PartsList": [
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "N0UNY6HLXI",
+                        "sourceType": "User",
+                        "MetadataID": "/5/20",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "N0UNY6HLXI/5/20",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.346Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "N0UNY6HLXI",
+                        "sourceType": "User",
+                        "MetadataID": "/5/23",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "N0UNY6HLXI/5/23",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.361Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "N0UNY6HLXI",
+                        "sourceType": "User",
+                        "MetadataID": "/5/17",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "N0UNY6HLXI/5/17",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.377Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "N0UNY6HLXI",
+                        "sourceType": "User",
+                        "MetadataID": "/5/11/44/8",
+                        "DisplayName": "COVER_RELAY.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "N0UNY6HLXI/5/11/44/8",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.392Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "N0UNY6HLXI",
+                        "sourceType": "User",
+                        "MetadataID": "/5/8/35/14",
+                        "DisplayName": "RECT.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "N0UNY6HLXI/5/8/35/14",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.408Z"
+                    }
+                ],
+                "WorkID": "WI000005",
+                "StepDetail": "stepDetail for step 2. The Tool requirements are. gloves,wench and flashlight. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            },
+            {
+                "AffectedPartsID": "RS7W1QRDQY",
+                "StepNumber": "3.0",
+                "StepType": "Evaluation",
+                "Label1": "Evaluation",
+                "Label3": "...",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/5/17",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/23",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/20",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/11/44/8",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/8/35/14",
+                            "model": "EH4"
+                        }
+                    ]
+                },
+                "Label2": "...",
+                "PartsList": [
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "RS7W1QRDQY",
+                        "sourceType": "User",
+                        "MetadataID": "/5/17",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "RS7W1QRDQY/5/17",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.439Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "RS7W1QRDQY",
+                        "sourceType": "User",
+                        "MetadataID": "/5/23",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "RS7W1QRDQY/5/23",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.455Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "RS7W1QRDQY",
+                        "sourceType": "User",
+                        "MetadataID": "/5/20",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "RS7W1QRDQY/5/20",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.471Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "RS7W1QRDQY",
+                        "sourceType": "User",
+                        "MetadataID": "/5/11/44/8",
+                        "DisplayName": "COVER_RELAY.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "RS7W1QRDQY/5/11/44/8",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.486Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "RS7W1QRDQY",
+                        "sourceType": "User",
+                        "MetadataID": "/5/8/35/14",
+                        "DisplayName": "RECT.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "RS7W1QRDQY/5/8/35/14",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.502Z"
+                    }
+                ],
+                "WorkID": "WI000005",
+                "StepDetail": "stepDetail for step 3. The evaluation is to explore if the component has been insatlled correctly. "
+            },
+            {
+                "AffectedPartsID": "VVAQRP3PBG",
+                "StepNumber": "4.0",
+                "StepType": "work to be done",
+                "Label1": "work to be done",
+                "Label3": "...",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/5/26",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/23",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/20",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/17",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/14/44/8",
+                            "model": "EH4"
+                        }
+                    ]
+                },
+                "Label2": "...",
+                "PartsList": [
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "VVAQRP3PBG",
+                        "sourceType": "User",
+                        "MetadataID": "/5/26",
+                        "DisplayName": "CONN_5_EB.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "VVAQRP3PBG/5/26",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.533Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "VVAQRP3PBG",
+                        "sourceType": "User",
+                        "MetadataID": "/5/23",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "VVAQRP3PBG/5/23",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.549Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "VVAQRP3PBG",
+                        "sourceType": "User",
+                        "MetadataID": "/5/20",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "VVAQRP3PBG/5/20",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.564Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "VVAQRP3PBG",
+                        "sourceType": "User",
+                        "MetadataID": "/5/17",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "VVAQRP3PBG/5/17",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.580Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "VVAQRP3PBG",
+                        "sourceType": "User",
+                        "MetadataID": "/5/14/44/8",
+                        "DisplayName": "COVER_RELAY.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "VVAQRP3PBG/5/14/44/8",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.596Z"
+                    }
+                ],
+                "WorkID": "WI000005",
+                "StepDetail": "stepDetail for step 4. The work required to be done is check off items 1,2,3. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            },
+            {
+                "AffectedPartsID": "OBIECQDIUC",
+                "StepNumber": "5.0",
+                "StepType": "Inspection",
+                "Label1": "Inspection",
+                "Label3": "...",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/5/32",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/8/8",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/23",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/20",
+                            "model": "EH4"
+                        },
+                        {
+                            "path": "/5/17",
+                            "model": "EH4"
+                        }
+                    ]
+                },
+                "Label2": "...",
+                "PartsList": [
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "OBIECQDIUC",
+                        "sourceType": "User",
+                        "MetadataID": "/5/32",
+                        "DisplayName": "CONN_9_CM.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "OBIECQDIUC/5/32",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.627Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "OBIECQDIUC",
+                        "sourceType": "User",
+                        "MetadataID": "/5/8/8",
+                        "DisplayName": "POWER.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "OBIECQDIUC/5/8/8",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.642Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "OBIECQDIUC",
+                        "sourceType": "User",
+                        "MetadataID": "/5/23",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "OBIECQDIUC/5/23",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.658Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "OBIECQDIUC",
+                        "sourceType": "User",
+                        "MetadataID": "/5/20",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "OBIECQDIUC/5/20",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.674Z"
+                    },
+                    {
+                        "ModelName": "EH4",
+                        "AffectedPartID": "OBIECQDIUC",
+                        "sourceType": "User",
+                        "MetadataID": "/5/17",
+                        "DisplayName": "CONN_2_L.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "source": "Administrator",
+                        "key": "OBIECQDIUC/5/17",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "timestamp": "2023-04-28T17:56:49.689Z"
+                    }
+                ],
+                "WorkID": "WI000005",
+                "StepDetail": "stepDetail for step 5 The final inspection to to review the work and checkoff all required items."
+            }
+        ]
+    }
+]
+
+
+
+

@@ -24,6 +24,15 @@
       // List of properties that will be displayed in the widget properties panel once it's been dropped on the Canvas
       properties: [
         {
+          name: 'workpackage',
+          label: 'WorkPackage Incoming data',
+          datatype: 'json',
+          default: {},
+          isBindingTarget: true,
+          isBindingSource: false,
+          showInput: false
+        },
+        {
           name: 'workorders',
           label: 'WorkOrders Incoming data',
           datatype: 'json',
@@ -168,6 +177,10 @@
 
       services: [
         {
+          name: 'displaywp',
+          label: 'Display WorkPackage'
+        },
+        {
           name: 'displaywo',
           label: 'Display WorkOrders'
         },
@@ -183,6 +196,12 @@
 
       // List of events that will displayed in the widget properties panel
       events: [
+
+
+        {
+          name: 'workpackagereceieved',
+          label: 'WorkPackage Receieved'
+        },
         {
           name: 'workordersreceieved',
           label: 'Work Orders Receieved'
@@ -206,7 +225,7 @@
       ],
 
       dependencies: {
-        files         : ['js/workorderscoe-ng.js','js/workorderscoe.js', 'images/workorderscoe_wo.png', 'images/images/workorderscoe_wi.png' , 'images/workorderscoe_close.png' ,'images/workorderscoe_expand.png'],
+        files         : ['js/workorderscoe-ng.js','js/workorderscoe.js', 'images/workorderscoe_steps.png', 'images/workorderscoe_wo.png', 'images/images/workorderscoe_wi.png' , 'images/workorderscoe_close.png' ,'images/workorderscoe_back.png' ,'images/workorderscoe_next.png' ,'images/workorderscoe_expand.png'],
         angularModules: ['workorderscoe-ng']
       },
 
@@ -214,9 +233,9 @@
       designTemplate: function () {
         return '<div class="workorderscoeWidget"></div>';
       },
-
+  
       runtimeTemplate: function (props) {
-        var tmpl = '<div ng-workorderscoe  workorders-field="me.workorders" workinstructions-field="me.workinstructions"   affectedparts-field="me.affectedparts"  selectedwo-field="me.selectedwo" selectedwi-field="me.selectedwi" modelid-field={{me.modelid}} actionid-field={{me.actionid}} autolaunch-field={{me.autolaunch}}  incomingid-field={{me.incomingid}} wowidth-field={{me.wowidth}} woheight-field={{me.woheight}} wiwidth-field={{me.wiwidth}} wiheight-field={{me.wiheight}} wobottomoffset-field={{me.wobottomoffset}} wibottomoffset-field={{me.wibottomoffset}} leftoffset-field={{me.leftoffset}}  delegate-field="delegate"></div>' ; 
+        var tmpl = '<div ng-workorderscoe workpackage-field="me.workpackage"  workorders-field="me.workorders" workinstructions-field="me.workinstructions"   affectedparts-field="me.affectedparts"  selectedwo-field="me.selectedwo" selectedwi-field="me.selectedwi" modelid-field={{me.modelid}} actionid-field={{me.actionid}} autolaunch-field={{me.autolaunch}}  incomingid-field={{me.incomingid}} wowidth-field={{me.wowidth}} woheight-field={{me.woheight}} wiwidth-field={{me.wiwidth}} wiheight-field={{me.wiheight}} wobottomoffset-field={{me.wobottomoffset}} wibottomoffset-field={{me.wibottomoffset}} leftoffset-field={{me.leftoffset}}  delegate-field="delegate"></div>' ; 
         return tmpl;
       }
     };

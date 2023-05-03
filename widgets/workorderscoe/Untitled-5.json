@@ -1,0 +1,28 @@
+{
+    "filters": {
+        "type": "AND",
+        "filters":
+                [	{
+                        "type": "EQ",
+                        "fieldName": "filterSelected",
+                        "value": true
+                    },
+                 	{
+                        "type": "NE",
+                        "fieldName": "parentId",
+                        "value": "ROOT_ID"
+                    },
+                 	{
+                        "type": "NE",
+                        "fieldName": "parentId",
+                        "value": "SAVEDFILTER_ID"
+                    },
+                	{
+                        "type": "NE",
+                        "fieldName": "parentId",
+                        "value": "SAVEDGROUP_ID"
+                    }
+                 
+                ]
+    }
+}

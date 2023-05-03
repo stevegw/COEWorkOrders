@@ -1,0 +1,79 @@
+[
+    {
+        "model": "model-1",
+        "path": "/1/4",
+        "categories": {
+            "": {
+                "Feature_Id": "4",
+                "Source_file_name": "2020-2 profile.sldprt",
+                "Source_not_standard": "1"
+            },
+            "PROE Parameters": {
+                "PTC_COMMON_NAME": "",
+                "PTC_MASTER_MATERIAL": "PTC_SYSTEM_MTRL_PROPS",
+                "PTC_MATERIAL_NAME": "",
+                "PTC_MP_VAL_IMP_AREA": "51269.852700",
+                "PTC_MP_VAL_IMP_COGX": "165.000000",
+                "PTC_MP_VAL_IMP_COGY": "-0.013383",
+                "PTC_MP_VAL_IMP_COGZ": "-0.000000",
+                "PTC_MP_VAL_IMP_VOLUME": "56916.792972",
+                "PTC_REPORTED_MATERIAL": "",
+                "PTC_VAL_IMP_PART_STATUS": "OK",
+                "PTC_VAL_IMP_SCORE": "PASS"
+            },
+            "__PV_SystemProperties": {
+                "Child Count": "0",
+                "Component Name": "2020-2 PROFILE.SLDPRT",
+                "Display Name": "2020-2 PROFILE.SLDPRT",
+                "Model Extents (mm)": "330",
+                "OL File Name": "main_6.ol",
+                "Part Depth": "3",
+                "Part ID": "4",
+                "Part ID Path": "/1/4",
+                "Part Name": "2020-2 PROFILE.SLDPRT",
+                "Part Path": "01 MAIN ASM ENDER 3 PRO.SLDASM/ASM FRAME.SLDASM/2020-2 PROFILE.SLDPRT"
+            }
+        }
+    }
+]
+
+
+
+[
+    {
+        "model": "model-1",
+        "path": "/2/39/2",
+        "categories": {
+            "": {
+                "Feature_Id": "2",
+                "Source_file_name": "cold section fan.sldprt",
+                "Source_not_standard": "1"
+            },
+            "PROE Parameters": {
+                "PTC_COMMON_NAME": "",
+                "PTC_MASTER_MATERIAL": "PTC_SYSTEM_MTRL_PROPS",
+                "PTC_MATERIAL_NAME": "",
+                "PTC_MP_VAL_IMP_AREA": "7815.233018",
+                "PTC_MP_VAL_IMP_COGX": "246.277604",
+                "PTC_MP_VAL_IMP_COGY": "189.882632",
+                "PTC_MP_VAL_IMP_COGZ": "-62.554114",
+                "PTC_MP_VAL_IMP_VOLUME": "7749.287088",
+                "PTC_REPORTED_MATERIAL": "",
+                "PTC_VAL_IMP_PART_STATUS": "OK",
+                "PTC_VAL_IMP_SCORE": "PASS"
+            },
+            "__PV_SystemProperties": {
+                "Child Count": "0",
+                "Component Name": "COLD SECTION FAN.SLDPRT",
+                "Display Name": "COLD SECTION FAN.SLDPRT",
+                "Model Extents (mm)": "40",
+                "OL File Name": "main_342.ol",
+                "Part Depth": "4",
+                "Part ID": "2",
+                "Part ID Path": "/2/39/2",
+                "Part Name": "COLD SECTION FAN.SLDPRT",
+                "Part Path": "01 MAIN ASM ENDER 3 PRO.SLDASM/ASM X-AXIS.SLDASM/ASM PRINTING HEAD.SLDASM/COLD SECTION FAN.SLDPRT"
+            }
+        }
+    }
+]
