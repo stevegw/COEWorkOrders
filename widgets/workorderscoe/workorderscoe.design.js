@@ -225,7 +225,7 @@
       ],
 
       dependencies: {
-        files         : ['js/workorderscoe-ng.js','js/workorderscoe.js', 'images/workorderscoe_steps.png', 'images/workorderscoe_wo.png', 'images/images/workorderscoe_wi.png' , 'images/workorderscoe_close.png' ,'images/workorderscoe_back.png' ,'images/workorderscoe_next.png' ,'images/workorderscoe_expand.png'],
+        files         : ['js/workorderscoe-ng.js','js/workorderscoe.js', 'js/widgetcreator.js', 'images/workorderscoe_steps.png', 'images/workorderscoe_wo.png', 'images/images/workorderscoe_wi.png' , 'images/workorderscoe_close.png' ,'images/workorderscoe_back.png' ,'images/workorderscoe_next.png' ,'images/workorderscoe_expand.png' , 'images/workorderscoe_showwp.png' , 'images/workorderscoe_hidewp.png'],
         angularModules: ['workorderscoe-ng']
       },
 

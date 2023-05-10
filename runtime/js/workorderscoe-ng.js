@@ -45,7 +45,8 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
           console.log('Working on action ' + actionid);
           if (workorderscoe == undefined) {
             try {
-              workorderscoe = new WorkOrderscoe(scope, scope.wowidthField, scope.woheightField , scope.wiwidthField, scope.wiheightField , scope.wobottomoffsetField , scope.wibottomoffsetField ,scope.leftoffsetField , scope.modelidField);
+              let widgetRegister = new WidgetRegister( scope.renderer , $injector , scope );
+              workorderscoe = new WorkOrderscoe(scope, widgetRegister,  scope.wowidthField, scope.woheightField , scope.wiwidthField, scope.wiheightField , scope.wobottomoffsetField , scope.wibottomoffsetField ,scope.leftoffsetField , scope.modelidField);
             }catch(ex) {
               console.log('Creating the class WorkOrderscoe - somethimg when wrong! The exception >>'+ ex);
             }
@@ -84,6 +85,20 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
           if (scope.workpackageField != undefined && scope.workpackageField != '') {
             scope.$parent.fireEvent("workpackagereceieved");
             scope.$parent.$applyAsync();
+
+
+            // let widgetRegister = new WidgetRegister( scope.renderer , $injector , scope );
+
+            // widgetRegister.addWidget({
+            //   originalWidget: "twx-dt-model",
+            //   id: "model-1",
+            //   src: "/Thingworx/FileRepositories/AutoARRepo/Ford/F150_MODEL.pvz" ,  //"app/resources/Uploaded/remote-control.pvz",
+            //   y:"1",
+            //   z:"2",
+            //   events:[{name:"modelLoaded", value: "someExample()"}]
+            // })
+
+
           }
 
         });
@@ -133,7 +148,7 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
         // If you don't see this message its not deployed
         // Comment out once you have it working
         scope.$watch( function() {
-          console.log("workorderscoe Any watch "); 
+          //console.log("workorderscoe Any watch "); 
         });
       }
     };

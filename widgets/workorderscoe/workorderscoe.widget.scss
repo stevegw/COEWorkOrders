@@ -12,9 +12,7 @@ body {
     font-family: helvetica;
 }
 
-ul {
-    
-}
+
 
 li {
     list-style: circle;
@@ -193,17 +191,26 @@ height : 32px;
 
   }
 
-  .wo-buttonbarcontainer {
-    display : flex;
-    flex-direction : row;
-    background-color : transparent;
-    border-radius : 16px;
-    padding-bottom:  10px;
-    padding-left: 10px;
-    position: fixed ;
-    bottom: 1px;
+  // .wo-buttonbarcontainer {
+  //   display : flex;
+  //   flex-direction : row;
+  //   background-color : transparent;
+  //   border-radius : 16px;
+  //   padding-bottom:  10px;
+  //   padding-left: 10px;
+  //   position: fixed ;
+  //   bottom: 1px;
    
-  }
+  // }
+    .wp-showbutton  {
+    /* margin-left: auto; */
+    width : 32px;   
+    height : 32px; 
+    bottom: 1px;
+    right: 1px;
+    position: fixed;
+
+    }
 
   .wo-workorders-img {
     
@@ -224,6 +231,7 @@ height : 32px;
     z-index:  900;
     border-radius :16px;
     height: 275px;
+    visibility: "visible";
     
     }
     
@@ -346,6 +354,9 @@ height : 32px;
       height: 50px;
       bottom: 1px;
       position: fixed ;
+      width: -webkit-fill-available;
+      background-color : rgb(5, 82, 30);
+      
     }
   
     .workorderpanel {
