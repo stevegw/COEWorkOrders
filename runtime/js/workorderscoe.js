@@ -5,11 +5,11 @@ class WorkOrderscoe {
     UIContainerWI ;
     WorkOrders;
     SelectedWorkOrder;
+    widgetRegister;
 
-    constructor( vuforiaScope, widgetRegister, wowidth, woheight , wiwidth, wiheight , wobottom , wibottom ,  left , modelid ) {
+    constructor( vuforiaScope, wowidth, woheight , wiwidth, wiheight , wobottom , wibottom ,  left , modelid ) {
         // Not using the topoffset, leftoffset yet
         this.vuforiaScope  = vuforiaScope;
-        this.widgetRegister = widgetRegister;
         this.wowidth = wowidth;
         this.woheight = woheight;
         this.wiwidth = wiwidth;
@@ -23,8 +23,7 @@ class WorkOrderscoe {
     }
 
 
-    doAction = function (actionid , workpackage , workorders , workinstructions) {
-
+    doAction = function (actionid , workpackage , workorders , workinstructions, widgetRegister ) {
 
 
         let PanelQuery = 'body > ion-side-menus > ion-side-menu-content > ion-nav-view > ion-view > ion-content > twx-widget > twx-widget-content > \n' +
@@ -36,7 +35,7 @@ class WorkOrderscoe {
 
         if (actionid == 'GetWorkPackage') {
             let selectedWOIndex = 0; // for now allows select first work order when starting
-            this.getWorkPackage (workpackage , selectedWOIndex , PanelSelector); 
+            this.getWorkPackage (workpackage , selectedWOIndex , PanelSelector , widgetRegister ); 
         }
 
         else if (actionid == 'GetWorkOrders') {
@@ -59,7 +58,7 @@ class WorkOrderscoe {
 
     }
 
-    getWorkPackage = function (workpackage, selectedWOIndex,  panelSelector) {
+    getWorkPackage = function (workpackage, selectedWOIndex,  panelSelector , widgetRegister) {
 
         let WPVISIBLE = true;
         let currentStep = 1; 
@@ -86,7 +85,7 @@ class WorkOrderscoe {
         let WPInstructionSteps = document.createElement('div');
         WPInstructionSteps.id = 'wi-instructionsteps';
         WPInstructionSteps.className = 'wi-instructionsteps'; 
-        WPInstructionSteps.innerHTML = (currentStep ) +" OF " + (steps );
+        //WPInstructionSteps.innerText = (currentStep ) +" OF " + (steps );
 
         let WPCloseButton = document.createElement('img');
         WPCloseButton.src = "extensions/images/workorderscoe_hidewp.png"; 
@@ -135,17 +134,17 @@ class WorkOrderscoe {
         let WPDetailsLabel1 = document.createElement('div');
         WPDetailsLabel1.id = 'wi-label1';
         WPDetailsLabel1.className = 'wi-label1'; 
-        WPDetailsLabel1.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label1
+        //WPDetailsLabel1.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label1
 
         let WPDetailsLabel2 = document.createElement('div');
         WPDetailsLabel2.id = 'wi-label2';
         WPDetailsLabel2.className = 'wi-label2'; 
-        WPDetailsLabel2.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label2
+        //WPDetailsLabel2.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label2
 
         let WPDetailsLabel3 = document.createElement('div');
         WPDetailsLabel3.id = 'wi-label3';
         WPDetailsLabel3.className = 'wi-label3'; 
-        WPDetailsLabel3.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label3
+        //WPDetailsLabel3.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label3
 
         WPDetailsContainer.appendChild(WPDetailsLabel1);
         WPDetailsContainer.appendChild(WPDetailsLabel2);
@@ -154,7 +153,7 @@ class WorkOrderscoe {
         let WPText = document.createElement('div');
         WPText.id = 'wi-text';
         WPText.className = 'wi-text'; 
-        WPText.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].StepDetail;
+        //WPText.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].StepDetail;
 
         let WPBackForwardContainer = document.createElement('div');
         WPBackForwardContainer.id = 'wi-backforwardcontainer';
@@ -181,11 +180,11 @@ class WorkOrderscoe {
                     WOSelectcontainerContainer.style.visibility = "visible";
                 }
 
-                WPInstructionSteps.innerHTML = (currentStep ) +" OF " + (steps); 
-                WPDetailsLabel1.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label1;
-                WPDetailsLabel2.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label2;
-                WPDetailsLabel3.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label3;
-                WPText.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].StepDetail;        
+                WPInstructionSteps.innerText = (currentStep ) +" OF " + (steps); 
+                WPDetailsLabel1.innerText = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label1;
+                WPDetailsLabel2.innerText = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label2;
+                WPDetailsLabel3.innerText = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label3;
+                WPText.innerText = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].StepDetail;        
 
                 this.vuforiaScope.affectedpartsField = this.getAffectedParts(currentStep , workpackage[selectedWOIndex].WorkInstructions);
                 this.vuforiaScope.$parent.fireEvent('workinstructionselected');
@@ -219,11 +218,11 @@ class WorkOrderscoe {
                     WOButton.style.visibility = "visible";
                     WOSelectcontainerContainer.style.visibility = "visible";
                 }
-                WPInstructionSteps.innerHTML = (currentStep ) +" OF " + (steps); 
-                WPDetailsLabel1.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label1;
-                WPDetailsLabel2.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label2;
-                WPDetailsLabel3.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label3;    
-                WPText.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].StepDetail; 
+                WPInstructionSteps.innerText = (currentStep ) +" OF " + (steps); 
+                WPDetailsLabel1.innerText = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label1;
+                WPDetailsLabel2.innerText = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label2;
+                WPDetailsLabel3.innerText = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label3;    
+                WPText.innerText = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].StepDetail; 
 
                 this.vuforiaScope.affectedpartsField = this.getAffectedParts(currentStep , workpackage[selectedWOIndex].WorkInstructions);
                 this.vuforiaScope.$parent.fireEvent('workinstructionselected');
@@ -272,18 +271,49 @@ class WorkOrderscoe {
             console.log("selected WorkID " + workpackage[selectedWOIndex].WorkID);
             currentStep = 1; 
             steps = workpackage[selectedWOIndex].WorkInstructions.length ;
-            WPInstructionSteps.innerHTML = (currentStep) +" OF " + (steps); 
-            WPDetailsLabel1.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label1;
-            WPDetailsLabel2.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label2;
-            WPDetailsLabel3.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label3;
-            WPText.innerHTML = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].StepDetail;        
+            WPInstructionSteps.innerText = (currentStep) +" OF " + (steps); 
+            WPDetailsLabel1.innerText = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label1;
+            WPDetailsLabel2.innerText = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label2;
+            WPDetailsLabel3.innerText = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label3;
+            WPText.innerText = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].StepDetail;  
+            
+            let modelsJSON = workpackage[selectedWOIndex].Models; 
 
+
+            try {
+
+
+                for (let index = 0; index < modelsJSON.array.length; index++) {
+                    const element = modelsJSON.array[index];
+                    widgetRegister.addWidget({
+                        originalWidget: "twx-dt-model",
+                        id: element.model,
+                        src: "/Thingworx/FileRepositories/AutoARRepo"+element.src ,  //"app/resources/Uploaded/remote-control.pvz",
+                        x: "0",
+                        y:"0",
+                        z:"0",
+                        visible : "false",
+                        events:[{name:"modelLoaded", value: "someExample()"}]
+                      })
+                        console.log("Model" + element.src);
+                    
+                }
+                
+            } catch (error) {
+                console.log("Issues with widgetRegister error=" + error);
+            }
+    
 
 
 
         }
         
         //Create and append the options
+        var option = document.createElement("option");
+        option.value = "None";
+        option.text = "None";
+        WorkOrderList.appendChild(option);
+
         for (var i = 0; i < workpackage.length; i++) {
         var option = document.createElement("option");
         option.value = i;
@@ -361,6 +391,7 @@ class WorkOrderscoe {
         WorkOrderPicklist.appendChild(WorkOrderList);
 
         let listscope = this.vuforiaScope;
+
         function listSelection (e) {
             //alert('value ' + this.value);
 
@@ -370,8 +401,12 @@ class WorkOrderscoe {
         }
         
         //Create and append the options
-        for (var i = 0; i < selectArray.length; i++) {
         var option = document.createElement("option");
+        option.value = "None";
+        option.text = "None";
+
+        for (var i = 0; i < selectArray.length; i++) {
+
         option.value = selectArray[i].WorkID;
         option.text = selectArray[i].Title;
         WorkOrderList.appendChild(option);
@@ -453,20 +488,20 @@ class WorkOrderscoe {
 
         try {
 
-            models.forEach(element => {
-                this.widgetRegister.addWidget({
-                    originalWidget: "twx-dt-model",
-                    id: element.model,
-                    src: "/Thingworx/FileRepositories/AutoARRepo"+element.src ,  //"app/resources/Uploaded/remote-control.pvz",
-                    x: "0",
-                    y:"0",
-                    z:"0",
-                    visible : "false",
-                    events:[{name:"modelLoaded", value: "someExample()"}]
-                  })
-                
+            // models.forEach(element => {
+            //     this.widgetRegister.addWidget({
+            //         originalWidget: "twx-dt-model",
+            //         id: element.model,
+            //         src: "/Thingworx/FileRepositories/AutoARRepo"+element.src ,  //"app/resources/Uploaded/remote-control.pvz",
+            //         x: "0",
+            //         y:"0",
+            //         z:"0",
+            //         visible : "false",
+            //         events:[{name:"modelLoaded", value: "someExample()"}]
+            //       })
+                     //console.log("Model" + element.src);
     
-            });
+            // });
             
         } catch (error) {
             console.log("Issues with widgetRegister error=" + error);
@@ -560,7 +595,7 @@ class WorkOrderscoe {
 
         var WOSummaryTitle = document.createElement('div');
         WOSummaryTitle.id = 'wo-summarytitle';  
-        WOSummaryTitle.innerHTML = "Work Order Summary: " + this.WorkOrders[selectedIndex].Title;
+        WOSummaryTitle.innerText = "Work Order Summary: " + this.WorkOrders[selectedIndex].Title;
         WOSummaryTitle.className ='wo-summarytitle';
 
         WOSummaryHeaderContainer.appendChild(WOSummaryTitle);
@@ -569,7 +604,7 @@ class WorkOrderscoe {
         var WOSummaryDetailPanel = document.createElement('div');
         WOSummaryDetailPanel.id = 'wo-detailspanel'; 
         WOSummaryDetailPanel.className = 'wo-detailspanel';  
-        WOSummaryDetailPanel.innerHTML = this.WorkOrders[selectedIndex].Overview;  
+        WOSummaryDetailPanel.innerText = this.WorkOrders[selectedIndex].Overview;  
 
 
         let WOSummaryTimeContainer = document.createElement('div');
@@ -579,14 +614,14 @@ class WorkOrderscoe {
         var WOSummaryDifficultyPanel = document.createElement('div');
         WOSummaryDifficultyPanel.id = 'wo-difficulty'; 
         WOSummaryDifficultyPanel.className = 'wo-difficulty'; 
-        WOSummaryDifficultyPanel.innerHTML = "Level:" +this.WorkOrders[selectedIndex].Difficulty;
+        WOSummaryDifficultyPanel.innerText = "Level:" +this.WorkOrders[selectedIndex].Difficulty;
 
         
         var WOSummaryGotoStepsPanel = document.createElement('div');
         WOSummaryGotoStepsPanel.id = 'wi-instructionsteps'; 
         WOSummaryGotoStepsPanel.className = 'wi-type';  
         WOSummaryGotoStepsPanel.style.right = "0px";
-        WOSummaryGotoStepsPanel.innerHTML = "Goto steps >";  
+        WOSummaryGotoStepsPanel.innerText = "Goto steps >";  
         
         var SelectButton = document.createElement('img');
         SelectButton.className ="wi-steps";
@@ -603,7 +638,7 @@ class WorkOrderscoe {
             panelSelector.appendChild(uiContainerWI);
 
 
-                //panelSelector.appendChild(UIContainerWI);
+        //panelSelector.appendChild(UIContainerWI);
         // fire currect step selected
         //this.vuforiaScope.affectedpartsField = this.getAffectedParts( currentStep, workinstructions);
         //this.vuforiaScope.$parent.fireEvent('workinstructionselected');
@@ -617,7 +652,7 @@ class WorkOrderscoe {
         var WOSummaryTimePanel = document.createElement('div');
         WOSummaryTimePanel.id = 'wos-text-time'; 
         WOSummaryTimePanel.className = 'wi-type'; 
-        WOSummaryTimePanel.innerHTML = "Est. Time:" +this.WorkOrders[selectedIndex].Time;   
+        WOSummaryTimePanel.innerText = "Est. Time:" +this.WorkOrders[selectedIndex].Time;   
 
 
 
@@ -690,7 +725,7 @@ class WorkOrderscoe {
         let WIInstructionSteps = document.createElement('div');
         WIInstructionSteps.id = 'wi-steps';
         WIInstructionSteps.className = 'wi-steps'; 
-        WIInstructionSteps.innerHTML = currentStep +" OF " + steps; 
+        WIInstructionSteps.innerText = currentStep +" OF " + steps; 
 
         let WICloseButton = document.createElement('img');
         WICloseButton.id = 'wi-closebutton';
@@ -712,12 +747,12 @@ class WorkOrderscoe {
         let WIDetailsType = document.createElement('div');
         WIDetailsType.id = 'wi-type';
         WIDetailsType.className = 'wi-text'; 
-        WIDetailsType.innerHTML = workinstructions[currentStep-1].StepType
+        WIDetailsType.innerText = workinstructions[currentStep-1].StepType
 
         let WIDetailsText = document.createElement('div');
         WIDetailsText.id = 'wi-text';
         WIDetailsText.className = 'wi-text'; 
-        WIDetailsText.innerHTML = workinstructions[currentStep-1].StepDetail;
+        WIDetailsText.innerText = workinstructions[currentStep-1].StepDetail;
 
         WIDetailsContainer.appendChild(WIDetailsType);
         WIDetailsContainer.appendChild(WIDetailsText);
@@ -738,9 +773,9 @@ class WorkOrderscoe {
                 } else {
                     currentStep = workinstructions.length ;
                 }
-                WIInstructionSteps.innerHTML = currentStep +" OF " + steps; 
-                WIDetailsType.innerHTML = workinstructions[currentStep-1].StepType;//"This is the header text";
-                WIDetailsText.innerHTML = workinstructions[currentStep-1].StepDetail;//"This is the work instruction text";  
+                WIInstructionSteps.innerText = currentStep +" OF " + steps; 
+                WIDetailsType.innerText = workinstructions[currentStep-1].StepType;//"This is the header text";
+                WIDetailsText.innerText = workinstructions[currentStep-1].StepDetail;//"This is the work instruction text";  
 
                 this.vuforiaScope.outgoingdataField = this.getAffectedParts(currentStep, workinstructions);
                 this.vuforiaScope.$parent.fireEvent('workinstructionselected');
@@ -766,9 +801,9 @@ class WorkOrderscoe {
                     currentStep = 1;
                 }
 
-                WIInstructionSteps.innerHTML = currentStep +" OF " + steps; 
-                WIDetailsType.innerHTML = workinstructions[currentStep-1].StepType;//"This is the header text";
-                WIDetailsText.innerHTML = workinstructions[currentStep-1].StepDetail;//"This is the work instruction text";  
+                WIInstructionSteps.innerText = currentStep +" OF " + steps; 
+                WIDetailsType.innerText = workinstructions[currentStep-1].StepType;//"This is the header text";
+                WIDetailsText.innerText = workinstructions[currentStep-1].StepDetail;//"This is the work instruction text";  
 
                 this.vuforiaScope.affectedpartsField = this.getAffectedParts(currentStep , workinstructions);
                 this.vuforiaScope.$parent.fireEvent('workinstructionselected');
@@ -815,11 +850,16 @@ class WorkOrderscoe {
         
         let selectArray = [];
         //Create and append the options
-        for (var i = 0; i < selectArray.length; i++) {
         var option = document.createElement("option");
-        option.value = selectArray[i].WorkID;
-        option.text = selectArray[i].Title;
+        option.text = "None";
+        option.value = "None";
         WorkOrderList.appendChild(option);
+
+        for (var i = 0; i < selectArray.length; i++) {
+            
+            option.value = selectArray[i].WorkID;
+            option.text = selectArray[i].Title;
+            WorkOrderList.appendChild(option);
 
         }
 

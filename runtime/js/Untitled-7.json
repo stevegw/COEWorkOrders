@@ -1,0 +1,172 @@
+{
+	"rows": [{
+		"ModelName": "modelAffected1",
+		"AffectedPartID": "V6D3F3QNEX",
+		"FileName": "/Polaris/AffectedParts/polaris_toy_low.pvz",
+		"MetadataID": "/0/0/5/1/0/5/0",
+		"source": "Administrator",
+		"MetadataPropertyName": "path",
+		"tags": [],
+		"PartName": "7044771_BODY.PRT",
+		"sourceType": "User",
+		"DisplayName": "7044771_BODY.PRT",
+		"location": {
+			"elevation": 0,
+			"latitude": 0,
+			"longitude": 0
+		},
+		"key": "V6D3F3QNEX/0/0/5/1/0/5/0",
+		"timestamp": 1683671134301
+	}, {
+		"ModelName": "modelAffected1",
+		"AffectedPartID": "V6D3F3QNEX",
+		"FileName": "/Polaris/AffectedParts/polaris_toy_low.pvz",
+		"MetadataID": "/0/0/5/1/0/9/0",
+		"source": "Administrator",
+		"MetadataPropertyName": "path",
+		"tags": [],
+		"PartName": "7044897_ROD.PRT",
+		"sourceType": "User",
+		"DisplayName": "7044897_ROD.PRT",
+		"location": {
+			"elevation": 0,
+			"latitude": 0,
+			"longitude": 0
+		},
+		"key": "V6D3F3QNEX/0/0/5/1/0/9/0",
+		"timestamp": 1683671134317
+	}, {
+		"ModelName": "modelAffected1",
+		"AffectedPartID": "V6D3F3QNEX",
+		"FileName": "/Polaris/AffectedParts/polaris_toy_low.pvz",
+		"MetadataID": "/0/0/5/1/0/7",
+		"source": "Administrator",
+		"MetadataPropertyName": "path",
+		"tags": [],
+		"PartName": "7044640.PRT",
+		"sourceType": "User",
+		"DisplayName": "7044640.PRT",
+		"location": {
+			"elevation": 0,
+			"latitude": 0,
+			"longitude": 0
+		},
+		"key": "V6D3F3QNEX/0/0/5/1/0/7",
+		"timestamp": 1683671134332
+	}],
+	"dataShape": {
+		"fieldDefinitions": {
+			"ModelName": {
+				"name": "ModelName",
+				"aspects": {
+					"isPrimaryKey": false
+				},
+				"description": "",
+				"baseType": "STRING",
+				"ordinal": 9
+			},
+			"AffectedPartID": {
+				"name": "AffectedPartID",
+				"aspects": {
+					"isPrimaryKey": true
+				},
+				"description": "",
+				"baseType": "STRING",
+				"ordinal": 6
+			},
+			"FileName": {
+				"name": "FileName",
+				"aspects": {
+					"isPrimaryKey": false
+				},
+				"description": "",
+				"baseType": "STRING",
+				"ordinal": 12
+			},
+			"MetadataID": {
+				"name": "MetadataID",
+				"aspects": {
+					"isPrimaryKey": true
+				},
+				"description": "",
+				"baseType": "STRING",
+				"ordinal": 7
+			},
+			"source": {
+				"name": "source",
+				"aspects": {},
+				"description": "Source of last modification",
+				"baseType": "STRING",
+				"ordinal": 0
+			},
+			"MetadataPropertyName": {
+				"name": "MetadataPropertyName",
+				"aspects": {
+					"defaultValue": "Path",
+					"isPrimaryKey": false
+				},
+				"description": "",
+				"baseType": "STRING",
+				"ordinal": 8
+			},
+			"tags": {
+				"name": "tags",
+				"aspects": {
+					"tagType": "DataTags"
+				},
+				"description": "Tags",
+				"baseType": "TAGS",
+				"ordinal": 0
+			},
+			"PartName": {
+				"name": "PartName",
+				"aspects": {
+					"isPrimaryKey": false
+				},
+				"description": "",
+				"baseType": "STRING",
+				"ordinal": 11
+			},
+			"sourceType": {
+				"name": "sourceType",
+				"aspects": {},
+				"description": "Source type",
+				"baseType": "STRING",
+				"ordinal": 0
+			},
+			"DisplayName": {
+				"name": "DisplayName",
+				"aspects": {
+					"isPrimaryKey": false
+				},
+				"description": "",
+				"baseType": "STRING",
+				"ordinal": 10
+			},
+			"location": {
+				"name": "location",
+				"aspects": {},
+				"description": "Location of last modification",
+				"baseType": "LOCATION",
+				"ordinal": 0
+			},
+			"key": {
+				"name": "key",
+				"aspects": {
+					"isPrimaryKey": true
+				},
+				"description": "Internal key value",
+				"baseType": "STRING",
+				"ordinal": 0
+			},
+			"timestamp": {
+				"name": "timestamp",
+				"aspects": {},
+				"description": "Time of last modification",
+				"baseType": "DATETIME",
+				"ordinal": 0
+			}
+		}
+	}
+}
+

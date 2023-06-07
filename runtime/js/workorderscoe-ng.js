@@ -36,6 +36,7 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
 
         var lastUpdated = 'unknown';
         let workorderscoe = undefined ;
+        let widgetRegister ;
 
         
 
@@ -45,15 +46,15 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
           console.log('Working on action ' + actionid);
           if (workorderscoe == undefined) {
             try {
-              let widgetRegister = new WidgetRegister( scope.renderer , $injector , scope );
+              widgetRegister = new WidgetRegister( scope.renderer , $injector , scope );
               workorderscoe = new WorkOrderscoe(scope, widgetRegister,  scope.wowidthField, scope.woheightField , scope.wiwidthField, scope.wiheightField , scope.wobottomoffsetField , scope.wibottomoffsetField ,scope.leftoffsetField , scope.modelidField);
             }catch(ex) {
-              console.log('Creating the class WorkOrderscoe - somethimg when wrong! The exception >>'+ ex);
+              console.log('Creating the class WorkOrderscoe - something when wrong! The exception >>'+ ex);
             }
           }
 
 
-          workorderscoe.doAction(actionid, scope.workpackageField,  scope.workordersField, scope.workinstructionsField);
+          workorderscoe.doAction(actionid, scope.workpackageField,  scope.workordersField, scope.workinstructionsField , widgetRegister);
           
           
           // else {

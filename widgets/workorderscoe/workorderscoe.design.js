@@ -32,24 +32,6 @@
           isBindingSource: false,
           showInput: false
         },
-        {
-          name: 'workorders',
-          label: 'WorkOrders Incoming data',
-          datatype: 'json',
-          default: {},
-          isBindingTarget: true,
-          isBindingSource: false,
-          showInput: false
-        },
-        {
-          name: 'workinstructions',
-          label: 'WorkInstructions Incoming data',
-          datatype: 'json',
-          default: {},
-          isBindingTarget: true,
-          isBindingSource: false,
-          showInput: false
-        },
 
         {
           name: 'affectedparts',
@@ -60,19 +42,6 @@
           isBindingSource: true,
           showInput: false
         },   
-        {
-          name: 'actionid',
-          label: 'Some action ID',
-          datatype: 'string',
-          default: 'NoAction',
-          isBindingTarget: true,
-          isBindingSource: false,
-          showInput: true,
-          editor: 'select',
-          options: [
-            {label: 'No action', value: "NoAction"}
-            ]
-        },
         {
           name: 'autolaunch',
           label: 'Auto do start',
@@ -100,15 +69,6 @@
           isBindingSource: true,
           showInput: false
         },  
-        {
-          name: 'modelid',
-          label: 'Model ID',
-          datatype: 'string',
-          default: 'model-1',
-          isBindingTarget: true,
-          isBindingSource: false,
-          showInput: true
-        },
         {
           name: 'wowidth',
           label: 'wo width',
@@ -181,14 +141,6 @@
           label: 'Display WorkPackage'
         },
         {
-          name: 'displaywo',
-          label: 'Display WorkOrders'
-        },
-        {
-          name: 'displaywi',
-          label: 'Display WorkInstructions'
-        },
-        {
           name: 'stop',
           label: 'Stop'
         }
@@ -201,22 +153,6 @@
         {
           name: 'workpackagereceieved',
           label: 'WorkPackage Receieved'
-        },
-        {
-          name: 'workordersreceieved',
-          label: 'Work Orders Receieved'
-        },
-        {
-          name: 'workinstructionsreceieved',
-          label: 'Work Instructions Receieved'
-        },
-        {
-          name: 'workorderselected',
-          label: 'Work Order Selected'
-        },
-        {
-          name: 'workinstructionselected',
-          label: 'Work Instruction Selected'
         },
         {
           name: 'completed',
@@ -235,7 +171,7 @@
       },
   
       runtimeTemplate: function (props) {
-        var tmpl = '<div ng-workorderscoe workpackage-field="me.workpackage"  workorders-field="me.workorders" workinstructions-field="me.workinstructions"   affectedparts-field="me.affectedparts"  selectedwo-field="me.selectedwo" selectedwi-field="me.selectedwi" modelid-field={{me.modelid}} actionid-field={{me.actionid}} autolaunch-field={{me.autolaunch}}  incomingid-field={{me.incomingid}} wowidth-field={{me.wowidth}} woheight-field={{me.woheight}} wiwidth-field={{me.wiwidth}} wiheight-field={{me.wiheight}} wobottomoffset-field={{me.wobottomoffset}} wibottomoffset-field={{me.wibottomoffset}} leftoffset-field={{me.leftoffset}}  delegate-field="delegate"></div>' ; 
+        var tmpl = '<div ng-workorderscoe workpackage-field="me.workpackage"   affectedparts-field="me.affectedparts"  selectedwo-field="me.selectedwo" selectedwi-field="me.selectedwi" autolaunch-field={{me.autolaunch}}  incomingid-field={{me.incomingid}} wowidth-field={{me.wowidth}} woheight-field={{me.woheight}} wiwidth-field={{me.wiwidth}} wiheight-field={{me.wiheight}} wobottomoffset-field={{me.wobottomoffset}} wibottomoffset-field={{me.wibottomoffset}} leftoffset-field={{me.leftoffset}}  delegate-field="delegate"></div>' ; 
         return tmpl;
       }
     };

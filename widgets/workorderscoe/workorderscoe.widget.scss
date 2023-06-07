@@ -1,4 +1,11 @@
 
+//$primary-color:  rgba(32,109,22,0.75); //green
+$primary-color:  rgba(56,126,245,0.75); //blue
+$mainbackground-color: rgba(0, 0, 0, 0.6);
+$mainsecondary-color: rgba(255,243,1,1);
+
+
+
 
 :root {
     --grey: #7e857e;
@@ -129,9 +136,11 @@ border-radius : 16px;
 
 .wo-summarypanel {
   width: -webkit-fill-available;
+  margin: 15px;
   border-radius : 16px;
   color: rgba(255, 255, 255, 0.75); ;
-  background-color: rgb(7, 7, 7);
+  background-color: $mainbackground-color;
+
   /* flex: 1 1 auto; */
   position: fixed;
   display:flex;
@@ -223,7 +232,9 @@ height : 32px;
 
     .wi-uicontainer {
     
+    margin-left: 15px;
     width: -webkit-fill-available;
+    margin-right: 15px;
     background-color : transparent;
     display : flex;
     flex-direction : column;
@@ -238,8 +249,8 @@ height : 32px;
    
     .wi-instructionpanel {
     border-radius : 16px;
-    color: rgba(255, 255, 255, 0.75); ;
-    background-color: rgb(7, 7, 7);
+    color: rgba(255, 255, 255, 0.75); 
+    background-color: $mainbackground-color;
     /* flex: 1 1 auto; */
     // position: fixed;
     // display:flex;
@@ -331,7 +342,22 @@ height : 32px;
     height: 100px;
     bottom: 82px;
     position: fixed ;
+    margin-left: 15px;
+    margin-right: 15px;
     width: -webkit-fill-available;
+    }
+
+    .wi-label1 {
+      padding-left: 15px;
+    
+    }
+    .wi-label2 {
+      padding-left: 15px;
+    
+    }
+    .wi-label3 {
+      padding-left: 15px;
+    
     }
   
     .wi-backforwardcontainer   {
@@ -340,7 +366,10 @@ height : 32px;
       height: 40px;
       position: fixed ;
       bottom: 40px;
+      //margin: 15px;
       width: -webkit-fill-available;
+      margin-left: 15px;
+      margin-right: 15px;
     }
     .wi-buttonbarcontainer {
       display : flex;
@@ -349,12 +378,15 @@ height : 32px;
       border-radius : 16px;
       padding-top: 10px;
       padding-bottom:  10px;
-      padding-left: 10px;
+      //padding-left: 10px;
       background-color:  rgba(78, 137, 38, 0.3);
       height: 50px;
       bottom: 1px;
       position: fixed ;
+      //margin: 15px;
       width: -webkit-fill-available;
+      //margin-left: 15px;
+      margin-right: 15px;
       background-color : rgb(5, 82, 30);
       
     }
