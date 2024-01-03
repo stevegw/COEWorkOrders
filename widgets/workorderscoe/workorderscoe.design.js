@@ -24,6 +24,80 @@
       // List of properties that will be displayed in the widget properties panel once it's been dropped on the Canvas
       properties: [
         {
+          name: 'heroid',
+          label: 'Herodata ID eg. VIN',
+          datatype: 'string',
+          default: "",
+          isBindingTarget: true,
+          isBindingSource: true,
+          showInput: true
+        },
+        {
+          name: 'herofolder',
+          label: 'Herodata  Folder',
+          datatype: 'string',
+          default: '',
+          isBindingTarget: false,
+          isBindingSource: true,
+          showInput: false
+        },
+        {
+          name: 'heromodel',
+          label: 'Herodata  Model',
+          datatype: 'string',
+          default: '',
+          isBindingTarget: false,
+          isBindingSource: true,
+          showInput: false
+        },
+        {
+          name: 'heromtdataset',
+          label: 'Herodata  MTDataset',
+          datatype: 'string',
+          default: '',
+          isBindingTarget: false,
+          isBindingSource: true,
+          showInput: false
+        },
+        {
+          name: 'heromtguideview',
+          label: 'Herodata  MTGuideView',
+          datatype: 'string',
+          default: '',
+          isBindingTarget: false,
+          isBindingSource: true,
+          showInput: false
+        },
+        {
+          name: 'heromtid',
+          label: 'Herodata  MTID',
+          datatype: 'string',
+          default: '',
+          isBindingTarget: false,
+          isBindingSource: true,
+          showInput: false
+        },
+
+        {
+          name: 'workpackageid',
+          label: 'WorkPackage ID eg. VIN',
+          datatype: 'string',
+          default: "",
+          isBindingTarget: true,
+          isBindingSource: true,
+          showInput: true
+        },
+        {
+          name: 'workpackagedata',
+          label: 'WorkPackage outgoing data',
+          datatype: 'json',
+          default: {},
+          isBindingTarget: false,
+          isBindingSource: true,
+          showInput: false
+        },
+
+        {
           name: 'workpackage',
           label: 'WorkPackage Incoming data',
           datatype: 'json',
@@ -132,10 +206,27 @@
           isBindingTarget: true,
           isBindingSource: false,
           showInput: true
+        },
+        {
+          name: 'message',
+          label: 'Message',
+          datatype: 'string',
+          default: '',
+          isBindingTarget: false,
+          isBindingSource: true,
+          showInput: false
         }
       ],
 
       services: [
+        {
+          name: 'getherodata',
+          label: 'Get Hero data based on ID'
+        },
+        {
+          name: 'getwpfromid',
+          label: 'Get WorkPackage from ID'
+        },
         {
           name: 'displaywp',
           label: 'Display WorkPackage'
@@ -149,6 +240,14 @@
       // List of events that will displayed in the widget properties panel
       events: [
 
+        {
+          name: 'herodatareturned',
+          label: 'Hero Data Returned'
+        },
+        {
+          name: 'workpackagereturned',
+          label: 'WorkPackage Returned'
+        },
 
         {
           name: 'workpackagereceieved',
@@ -157,7 +256,15 @@
         {
           name: 'completed',
           label: 'Completed action'
-        }
+        },
+        {
+          name: 'failure',
+          label: 'Failed action'
+        },
+        {
+          name: 'message',
+          label: 'Message event fired'
+        },
       ],
 
       dependencies: {
@@ -171,7 +278,7 @@
       },
   
       runtimeTemplate: function (props) {
-        var tmpl = '<div ng-workorderscoe workpackage-field="me.workpackage"   affectedparts-field="me.affectedparts"  selectedwo-field="me.selectedwo" selectedwi-field="me.selectedwi" autolaunch-field={{me.autolaunch}}  incomingid-field={{me.incomingid}} wowidth-field={{me.wowidth}} woheight-field={{me.woheight}} wiwidth-field={{me.wiwidth}} wiheight-field={{me.wiheight}} wobottomoffset-field={{me.wobottomoffset}} wibottomoffset-field={{me.wibottomoffset}} leftoffset-field={{me.leftoffset}}  delegate-field="delegate"></div>' ; 
+        var tmpl = '<div ng-workorderscoe  workpackage-field="me.workpackage"  workpackagedata-field="me.workpackagedata" heroid-field="me.heroid" workpackageid-field="me.workpackageid"  heromtfolder-field="me.herofolder" heromodel-field="me.heromodel" heromtdataset-field="me.heromtdataset" heromtguideview-field="me.heromtguideview" heromtid-field="me.heromtid"  affectedparts-field="me.affectedparts"  selectedwo-field="me.selectedwo" selectedwi-field="me.selectedwi" autolaunch-field={{me.autolaunch}}  incomingid-field={{me.incomingid}} wowidth-field={{me.wowidth}} woheight-field={{me.woheight}} wiwidth-field={{me.wiwidth}} wiheight-field={{me.wiheight}} wobottomoffset-field={{me.wobottomoffset}} wibottomoffset-field={{me.wibottomoffset}} leftoffset-field={{me.leftoffset}}  delegate-field="delegate"></div>' ; 
         return tmpl;
       }
     };

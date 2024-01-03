@@ -13,8 +13,17 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
     return {
       restrict: 'EA',
       scope: {
+        heroidField : '=',
+        workpackageidField : '=',
+        herofolderField : '=',
+        heromodelField: '=',
+        heromtdatasetField: '=',
+        heromtguideviewField: '=',
+        heromtidField: '=',
         workpackageField : '=',
+        workpackagedataField : '=',
         workordersField : '=',
+        messageField : '=',
         workinstructionsField : '=',
         affectedpartsField: '=',
         selectedwoField: '=',
@@ -34,41 +43,32 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
       template: '<div></div>',
       link: function (scope, element, attr) {
 
-        var lastUpdated = 'unknown';
+        console.log(config.appKey);
+
         let workorderscoe = undefined ;
         let widgetRegister ;
 
         
 
         scope.renderer = $window.cordova ? vuforia : $injector.get('threeJsTmlRenderer');
+        scope.http = $http;
                      
         var executeWidget = function(actionid) {
           console.log('Working on action ' + actionid);
           if (workorderscoe == undefined) {
             try {
               widgetRegister = new WidgetRegister( scope.renderer , $injector , scope );
-              workorderscoe = new WorkOrderscoe(scope, widgetRegister,  scope.wowidthField, scope.woheightField , scope.wiwidthField, scope.wiheightField , scope.wobottomoffsetField , scope.wibottomoffsetField ,scope.leftoffsetField , scope.modelidField);
+              workorderscoe = new WorkOrderscoe(config.appKey, scope, widgetRegister,  scope.wowidthField, scope.woheightField , scope.wiwidthField, scope.wiheightField , scope.wobottomoffsetField , scope.wibottomoffsetField ,scope.leftoffsetField , scope.modelidField);
             }catch(ex) {
-              console.log('Creating the class WorkOrderscoe - something when wrong! The exception >>'+ ex);
+              console.log('When creating the class WorkOrderscoe - something went wrong! The exception is >>'+ ex);
             }
           }
 
-
-          workorderscoe.doAction(actionid, scope.workpackageField,  scope.workordersField, scope.workinstructionsField , widgetRegister);
+          workorderscoe.doAction(actionid, scope.heroidField, scope.workpackageidField, scope.workpackageField,  scope.workordersField, scope.workinstructionsField , widgetRegister);
           
-          
-          // else {
-          //    
-
-          // }
-  
           
         };
-        // var start = function() {
-        //   console.log('Starting');
-        //   scope.$parent.fireEvent('started');
-        //   executeWidget();
-        // }
+
         var stop = function() {
           console.log('Stopping');
           scope.$parent.fireEvent('stopped');
@@ -81,24 +81,18 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
         // Step 0 holds all the details of the Work Order 
         // This is to makes it easy to work with and step through from baisc work order summary to each step
         //
+        scope.$watch('heroidField', function () {
+          console.log('dataField='+ scope.heroidField);
+          if (scope.heroidField != undefined && scope.heroidField != '') {
+            executeWidget("GetHeroFromID");
+          }
+
+        });
         scope.$watch('workpackageField', function () {
           console.log('dataField='+ scope.workpackageField);
           if (scope.workpackageField != undefined && scope.workpackageField != '') {
             scope.$parent.fireEvent("workpackagereceieved");
             scope.$parent.$applyAsync();
-
-
-            // let widgetRegister = new WidgetRegister( scope.renderer , $injector , scope );
-
-            // widgetRegister.addWidget({
-            //   originalWidget: "twx-dt-model",
-            //   id: "model-1",
-            //   src: "/Thingworx/FileRepositories/AutoARRepo/Ford/F150_MODEL.pvz" ,  //"app/resources/Uploaded/remote-control.pvz",
-            //   y:"1",
-            //   z:"2",
-            //   events:[{name:"modelLoaded", value: "someExample()"}]
-            // })
-
 
           }
 
@@ -125,6 +119,14 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
 
         scope.$watch('delegateField', function (delegate) {
           if (delegate) {
+            delegate.getherodata = function () {
+              executeWidget("GetHeroFromID");
+
+            };
+            delegate.getwpfromid = function () {
+              executeWidget("GetWorkPackageFromID");
+
+            };
             delegate.displaywp = function () {
               executeWidget("GetWorkPackage");
 
@@ -142,8 +144,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
             };
           }
         });
-
-
 
         // Use this initially to see if your extension get deployed
         // If you don't see this message its not deployed

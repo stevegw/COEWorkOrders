@@ -1,0 +1,297 @@
+    {
+        "Difficulty": "Difficulty: undefined",
+        "Models": {
+            "array": [
+                {
+                    "src": "/Crv/AffectedPart/rear_wiper_motor.pvz",
+                    "model": "ap_rear_wiper_motor"
+                },
+                {
+                    "src": "/Crv/AffectedPart/tailgate_wireharness.pvz",
+                    "model": "tailgate_wireharness"
+                },
+                {
+                    "src": "/Crv/AffectedPart/underDashFuseRelayBox.pvz",
+                    "model": "ap_underDashFuseRelayBox"
+                },
+                {
+                    "src": "/Crv/AffectedPart/gauge_control_unit.pvz",
+                    "model": "ap_gauge_control_unit"
+                }
+            ]
+        },
+        "Overview": "Overview: undefined",
+        "Time": "Time Est.: undefined",
+        "Title": "Rear Window Wiper Motor. As Signal Error",
+        "WorkID": "WIB1028",
+        "WorkInstructions": [
+            {
+                "StepNumber": "0.0",
+                "Label1": "Work Order: Rear Window Wiper Motor. As Signal Error",
+                "Label3": "Time Est.: 1.0",
+                "Label2": "Difficulty: Medium",
+                "WorkID": "WIB1028",
+                "StepDetail": "Overview: Rear Window Wiper Motor (As) Signal Error : If you are troubleshooting multiple DTCs, be sure to follow the instructions in B-CAN System Diagnosis Test Mode A"
+            },
+            {
+                "AffectedPartsID": "3KK4EQN7VU",
+                "StepNumber": "1.0",
+                "Label1": "Safety",
+                "Label3": "",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/134",
+                            "model": "ap_rear_wiper_motor"
+                        },
+                        {
+                            "path": "/68/85/@@PV-AUTO-ID@@010",
+                            "model": "tailgate_wireharness"
+                        },
+                        {
+                            "path": ":5/134",
+                            "model": "ap_underDashFuseRelayBox"
+                        },
+                        {
+                            "path": "/138",
+                            "model": "ap_gauge_control_unit"
+                        }
+                    ]
+                },
+                "Label2": "",
+                "PartsList": [
+                    {
+                        "ModelName": "ap_rear_wiper_motor",
+                        "AffectedPartID": "3KK4EQN7VU",
+                        "FileName": "/Crv/AffectedPart/rear_wiper_motor.pvz",
+                        "MetadataID": "/134",
+                        "source": "demo",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "PartName": "REAR_WIPER_MOTOR.PRT",
+                        "sourceType": "User",
+                        "DisplayName": "REAR_WIPER_MOTOR.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "key": "3KK4EQN7VU/134",
+                        "timestamp": "2023-12-20T21:19:02.159Z"
+                    },
+                    {
+                        "ModelName": "tailgate_wireharness",
+                        "AffectedPartID": "3KK4EQN7VU",
+                        "FileName": "/Crv/AffectedPart/tailgate_wireharness.pvz",
+                        "MetadataID": "/68/85/@@PV-AUTO-ID@@010",
+                        "source": "demo",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "PartName": "BUNDLE_1",
+                        "sourceType": "User",
+                        "DisplayName": "BUNDLE_1",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "key": "3KK4EQN7VU/68/85/@@PV-AUTO-ID@@010",
+                        "timestamp": "2023-12-20T21:19:02.175Z"
+                    },
+                    {
+                        "ModelName": "ap_underDashFuseRelayBox",
+                        "AffectedPartID": "3KK4EQN7VU",
+                        "FileName": "/Crv/AffectedPart/underDashFuseRelayBox.pvz",
+                        "MetadataID": ":5/134",
+                        "source": "demo",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "PartName": "UNDERDASHFUSERELAYBOX.PRT",
+                        "sourceType": "User",
+                        "DisplayName": "UNDERDASHFUSERELAYBOX.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "key": "3KK4EQN7VU:5/134",
+                        "timestamp": "2023-12-20T21:19:02.191Z"
+                    },
+                    {
+                        "ModelName": "ap_gauge_control_unit",
+                        "AffectedPartID": "3KK4EQN7VU",
+                        "FileName": "/Crv/AffectedPart/gauge_control_unit.pvz",
+                        "MetadataID": "/138",
+                        "source": "demo",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "PartName": "GAUGE_CONTROL_UNIT.PRT",
+                        "sourceType": "User",
+                        "DisplayName": "GAUGE_CONTROL_UNIT.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "key": "3KK4EQN7VU/138",
+                        "timestamp": "2023-12-20T21:19:02.208Z"
+                    }
+                ],
+                "WorkID": "WIB1028",
+                "StepDetail": "Please make sure all safety options have been worked through."
+            },
+            {
+                "AffectedPartsID": "EZYZ9FQ9OU",
+                "StepNumber": "2.0",
+                "Label1": "Clear registers",
+                "Label3": "",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/138",
+                            "model": "ap_gauge_control_unit"
+                        }
+                    ]
+                },
+                "Label2": "",
+                "PartsList": [
+                    {
+                        "ModelName": "ap_gauge_control_unit",
+                        "AffectedPartID": "EZYZ9FQ9OU",
+                        "FileName": "/Crv/AffectedPart/gauge_control_unit.pvz",
+                        "MetadataID": "/138",
+                        "source": "demo",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "PartName": "GAUGE_CONTROL_UNIT.PRT",
+                        "sourceType": "User",
+                        "DisplayName": "GAUGE_CONTROL_UNIT.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "key": "EZYZ9FQ9OU/138",
+                        "timestamp": "2023-12-20T21:19:02.268Z"
+                    }
+                ],
+                "WorkID": "WIB1028",
+                "StepDetail": "Clear the DTCs with the HDS. Turn the ignition switch OFF, and then back ON (11). Operate the rear window wiper for 15 seconds or more, then turn the rear window wiper switch OFF. Does the rear window wiper stop in the normal park position?"
+            },
+            {
+                "AffectedPartsID": "TNW1JVXRID",
+                "StepNumber": "3.0",
+                "Label1": "Is the rear window wiper motor OK?",
+                "Label3": "",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/138",
+                            "model": "ap_gauge_control_unit"
+                        }
+                    ]
+                },
+                "Label2": "",
+                "PartsList": [
+                    {
+                        "ModelName": "ap_gauge_control_unit",
+                        "AffectedPartID": "TNW1JVXRID",
+                        "FileName": "/Crv/AffectedPart/gauge_control_unit.pvz",
+                        "MetadataID": "/138",
+                        "source": "demo",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "PartName": "GAUGE_CONTROL_UNIT.PRT",
+                        "sourceType": "User",
+                        "DisplayName": "GAUGE_CONTROL_UNIT.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "key": "TNW1JVXRID/138",
+                        "timestamp": "2023-12-20T21:19:02.300Z"
+                    }
+                ],
+                "WorkID": "WIB1028",
+                "StepDetail": "Do the rear window wiper motor test (see page 22-217)."
+            },
+            {
+                "AffectedPartsID": "36ISBL2XZX",
+                "StepNumber": "4.0",
+                "Label1": "Baseline",
+                "Label3": "",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/115",
+                            "model": "ap_underDashFuseRelayBox"
+                        }
+                    ]
+                },
+                "Label2": "",
+                "PartsList": [
+                    {
+                        "ModelName": "ap_underDashFuseRelayBox",
+                        "AffectedPartID": "36ISBL2XZX",
+                        "FileName": "/Crv/AffectedPart/underDashFuseRelayBox.pvz",
+                        "MetadataID": "/115",
+                        "source": "demo",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "PartName": "UNDERDASHFUSERELAYBOX.PRT",
+                        "sourceType": "User",
+                        "DisplayName": "UNDERDASHFUSERELAYBOX.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "key": "36ISBL2XZX/115",
+                        "timestamp": "2023-12-20T21:19:02.331Z"
+                    }
+                ],
+                "WorkID": "WIB1028",
+                "StepDetail": "Operate the rear window wiper for 15 seconds or more, then turn the rear window wiper switch OFF. Does the rear window wiper stop in the normal park position?"
+            },
+            {
+                "AffectedPartsID": "OYFNVXK8SF",
+                "StepNumber": "5.0",
+                "Label1": "Baseline",
+                "Label3": "",
+                "Models": {
+                    "array": [
+                        {
+                            "path": "/138",
+                            "model": "ap_gauge_control_unit"
+                        }
+                    ]
+                },
+                "Label2": "",
+                "PartsList": [
+                    {
+                        "ModelName": "ap_gauge_control_unit",
+                        "AffectedPartID": "OYFNVXK8SF",
+                        "FileName": "/Crv/AffectedPart/gauge_control_unit.pvz",
+                        "MetadataID": "/138",
+                        "source": "demo",
+                        "MetadataPropertyName": "path",
+                        "tags": [],
+                        "PartName": "GAUGE_CONTROL_UNIT.PRT",
+                        "sourceType": "User",
+                        "DisplayName": "GAUGE_CONTROL_UNIT.PRT",
+                        "location": {
+                            "latitude": 0,
+                            "longitude": 0,
+                            "elevation": 0
+                        },
+                        "key": "OYFNVXK8SF/138",
+                        "timestamp": "2023-12-20T21:19:02.363Z"
+                    }
+                ],
+                "WorkID": "WIB1028",
+                "StepDetail": "Turn the ignition switch OFF, and then back ON"
+            }
+        ],
+        "_isSelected": true
+    }
