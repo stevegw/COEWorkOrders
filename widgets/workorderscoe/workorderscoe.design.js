@@ -97,6 +97,7 @@
           showInput: false
         },
 
+
         {
           name: 'workpackage',
           label: 'WorkPackage Incoming data',
@@ -118,7 +119,7 @@
         },   
         {
           name: 'autolaunch',
-          label: 'Auto do start',
+          label: 'Auto display',
           datatype: 'boolean',
           default: false,
           isBindingTarget: true,
@@ -228,9 +229,10 @@
           label: 'Get WorkPackage from ID'
         },
         {
-          name: 'displaywp',
-          label: 'Display WorkPackage'
+          name: 'buildwp',
+          label: 'Build and Display WorkPackage'
         },
+
         {
           name: 'stop',
           label: 'Stop'

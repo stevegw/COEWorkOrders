@@ -52,6 +52,10 @@ class WorkOrderscoe {
             let selectedWOIndex = 0; // for now allows select first work order when starting
             this.getWorkPackage (workpackage , selectedWOIndex , PanelSelector , widgetRegister ); 
         }
+        else if (actionid == 'BuildWorkPackage') {
+            let selectedWOIndex = 0; // for now allows select first work order when starting
+            this.buildWorkPackage (workpackage , selectedWOIndex , PanelSelector , widgetRegister ); 
+        }
 
         else if (actionid == 'GetWorkOrders') {
             this.getWorkOrders (workorders ,PanelSelector); 
@@ -181,6 +185,276 @@ class WorkOrderscoe {
 
     }
 
+    buildWorkPackage = function (workpackage, selectedWOIndex,  panelSelector , widgetRegister) {
+
+        let WPVISIBLE = true;
+        let currentStep = 1; 
+        let steps = workpackage[selectedWOIndex].WorkInstructions.rows.length ;
+
+        let WPContainer = document.createElement('div');
+        WPContainer.id = 'wi-uicontainer';
+        WPContainer.className = 'wi-uicontainer'; 
+        WPContainer.style.bottom = this.wibottom;
+
+        let WPInstructionsPanel = document.createElement('div');
+        WPInstructionsPanel.id = 'wi-instructionpanel';
+        WPInstructionsPanel.className = 'wi-instructionpanel'; 
+
+        WPContainer.appendChild(WPInstructionsPanel);
+
+        let WPHeaderContainer = document.createElement('div');
+        WPHeaderContainer.id = 'wi-headercontainer';
+        WPHeaderContainer.className = 'wi-headercontainer'; 
+        
+        let WPInstructionSteps = document.createElement('div');
+        WPInstructionSteps.id = 'wi-instructionsteps';
+        WPInstructionSteps.className = 'wi-instructionsteps'; 
+
+        let WPCloseButton = document.createElement('img');
+        WPCloseButton.src = "extensions/images/workorderscoe_hidewp.png"; 
+        WPCloseButton.id = 'wi-closebutton';
+        WPCloseButton.className = 'wi-closebutton'; 
+
+        let WPOpenButton = document.createElement('img');
+        WPOpenButton.src = "extensions/images/workorderscoe_showwp.png"; 
+        WPOpenButton.id = 'wp-showbutton';
+        WPOpenButton.className = 'wp-showbutton'; 
+
+        WPCloseButton.addEventListener("click",  () => { 
+            try { 
+                //this.markupCanvas.vuforiaScope.$parent.fireEvent('markCancelled');
+            } catch (ex) {
+
+            }
+            panelSelector.removeChild(WPContainer);
+            WPVISIBLE = false;
+            panelSelector.appendChild(WPOpenButton);
+            
+        });
+
+        WPOpenButton.addEventListener("click",  () => { 
+            try { 
+                //this.markupCanvas.vuforiaScope.$parent.fireEvent('markCancelled');
+            } catch (ex) {
+
+            }
+            panelSelector.removeChild(WPOpenButton);
+            WPVISIBLE = true;
+            panelSelector.appendChild(WPContainer);
+            
+        });
+
+        WPHeaderContainer.appendChild(WPInstructionSteps);
+        WPHeaderContainer.appendChild(WPCloseButton);
+
+        let WPDetailsContainer = document.createElement('div');
+        WPDetailsContainer.id = 'wi-details';
+        WPDetailsContainer.className = 'wi-details'; 
+
+        let WPDetailsLabel1 = document.createElement('div');
+        WPDetailsLabel1.id = 'wi-label1';
+        WPDetailsLabel1.className = 'wi-label1'; 
+
+        let WPDetailsLabel2 = document.createElement('div');
+        WPDetailsLabel2.id = 'wi-label2';
+        WPDetailsLabel2.className = 'wi-label2'; 
+
+        let WPDetailsLabel3 = document.createElement('div');
+        WPDetailsLabel3.id = 'wi-label3';
+        WPDetailsLabel3.className = 'wi-label3'; 
+
+        WPDetailsContainer.appendChild(WPDetailsLabel1);
+        WPDetailsContainer.appendChild(WPDetailsLabel2);
+        WPDetailsContainer.appendChild(WPDetailsLabel3);
+
+        let WPText = document.createElement('div');
+        WPText.id = 'wi-text';
+        WPText.className = 'wi-text'; 
+
+        let WPBackForwardContainer = document.createElement('div');
+        WPBackForwardContainer.id = 'wi-backforwardcontainer';
+        WPBackForwardContainer.className = 'wi-backforwardcontainer'; 
+
+        let WPBackButton = document.createElement('img');
+        WPBackButton.id = 'wi-backbutton';
+        WPBackButton.className = 'wi-backbutton'; 
+        WPBackButton.src = "extensions/images/workorderscoe_back.png"; 
+
+        if (currentStep == 1)  {
+            WPBackButton.style.visibility = "hidden";
+        }
+        WPBackButton.addEventListener("click",  () => { 
+            try { 
+
+
+                if (currentStep > 1 ) { 
+                    currentStep--;
+                } 
+                if (currentStep === 1)  {
+                    WPBackButton.style.visibility = "hidden";
+                    WOButton.style.visibility = "visible";
+                    WOSelectcontainerContainer.style.visibility = "visible";
+                }
+
+                WPInstructionSteps.innerText = (currentStep ) +" OF " + (steps); 
+                WPDetailsLabel1.innerText = workpackage[selectedWOIndex].WorkInstructions.rows[currentStep-1].Label1;
+                WPDetailsLabel2.innerText = workpackage[selectedWOIndex].WorkInstructions.rows[currentStep-1].Label2;
+                WPDetailsLabel3.innerText = workpackage[selectedWOIndex].WorkInstructions.rows[currentStep-1].Label3;
+                WPText.innerText = workpackage[selectedWOIndex].WorkInstructions.rows[currentStep-1].StepDetail;        
+
+                this.vuforiaScope.affectedpartsField = this.getAffectedParts(currentStep , workpackage[selectedWOIndex].WorkInstructions);
+                this.vuforiaScope.$parent.fireEvent('workinstructionselected');
+                this.vuforiaScope.$parent.$applyAsync();
+
+            } catch (ex) {
+                console.log("Error in click event back button >>" + ex);
+            }
+    
+        });
+
+        let WPForwardButton = document.createElement('img');
+        WPForwardButton.id = 'wi-nextbutton';
+        WPForwardButton.className = 'wi-nextbutton'; 
+        WPForwardButton.src = "extensions/images/workorderscoe_next.png"; 
+        WPForwardButton.addEventListener("click",  () => { 
+
+            try { 
+
+                if (currentStep   < workpackage[selectedWOIndex].WorkInstructions.rows.length ) { 
+                    currentStep++;
+                    WPBackButton.style.visibility = "visible";
+                } else {
+                    currentStep = 1;
+                    WPBackButton.style.visibility = "hidden";
+                }
+                if (currentStep > 1) {
+                    WOButton.style.visibility = "hidden";
+                    WOSelectcontainerContainer.style.visibility = "hidden";
+                } else {
+                    WOButton.style.visibility = "visible";
+                    WOSelectcontainerContainer.style.visibility = "visible";
+                }
+                WPInstructionSteps.innerText = (currentStep ) +" OF " + (steps); 
+                WPDetailsLabel1.innerText = workpackage[selectedWOIndex].WorkInstructions.rows[currentStep-1].Label1;
+                WPDetailsLabel2.innerText = workpackage[selectedWOIndex].WorkInstructions.rows[currentStep-1].Label2;
+                WPDetailsLabel3.innerText = workpackage[selectedWOIndex].WorkInstructions.rows[currentStep-1].Label3;    
+                WPText.innerText = workpackage[selectedWOIndex].WorkInstructions.rows[currentStep-1].StepDetail; 
+
+                this.vuforiaScope.affectedpartsField = this.getAffectedParts(currentStep , workpackage[selectedWOIndex].WorkInstructions.rows);
+                this.vuforiaScope.$parent.fireEvent('workinstructionselected');
+                this.vuforiaScope.$parent.$applyAsync();
+
+            } catch (ex) {
+                console.log("Error in click event forward button >>" + ex);
+            }
+    
+        });
+
+        WPBackForwardContainer.appendChild(WPBackButton);
+        WPBackForwardContainer.appendChild(WPForwardButton);
+
+        let WPButtonBarContainer = document.createElement('div');
+        WPButtonBarContainer.id = 'wi-buttonbarcontainer';
+        WPButtonBarContainer.className = 'wi-buttonbarcontainer'; 
+
+        let WOButton = document.createElement('img');
+        WOButton.id = 'wo-workorders-img';
+        WOButton.className = 'wo-workorders-img'; 
+        WOButton.src = "extensions/images/workorderscoe_wo.png"; 
+
+
+        let WOSelectcontainerContainer = document.createElement('div');
+        WOSelectcontainerContainer.id = 'wo-selectcontainer';
+        WOSelectcontainerContainer.className = 'wo-selectcontainer'; 
+
+        let WorkOrderLabel = document.createElement("label");
+        WorkOrderLabel.className = 'wo-selectlabel'; 
+        WorkOrderLabel.innerHTML = "Work Order:";
+
+        let WorkOrderList = document.createElement("select");
+        WorkOrderList.id = "wo-picklistpanel";
+        WorkOrderList.className = 'wo-picklistpanel'; 
+        let listscope = this.vuforiaScope;
+        function listSelection (e) {
+
+            selectedWOIndex = this.value;
+            listscope.selectedwoField =  workpackage[selectedWOIndex].WorkID;
+            listscope.$parent.fireEvent('workorderselected');
+            listscope.$parent.$applyAsync();
+
+            console.log("selected WorkID " + workpackage[selectedWOIndex].WorkID);
+            currentStep = 1; 
+            steps = workpackage[selectedWOIndex].WorkInstructions.rows.length ;
+            WPInstructionSteps.innerText = (currentStep) +" OF " + (steps); 
+            WPDetailsLabel1.innerText = workpackage[selectedWOIndex].WorkInstructions.rows[currentStep-1].Label1;
+            WPDetailsLabel2.innerText = workpackage[selectedWOIndex].WorkInstructions.rows[currentStep-1].Label2;
+            WPDetailsLabel3.innerText = workpackage[selectedWOIndex].WorkInstructions.rows[currentStep-1].Label3;
+            WPText.innerText = workpackage[selectedWOIndex].WorkInstructions.rows[currentStep-1].StepDetail;  
+            
+            let modelsJSON = workpackage[selectedWOIndex].Models; 
+
+
+            try {
+
+
+                for (let index = 0; index < modelsJSON.array.length; index++) {
+                    const element = modelsJSON.array[index];
+                    widgetRegister.addWidget({
+                        originalWidget: "twx-dt-model",
+                        id: element.model,
+                        src: "/Thingworx/FileRepositories/AutoARRepo"+element.src ,  //"app/resources/Uploaded/remote-control.pvz",
+                        x: "0",
+                        y:"0",
+                        z:"0",
+                        visible : "false",
+                        events:[{name:"modelLoaded", value: "someExample()"}]
+                      })
+                        console.log("Model" + element.src);
+                    
+                }
+                
+            } catch (error) {
+                console.log("Issues with widgetRegister error=" + error);
+            }
+    
+
+
+
+        }
+        
+        //Create and append the options
+        var option = document.createElement("option");
+        option.value = "None";
+        option.text = "None";
+        WorkOrderList.appendChild(option);
+
+        for (var i = 0; i < workpackage.length; i++) {
+        var option = document.createElement("option");
+        option.value = i;
+        option.text = workpackage[i].Title;
+        WorkOrderList.appendChild(option);
+
+        }
+
+        WorkOrderList.addEventListener("change",  listSelection );
+
+        WOSelectcontainerContainer.appendChild(WorkOrderLabel);
+        WOSelectcontainerContainer.appendChild(WorkOrderList);
+        WPButtonBarContainer.appendChild(WOSelectcontainerContainer);
+
+        WPInstructionsPanel.appendChild(WPHeaderContainer);
+        WPInstructionsPanel.appendChild(WPDetailsContainer);
+        WPInstructionsPanel.appendChild(WPText);
+        WPInstructionsPanel.appendChild(WPBackForwardContainer);
+        WPInstructionsPanel.appendChild(WPButtonBarContainer);
+
+        panelSelector.appendChild(WPContainer);
+ 
+        return WPContainer;
+
+
+
+    }
 
     getWorkPackage = function (workpackage, selectedWOIndex,  panelSelector , widgetRegister) {
 
@@ -555,7 +829,7 @@ class WorkOrderscoe {
         let models =[];
 
         if (workinstructions[step-1].PartsList != null) {
-            workinstructions[step-1].PartsList.forEach(element => {
+            workinstructions[step-1].PartsList.rows.forEach(element => {
                 var found = false;
                 for(var i = 0; i < affectedParts.length; i++) {
                     if (affectedParts[i].path == element.MetadataID) {
@@ -933,6 +1207,7 @@ class WorkOrderscoe {
 
         return WIContainer;
     }
+
 
 
 

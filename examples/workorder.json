@@ -1,297 +1,1045 @@
-    {
-        "Difficulty": "Difficulty: undefined",
-        "Models": {
-            "array": [
-                {
-                    "src": "/Crv/AffectedPart/rear_wiper_motor.pvz",
-                    "model": "ap_rear_wiper_motor"
-                },
-                {
-                    "src": "/Crv/AffectedPart/tailgate_wireharness.pvz",
-                    "model": "tailgate_wireharness"
-                },
-                {
-                    "src": "/Crv/AffectedPart/underDashFuseRelayBox.pvz",
-                    "model": "ap_underDashFuseRelayBox"
-                },
-                {
-                    "src": "/Crv/AffectedPart/gauge_control_unit.pvz",
-                    "model": "ap_gauge_control_unit"
+{
+    "rows": [
+        {
+            "Difficulty": "Difficulty: undefined",
+            "Title": "Rear Window Wiper Motor. As Signal Error",
+            "Models": {
+                "array": [
+                    {
+                        "src": "/Crv/AffectedPart/rear_wiper_motor.pvz",
+                        "model": "ap_rear_wiper_motor"
+                    },
+                    {
+                        "src": "/Crv/AffectedPart/tailgate_wireharness.pvz",
+                        "model": "tailgate_wireharness"
+                    },
+                    {
+                        "src": "/Crv/AffectedPart/underDashFuseRelayBox.pvz",
+                        "model": "ap_underDashFuseRelayBox"
+                    },
+                    {
+                        "src": "/Crv/AffectedPart/gauge_control_unit.pvz",
+                        "model": "ap_gauge_control_unit"
+                    }
+                ]
+            },
+            "Overview": "Overview: undefined",
+            "Time": "Time Est.: undefined",
+            "WorkInstructions": {
+                "rows": [
+                    {
+                        "StepNumber": "0.0",
+                        "Label1": "Work Order: Rear Window Wiper Motor. As Signal Error",
+                        "Label3": "Time Est.: 5.0",
+                        "Label2": "Difficulty: Medium",
+                        "WorkID": "WIB1028",
+                        "StepDetail": "Overview: Rear Window Wiper Motor (As) Signal Error : If you are troubleshooting multiple DTCs, be sure to follow the instructions in B-CAN System Diagnosis Test Mode A"
+                    },
+                    {
+                        "AffectedPartsID": "LXVMZ2RXU0",
+                        "StepNumber": "1.0",
+                        "Label1": "Safety",
+                        "Label3": "",
+                        "Models": {
+                            "array": [
+                                {
+                                    "path": "/134",
+                                    "model": "ap_rear_wiper_motor"
+                                },
+                                {
+                                    "path": "/68/85/@@PV-AUTO-ID@@010",
+                                    "model": "tailgate_wireharness"
+                                },
+                                {
+                                    "path": ":5/134",
+                                    "model": "ap_underDashFuseRelayBox"
+                                },
+                                {
+                                    "path": "/138",
+                                    "model": "ap_gauge_control_unit"
+                                }
+                            ]
+                        },
+                        "Label2": "",
+                        "PartsList": {
+                            "rows": [
+                                {
+                                    "ModelName": "ap_rear_wiper_motor",
+                                    "AffectedPartID": "LXVMZ2RXU0",
+                                    "FileName": "/Crv/AffectedPart/rear_wiper_motor.pvz",
+                                    "MetadataID": "/134",
+                                    "source": "demo",
+                                    "MetadataPropertyName": "path",
+                                    "tags": [],
+                                    "PartName": "REAR_WIPER_MOTOR.PRT",
+                                    "sourceType": "User",
+                                    "DisplayName": "REAR_WIPER_MOTOR.PRT",
+                                    "location": {
+                                        "elevation": 0,
+                                        "latitude": 0,
+                                        "longitude": 0
+                                    },
+                                    "key": "LXVMZ2RXU0/134",
+                                    "timestamp": 1704324878883
+                                },
+                                {
+                                    "ModelName": "tailgate_wireharness",
+                                    "AffectedPartID": "LXVMZ2RXU0",
+                                    "FileName": "/Crv/AffectedPart/tailgate_wireharness.pvz",
+                                    "MetadataID": "/68/85/@@PV-AUTO-ID@@010",
+                                    "source": "demo",
+                                    "MetadataPropertyName": "path",
+                                    "tags": [],
+                                    "PartName": "BUNDLE_1",
+                                    "sourceType": "User",
+                                    "DisplayName": "BUNDLE_1",
+                                    "location": {
+                                        "elevation": 0,
+                                        "latitude": 0,
+                                        "longitude": 0
+                                    },
+                                    "key": "LXVMZ2RXU0/68/85/@@PV-AUTO-ID@@010",
+                                    "timestamp": 1704324878899
+                                },
+                                {
+                                    "ModelName": "ap_underDashFuseRelayBox",
+                                    "AffectedPartID": "LXVMZ2RXU0",
+                                    "FileName": "/Crv/AffectedPart/underDashFuseRelayBox.pvz",
+                                    "MetadataID": ":5/134",
+                                    "source": "demo",
+                                    "MetadataPropertyName": "path",
+                                    "tags": [],
+                                    "PartName": "UNDERDASHFUSERELAYBOX.PRT",
+                                    "sourceType": "User",
+                                    "DisplayName": "UNDERDASHFUSERELAYBOX.PRT",
+                                    "location": {
+                                        "elevation": 0,
+                                        "latitude": 0,
+                                        "longitude": 0
+                                    },
+                                    "key": "LXVMZ2RXU0:5/134",
+                                    "timestamp": 1704324878914
+                                },
+                                {
+                                    "ModelName": "ap_gauge_control_unit",
+                                    "AffectedPartID": "LXVMZ2RXU0",
+                                    "FileName": "/Crv/AffectedPart/gauge_control_unit.pvz",
+                                    "MetadataID": "/138",
+                                    "source": "demo",
+                                    "MetadataPropertyName": "path",
+                                    "tags": [],
+                                    "PartName": "GAUGE_CONTROL_UNIT.PRT",
+                                    "sourceType": "User",
+                                    "DisplayName": "GAUGE_CONTROL_UNIT.PRT",
+                                    "location": {
+                                        "elevation": 0,
+                                        "latitude": 0,
+                                        "longitude": 0
+                                    },
+                                    "key": "LXVMZ2RXU0/138",
+                                    "timestamp": 1704324878930
+                                }
+                            ],
+                            "dataShape": {
+                                "fieldDefinitions": {
+                                    "ModelName": {
+                                        "name": "ModelName",
+                                        "aspects": {
+                                            "isPrimaryKey": false
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 9
+                                    },
+                                    "AffectedPartID": {
+                                        "name": "AffectedPartID",
+                                        "aspects": {
+                                            "isPrimaryKey": true
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 6
+                                    },
+                                    "FileName": {
+                                        "name": "FileName",
+                                        "aspects": {
+                                            "isPrimaryKey": false
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 12
+                                    },
+                                    "MetadataID": {
+                                        "name": "MetadataID",
+                                        "aspects": {
+                                            "isPrimaryKey": true
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 7
+                                    },
+                                    "source": {
+                                        "name": "source",
+                                        "aspects": {},
+                                        "description": "Source of last modification",
+                                        "baseType": "STRING",
+                                        "ordinal": 0
+                                    },
+                                    "MetadataPropertyName": {
+                                        "name": "MetadataPropertyName",
+                                        "aspects": {
+                                            "defaultValue": "Path",
+                                            "isPrimaryKey": false
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 8
+                                    },
+                                    "tags": {
+                                        "name": "tags",
+                                        "aspects": {
+                                            "tagType": "DataTags"
+                                        },
+                                        "description": "Tags",
+                                        "baseType": "TAGS",
+                                        "ordinal": 0
+                                    },
+                                    "PartName": {
+                                        "name": "PartName",
+                                        "aspects": {
+                                            "isPrimaryKey": false
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 11
+                                    },
+                                    "sourceType": {
+                                        "name": "sourceType",
+                                        "aspects": {},
+                                        "description": "Source type",
+                                        "baseType": "STRING",
+                                        "ordinal": 0
+                                    },
+                                    "DisplayName": {
+                                        "name": "DisplayName",
+                                        "aspects": {
+                                            "isPrimaryKey": false
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 10
+                                    },
+                                    "location": {
+                                        "name": "location",
+                                        "aspects": {},
+                                        "description": "Location of last modification",
+                                        "baseType": "LOCATION",
+                                        "ordinal": 0
+                                    },
+                                    "key": {
+                                        "name": "key",
+                                        "aspects": {
+                                            "isPrimaryKey": true
+                                        },
+                                        "description": "Internal key value",
+                                        "baseType": "STRING",
+                                        "ordinal": 0
+                                    },
+                                    "timestamp": {
+                                        "name": "timestamp",
+                                        "aspects": {},
+                                        "description": "Time of last modification",
+                                        "baseType": "DATETIME",
+                                        "ordinal": 0
+                                    }
+                                }
+                            }
+                        },
+                        "WorkID": "WIB1028",
+                        "StepDetail": "Please make sure all safety options have been worked through."
+                    },
+                    {
+                        "AffectedPartsID": "XNCUVND4GY",
+                        "StepNumber": "2.0",
+                        "Label1": "Clear registers",
+                        "Label3": "",
+                        "Models": {
+                            "array": [
+                                {
+                                    "path": "/138",
+                                    "model": "ap_gauge_control_unit"
+                                }
+                            ]
+                        },
+                        "Label2": "",
+                        "PartsList": {
+                            "rows": [
+                                {
+                                    "ModelName": "ap_gauge_control_unit",
+                                    "AffectedPartID": "XNCUVND4GY",
+                                    "FileName": "/Crv/AffectedPart/gauge_control_unit.pvz",
+                                    "MetadataID": "/138",
+                                    "source": "demo",
+                                    "MetadataPropertyName": "path",
+                                    "tags": [],
+                                    "PartName": "GAUGE_CONTROL_UNIT.PRT",
+                                    "sourceType": "User",
+                                    "DisplayName": "GAUGE_CONTROL_UNIT.PRT",
+                                    "location": {
+                                        "elevation": 0,
+                                        "latitude": 0,
+                                        "longitude": 0
+                                    },
+                                    "key": "XNCUVND4GY/138",
+                                    "timestamp": 1704324878961
+                                }
+                            ],
+                            "dataShape": {
+                                "fieldDefinitions": {
+                                    "ModelName": {
+                                        "name": "ModelName",
+                                        "aspects": {
+                                            "isPrimaryKey": false
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 9
+                                    },
+                                    "AffectedPartID": {
+                                        "name": "AffectedPartID",
+                                        "aspects": {
+                                            "isPrimaryKey": true
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 6
+                                    },
+                                    "FileName": {
+                                        "name": "FileName",
+                                        "aspects": {
+                                            "isPrimaryKey": false
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 12
+                                    },
+                                    "MetadataID": {
+                                        "name": "MetadataID",
+                                        "aspects": {
+                                            "isPrimaryKey": true
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 7
+                                    },
+                                    "source": {
+                                        "name": "source",
+                                        "aspects": {},
+                                        "description": "Source of last modification",
+                                        "baseType": "STRING",
+                                        "ordinal": 0
+                                    },
+                                    "MetadataPropertyName": {
+                                        "name": "MetadataPropertyName",
+                                        "aspects": {
+                                            "defaultValue": "Path",
+                                            "isPrimaryKey": false
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 8
+                                    },
+                                    "tags": {
+                                        "name": "tags",
+                                        "aspects": {
+                                            "tagType": "DataTags"
+                                        },
+                                        "description": "Tags",
+                                        "baseType": "TAGS",
+                                        "ordinal": 0
+                                    },
+                                    "PartName": {
+                                        "name": "PartName",
+                                        "aspects": {
+                                            "isPrimaryKey": false
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 11
+                                    },
+                                    "sourceType": {
+                                        "name": "sourceType",
+                                        "aspects": {},
+                                        "description": "Source type",
+                                        "baseType": "STRING",
+                                        "ordinal": 0
+                                    },
+                                    "DisplayName": {
+                                        "name": "DisplayName",
+                                        "aspects": {
+                                            "isPrimaryKey": false
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 10
+                                    },
+                                    "location": {
+                                        "name": "location",
+                                        "aspects": {},
+                                        "description": "Location of last modification",
+                                        "baseType": "LOCATION",
+                                        "ordinal": 0
+                                    },
+                                    "key": {
+                                        "name": "key",
+                                        "aspects": {
+                                            "isPrimaryKey": true
+                                        },
+                                        "description": "Internal key value",
+                                        "baseType": "STRING",
+                                        "ordinal": 0
+                                    },
+                                    "timestamp": {
+                                        "name": "timestamp",
+                                        "aspects": {},
+                                        "description": "Time of last modification",
+                                        "baseType": "DATETIME",
+                                        "ordinal": 0
+                                    }
+                                }
+                            }
+                        },
+                        "WorkID": "WIB1028",
+                        "StepDetail": "Clear the DTCs with the HDS. Turn the ignition switch OFF, and then back ON (11). Operate the rear window wiper for 15 seconds or more, then turn the rear window wiper switch OFF. Does the rear window wiper stop in the normal park position?"
+                    },
+                    {
+                        "AffectedPartsID": "XKRONBDSSW",
+                        "StepNumber": "3.0",
+                        "Label1": "Is the rear window wiper motor OK?",
+                        "Label3": "",
+                        "Models": {
+                            "array": [
+                                {
+                                    "path": "/138",
+                                    "model": "ap_gauge_control_unit"
+                                }
+                            ]
+                        },
+                        "Label2": "",
+                        "PartsList": {
+                            "rows": [
+                                {
+                                    "ModelName": "ap_gauge_control_unit",
+                                    "AffectedPartID": "XKRONBDSSW",
+                                    "FileName": "/Crv/AffectedPart/gauge_control_unit.pvz",
+                                    "MetadataID": "/138",
+                                    "source": "demo",
+                                    "MetadataPropertyName": "path",
+                                    "tags": [],
+                                    "PartName": "GAUGE_CONTROL_UNIT.PRT",
+                                    "sourceType": "User",
+                                    "DisplayName": "GAUGE_CONTROL_UNIT.PRT",
+                                    "location": {
+                                        "elevation": 0,
+                                        "latitude": 0,
+                                        "longitude": 0
+                                    },
+                                    "key": "XKRONBDSSW/138",
+                                    "timestamp": 1704324878992
+                                }
+                            ],
+                            "dataShape": {
+                                "fieldDefinitions": {
+                                    "ModelName": {
+                                        "name": "ModelName",
+                                        "aspects": {
+                                            "isPrimaryKey": false
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 9
+                                    },
+                                    "AffectedPartID": {
+                                        "name": "AffectedPartID",
+                                        "aspects": {
+                                            "isPrimaryKey": true
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 6
+                                    },
+                                    "FileName": {
+                                        "name": "FileName",
+                                        "aspects": {
+                                            "isPrimaryKey": false
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 12
+                                    },
+                                    "MetadataID": {
+                                        "name": "MetadataID",
+                                        "aspects": {
+                                            "isPrimaryKey": true
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 7
+                                    },
+                                    "source": {
+                                        "name": "source",
+                                        "aspects": {},
+                                        "description": "Source of last modification",
+                                        "baseType": "STRING",
+                                        "ordinal": 0
+                                    },
+                                    "MetadataPropertyName": {
+                                        "name": "MetadataPropertyName",
+                                        "aspects": {
+                                            "defaultValue": "Path",
+                                            "isPrimaryKey": false
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 8
+                                    },
+                                    "tags": {
+                                        "name": "tags",
+                                        "aspects": {
+                                            "tagType": "DataTags"
+                                        },
+                                        "description": "Tags",
+                                        "baseType": "TAGS",
+                                        "ordinal": 0
+                                    },
+                                    "PartName": {
+                                        "name": "PartName",
+                                        "aspects": {
+                                            "isPrimaryKey": false
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 11
+                                    },
+                                    "sourceType": {
+                                        "name": "sourceType",
+                                        "aspects": {},
+                                        "description": "Source type",
+                                        "baseType": "STRING",
+                                        "ordinal": 0
+                                    },
+                                    "DisplayName": {
+                                        "name": "DisplayName",
+                                        "aspects": {
+                                            "isPrimaryKey": false
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 10
+                                    },
+                                    "location": {
+                                        "name": "location",
+                                        "aspects": {},
+                                        "description": "Location of last modification",
+                                        "baseType": "LOCATION",
+                                        "ordinal": 0
+                                    },
+                                    "key": {
+                                        "name": "key",
+                                        "aspects": {
+                                            "isPrimaryKey": true
+                                        },
+                                        "description": "Internal key value",
+                                        "baseType": "STRING",
+                                        "ordinal": 0
+                                    },
+                                    "timestamp": {
+                                        "name": "timestamp",
+                                        "aspects": {},
+                                        "description": "Time of last modification",
+                                        "baseType": "DATETIME",
+                                        "ordinal": 0
+                                    }
+                                }
+                            }
+                        },
+                        "WorkID": "WIB1028",
+                        "StepDetail": "Do the rear window wiper motor test (see page 22-217)."
+                    },
+                    {
+                        "AffectedPartsID": "CG6UVX1UUJ",
+                        "StepNumber": "4.0",
+                        "Label1": "Baseline",
+                        "Label3": "",
+                        "Models": {
+                            "array": [
+                                {
+                                    "path": "/115",
+                                    "model": "ap_underDashFuseRelayBox"
+                                }
+                            ]
+                        },
+                        "Label2": "",
+                        "PartsList": {
+                            "rows": [
+                                {
+                                    "ModelName": "ap_underDashFuseRelayBox",
+                                    "AffectedPartID": "CG6UVX1UUJ",
+                                    "FileName": "/Crv/AffectedPart/underDashFuseRelayBox.pvz",
+                                    "MetadataID": "/115",
+                                    "source": "demo",
+                                    "MetadataPropertyName": "path",
+                                    "tags": [],
+                                    "PartName": "UNDERDASHFUSERELAYBOX.PRT",
+                                    "sourceType": "User",
+                                    "DisplayName": "UNDERDASHFUSERELAYBOX.PRT",
+                                    "location": {
+                                        "elevation": 0,
+                                        "latitude": 0,
+                                        "longitude": 0
+                                    },
+                                    "key": "CG6UVX1UUJ/115",
+                                    "timestamp": 1704324879024
+                                }
+                            ],
+                            "dataShape": {
+                                "fieldDefinitions": {
+                                    "ModelName": {
+                                        "name": "ModelName",
+                                        "aspects": {
+                                            "isPrimaryKey": false
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 9
+                                    },
+                                    "AffectedPartID": {
+                                        "name": "AffectedPartID",
+                                        "aspects": {
+                                            "isPrimaryKey": true
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 6
+                                    },
+                                    "FileName": {
+                                        "name": "FileName",
+                                        "aspects": {
+                                            "isPrimaryKey": false
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 12
+                                    },
+                                    "MetadataID": {
+                                        "name": "MetadataID",
+                                        "aspects": {
+                                            "isPrimaryKey": true
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 7
+                                    },
+                                    "source": {
+                                        "name": "source",
+                                        "aspects": {},
+                                        "description": "Source of last modification",
+                                        "baseType": "STRING",
+                                        "ordinal": 0
+                                    },
+                                    "MetadataPropertyName": {
+                                        "name": "MetadataPropertyName",
+                                        "aspects": {
+                                            "defaultValue": "Path",
+                                            "isPrimaryKey": false
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 8
+                                    },
+                                    "tags": {
+                                        "name": "tags",
+                                        "aspects": {
+                                            "tagType": "DataTags"
+                                        },
+                                        "description": "Tags",
+                                        "baseType": "TAGS",
+                                        "ordinal": 0
+                                    },
+                                    "PartName": {
+                                        "name": "PartName",
+                                        "aspects": {
+                                            "isPrimaryKey": false
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 11
+                                    },
+                                    "sourceType": {
+                                        "name": "sourceType",
+                                        "aspects": {},
+                                        "description": "Source type",
+                                        "baseType": "STRING",
+                                        "ordinal": 0
+                                    },
+                                    "DisplayName": {
+                                        "name": "DisplayName",
+                                        "aspects": {
+                                            "isPrimaryKey": false
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 10
+                                    },
+                                    "location": {
+                                        "name": "location",
+                                        "aspects": {},
+                                        "description": "Location of last modification",
+                                        "baseType": "LOCATION",
+                                        "ordinal": 0
+                                    },
+                                    "key": {
+                                        "name": "key",
+                                        "aspects": {
+                                            "isPrimaryKey": true
+                                        },
+                                        "description": "Internal key value",
+                                        "baseType": "STRING",
+                                        "ordinal": 0
+                                    },
+                                    "timestamp": {
+                                        "name": "timestamp",
+                                        "aspects": {},
+                                        "description": "Time of last modification",
+                                        "baseType": "DATETIME",
+                                        "ordinal": 0
+                                    }
+                                }
+                            }
+                        },
+                        "WorkID": "WIB1028",
+                        "StepDetail": "Operate the rear window wiper for 15 seconds or more, then turn the rear window wiper switch OFF. Does the rear window wiper stop in the normal park position?"
+                    },
+                    {
+                        "AffectedPartsID": "RNOR27GEGN",
+                        "StepNumber": "5.0",
+                        "Label1": "Baseline",
+                        "Label3": "",
+                        "Models": {
+                            "array": [
+                                {
+                                    "path": "/138",
+                                    "model": "ap_gauge_control_unit"
+                                }
+                            ]
+                        },
+                        "Label2": "",
+                        "PartsList": {
+                            "rows": [
+                                {
+                                    "ModelName": "ap_gauge_control_unit",
+                                    "AffectedPartID": "RNOR27GEGN",
+                                    "FileName": "/Crv/AffectedPart/gauge_control_unit.pvz",
+                                    "MetadataID": "/138",
+                                    "source": "demo",
+                                    "MetadataPropertyName": "path",
+                                    "tags": [],
+                                    "PartName": "GAUGE_CONTROL_UNIT.PRT",
+                                    "sourceType": "User",
+                                    "DisplayName": "GAUGE_CONTROL_UNIT.PRT",
+                                    "location": {
+                                        "elevation": 0,
+                                        "latitude": 0,
+                                        "longitude": 0
+                                    },
+                                    "key": "RNOR27GEGN/138",
+                                    "timestamp": 1704324879055
+                                }
+                            ],
+                            "dataShape": {
+                                "fieldDefinitions": {
+                                    "ModelName": {
+                                        "name": "ModelName",
+                                        "aspects": {
+                                            "isPrimaryKey": false
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 9
+                                    },
+                                    "AffectedPartID": {
+                                        "name": "AffectedPartID",
+                                        "aspects": {
+                                            "isPrimaryKey": true
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 6
+                                    },
+                                    "FileName": {
+                                        "name": "FileName",
+                                        "aspects": {
+                                            "isPrimaryKey": false
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 12
+                                    },
+                                    "MetadataID": {
+                                        "name": "MetadataID",
+                                        "aspects": {
+                                            "isPrimaryKey": true
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 7
+                                    },
+                                    "source": {
+                                        "name": "source",
+                                        "aspects": {},
+                                        "description": "Source of last modification",
+                                        "baseType": "STRING",
+                                        "ordinal": 0
+                                    },
+                                    "MetadataPropertyName": {
+                                        "name": "MetadataPropertyName",
+                                        "aspects": {
+                                            "defaultValue": "Path",
+                                            "isPrimaryKey": false
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 8
+                                    },
+                                    "tags": {
+                                        "name": "tags",
+                                        "aspects": {
+                                            "tagType": "DataTags"
+                                        },
+                                        "description": "Tags",
+                                        "baseType": "TAGS",
+                                        "ordinal": 0
+                                    },
+                                    "PartName": {
+                                        "name": "PartName",
+                                        "aspects": {
+                                            "isPrimaryKey": false
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 11
+                                    },
+                                    "sourceType": {
+                                        "name": "sourceType",
+                                        "aspects": {},
+                                        "description": "Source type",
+                                        "baseType": "STRING",
+                                        "ordinal": 0
+                                    },
+                                    "DisplayName": {
+                                        "name": "DisplayName",
+                                        "aspects": {
+                                            "isPrimaryKey": false
+                                        },
+                                        "description": "",
+                                        "baseType": "STRING",
+                                        "ordinal": 10
+                                    },
+                                    "location": {
+                                        "name": "location",
+                                        "aspects": {},
+                                        "description": "Location of last modification",
+                                        "baseType": "LOCATION",
+                                        "ordinal": 0
+                                    },
+                                    "key": {
+                                        "name": "key",
+                                        "aspects": {
+                                            "isPrimaryKey": true
+                                        },
+                                        "description": "Internal key value",
+                                        "baseType": "STRING",
+                                        "ordinal": 0
+                                    },
+                                    "timestamp": {
+                                        "name": "timestamp",
+                                        "aspects": {},
+                                        "description": "Time of last modification",
+                                        "baseType": "DATETIME",
+                                        "ordinal": 0
+                                    }
+                                }
+                            }
+                        },
+                        "WorkID": "WIB1028",
+                        "StepDetail": "Turn the ignition switch OFF, and then back ON"
+                    }
+                ],
+                "dataShape": {
+                    "fieldDefinitions": {
+                        "AffectedPartsID": {
+                            "name": "AffectedPartsID",
+                            "aspects": {
+                                "isPrimaryKey": false
+                            },
+                            "description": "",
+                            "baseType": "STRING",
+                            "ordinal": 7
+                        },
+                        "StepNumber": {
+                            "name": "StepNumber",
+                            "aspects": {
+                                "isPrimaryKey": true
+                            },
+                            "description": "",
+                            "baseType": "STRING",
+                            "ordinal": 2
+                        },
+                        "StepType": {
+                            "name": "StepType",
+                            "aspects": {
+                                "isPrimaryKey": false
+                            },
+                            "description": "",
+                            "baseType": "STRING",
+                            "ordinal": 6
+                        },
+                        "Label1": {
+                            "name": "Label1",
+                            "aspects": {
+                                "isPrimaryKey": false
+                            },
+                            "description": "",
+                            "baseType": "STRING",
+                            "ordinal": 9
+                        },
+                        "Label3": {
+                            "name": "Label3",
+                            "aspects": {
+                                "isPrimaryKey": false
+                            },
+                            "description": "",
+                            "baseType": "STRING",
+                            "ordinal": 11
+                        },
+                        "Models": {
+                            "name": "Models",
+                            "aspects": {
+                                "isPrimaryKey": false
+                            },
+                            "description": "",
+                            "baseType": "JSON",
+                            "ordinal": 8
+                        },
+                        "Label2": {
+                            "name": "Label2",
+                            "aspects": {
+                                "isPrimaryKey": false
+                            },
+                            "description": "",
+                            "baseType": "STRING",
+                            "ordinal": 10
+                        },
+                        "PartsList": {
+                            "name": "PartsList",
+                            "aspects": {
+                                "isPrimaryKey": false,
+                                "dataShape": "AutoARAffectedParts_DS"
+                            },
+                            "description": "",
+                            "baseType": "INFOTABLE",
+                            "ordinal": 5
+                        },
+                        "WorkID": {
+                            "name": "WorkID",
+                            "aspects": {
+                                "isPrimaryKey": true
+                            },
+                            "description": "",
+                            "baseType": "STRING",
+                            "ordinal": 1
+                        },
+                        "StepDetail": {
+                            "name": "StepDetail",
+                            "aspects": {
+                                "isPrimaryKey": false
+                            },
+                            "description": "",
+                            "baseType": "STRING",
+                            "ordinal": 3
+                        }
+                    }
                 }
-            ]
-        },
-        "Overview": "Overview: undefined",
-        "Time": "Time Est.: undefined",
-        "Title": "Rear Window Wiper Motor. As Signal Error",
-        "WorkID": "WIB1028",
-        "WorkInstructions": [
-            {
-                "StepNumber": "0.0",
-                "Label1": "Work Order: Rear Window Wiper Motor. As Signal Error",
-                "Label3": "Time Est.: 1.0",
-                "Label2": "Difficulty: Medium",
-                "WorkID": "WIB1028",
-                "StepDetail": "Overview: Rear Window Wiper Motor (As) Signal Error : If you are troubleshooting multiple DTCs, be sure to follow the instructions in B-CAN System Diagnosis Test Mode A"
             },
-            {
-                "AffectedPartsID": "3KK4EQN7VU",
-                "StepNumber": "1.0",
-                "Label1": "Safety",
-                "Label3": "",
-                "Models": {
-                    "array": [
-                        {
-                            "path": "/134",
-                            "model": "ap_rear_wiper_motor"
-                        },
-                        {
-                            "path": "/68/85/@@PV-AUTO-ID@@010",
-                            "model": "tailgate_wireharness"
-                        },
-                        {
-                            "path": ":5/134",
-                            "model": "ap_underDashFuseRelayBox"
-                        },
-                        {
-                            "path": "/138",
-                            "model": "ap_gauge_control_unit"
-                        }
-                    ]
+            "WorkID": "WIB1028"
+        }
+    ],
+    "dataShape": {
+        "fieldDefinitions": {
+            "Difficulty": {
+                "name": "Difficulty",
+                "aspects": {
+                    "isPrimaryKey": false
                 },
-                "Label2": "",
-                "PartsList": [
-                    {
-                        "ModelName": "ap_rear_wiper_motor",
-                        "AffectedPartID": "3KK4EQN7VU",
-                        "FileName": "/Crv/AffectedPart/rear_wiper_motor.pvz",
-                        "MetadataID": "/134",
-                        "source": "demo",
-                        "MetadataPropertyName": "path",
-                        "tags": [],
-                        "PartName": "REAR_WIPER_MOTOR.PRT",
-                        "sourceType": "User",
-                        "DisplayName": "REAR_WIPER_MOTOR.PRT",
-                        "location": {
-                            "latitude": 0,
-                            "longitude": 0,
-                            "elevation": 0
-                        },
-                        "key": "3KK4EQN7VU/134",
-                        "timestamp": "2023-12-20T21:19:02.159Z"
-                    },
-                    {
-                        "ModelName": "tailgate_wireharness",
-                        "AffectedPartID": "3KK4EQN7VU",
-                        "FileName": "/Crv/AffectedPart/tailgate_wireharness.pvz",
-                        "MetadataID": "/68/85/@@PV-AUTO-ID@@010",
-                        "source": "demo",
-                        "MetadataPropertyName": "path",
-                        "tags": [],
-                        "PartName": "BUNDLE_1",
-                        "sourceType": "User",
-                        "DisplayName": "BUNDLE_1",
-                        "location": {
-                            "latitude": 0,
-                            "longitude": 0,
-                            "elevation": 0
-                        },
-                        "key": "3KK4EQN7VU/68/85/@@PV-AUTO-ID@@010",
-                        "timestamp": "2023-12-20T21:19:02.175Z"
-                    },
-                    {
-                        "ModelName": "ap_underDashFuseRelayBox",
-                        "AffectedPartID": "3KK4EQN7VU",
-                        "FileName": "/Crv/AffectedPart/underDashFuseRelayBox.pvz",
-                        "MetadataID": ":5/134",
-                        "source": "demo",
-                        "MetadataPropertyName": "path",
-                        "tags": [],
-                        "PartName": "UNDERDASHFUSERELAYBOX.PRT",
-                        "sourceType": "User",
-                        "DisplayName": "UNDERDASHFUSERELAYBOX.PRT",
-                        "location": {
-                            "latitude": 0,
-                            "longitude": 0,
-                            "elevation": 0
-                        },
-                        "key": "3KK4EQN7VU:5/134",
-                        "timestamp": "2023-12-20T21:19:02.191Z"
-                    },
-                    {
-                        "ModelName": "ap_gauge_control_unit",
-                        "AffectedPartID": "3KK4EQN7VU",
-                        "FileName": "/Crv/AffectedPart/gauge_control_unit.pvz",
-                        "MetadataID": "/138",
-                        "source": "demo",
-                        "MetadataPropertyName": "path",
-                        "tags": [],
-                        "PartName": "GAUGE_CONTROL_UNIT.PRT",
-                        "sourceType": "User",
-                        "DisplayName": "GAUGE_CONTROL_UNIT.PRT",
-                        "location": {
-                            "latitude": 0,
-                            "longitude": 0,
-                            "elevation": 0
-                        },
-                        "key": "3KK4EQN7VU/138",
-                        "timestamp": "2023-12-20T21:19:02.208Z"
-                    }
-                ],
-                "WorkID": "WIB1028",
-                "StepDetail": "Please make sure all safety options have been worked through."
+                "description": "",
+                "baseType": "STRING",
+                "ordinal": 4
             },
-            {
-                "AffectedPartsID": "EZYZ9FQ9OU",
-                "StepNumber": "2.0",
-                "Label1": "Clear registers",
-                "Label3": "",
-                "Models": {
-                    "array": [
-                        {
-                            "path": "/138",
-                            "model": "ap_gauge_control_unit"
-                        }
-                    ]
+            "Title": {
+                "name": "Title",
+                "aspects": {
+                    "isPrimaryKey": false
                 },
-                "Label2": "",
-                "PartsList": [
-                    {
-                        "ModelName": "ap_gauge_control_unit",
-                        "AffectedPartID": "EZYZ9FQ9OU",
-                        "FileName": "/Crv/AffectedPart/gauge_control_unit.pvz",
-                        "MetadataID": "/138",
-                        "source": "demo",
-                        "MetadataPropertyName": "path",
-                        "tags": [],
-                        "PartName": "GAUGE_CONTROL_UNIT.PRT",
-                        "sourceType": "User",
-                        "DisplayName": "GAUGE_CONTROL_UNIT.PRT",
-                        "location": {
-                            "latitude": 0,
-                            "longitude": 0,
-                            "elevation": 0
-                        },
-                        "key": "EZYZ9FQ9OU/138",
-                        "timestamp": "2023-12-20T21:19:02.268Z"
-                    }
-                ],
-                "WorkID": "WIB1028",
-                "StepDetail": "Clear the DTCs with the HDS. Turn the ignition switch OFF, and then back ON (11). Operate the rear window wiper for 15 seconds or more, then turn the rear window wiper switch OFF. Does the rear window wiper stop in the normal park position?"
+                "description": "",
+                "baseType": "STRING",
+                "ordinal": 2
             },
-            {
-                "AffectedPartsID": "TNW1JVXRID",
-                "StepNumber": "3.0",
-                "Label1": "Is the rear window wiper motor OK?",
-                "Label3": "",
-                "Models": {
-                    "array": [
-                        {
-                            "path": "/138",
-                            "model": "ap_gauge_control_unit"
-                        }
-                    ]
+            "Models": {
+                "name": "Models",
+                "aspects": {
+                    "isPrimaryKey": false
                 },
-                "Label2": "",
-                "PartsList": [
-                    {
-                        "ModelName": "ap_gauge_control_unit",
-                        "AffectedPartID": "TNW1JVXRID",
-                        "FileName": "/Crv/AffectedPart/gauge_control_unit.pvz",
-                        "MetadataID": "/138",
-                        "source": "demo",
-                        "MetadataPropertyName": "path",
-                        "tags": [],
-                        "PartName": "GAUGE_CONTROL_UNIT.PRT",
-                        "sourceType": "User",
-                        "DisplayName": "GAUGE_CONTROL_UNIT.PRT",
-                        "location": {
-                            "latitude": 0,
-                            "longitude": 0,
-                            "elevation": 0
-                        },
-                        "key": "TNW1JVXRID/138",
-                        "timestamp": "2023-12-20T21:19:02.300Z"
-                    }
-                ],
-                "WorkID": "WIB1028",
-                "StepDetail": "Do the rear window wiper motor test (see page 22-217)."
+                "description": "",
+                "baseType": "JSON",
+                "ordinal": 7
             },
-            {
-                "AffectedPartsID": "36ISBL2XZX",
-                "StepNumber": "4.0",
-                "Label1": "Baseline",
-                "Label3": "",
-                "Models": {
-                    "array": [
-                        {
-                            "path": "/115",
-                            "model": "ap_underDashFuseRelayBox"
-                        }
-                    ]
+            "Overview": {
+                "name": "Overview",
+                "aspects": {
+                    "isPrimaryKey": false
                 },
-                "Label2": "",
-                "PartsList": [
-                    {
-                        "ModelName": "ap_underDashFuseRelayBox",
-                        "AffectedPartID": "36ISBL2XZX",
-                        "FileName": "/Crv/AffectedPart/underDashFuseRelayBox.pvz",
-                        "MetadataID": "/115",
-                        "source": "demo",
-                        "MetadataPropertyName": "path",
-                        "tags": [],
-                        "PartName": "UNDERDASHFUSERELAYBOX.PRT",
-                        "sourceType": "User",
-                        "DisplayName": "UNDERDASHFUSERELAYBOX.PRT",
-                        "location": {
-                            "latitude": 0,
-                            "longitude": 0,
-                            "elevation": 0
-                        },
-                        "key": "36ISBL2XZX/115",
-                        "timestamp": "2023-12-20T21:19:02.331Z"
-                    }
-                ],
-                "WorkID": "WIB1028",
-                "StepDetail": "Operate the rear window wiper for 15 seconds or more, then turn the rear window wiper switch OFF. Does the rear window wiper stop in the normal park position?"
+                "description": "",
+                "baseType": "STRING",
+                "ordinal": 5
             },
-            {
-                "AffectedPartsID": "OYFNVXK8SF",
-                "StepNumber": "5.0",
-                "Label1": "Baseline",
-                "Label3": "",
-                "Models": {
-                    "array": [
-                        {
-                            "path": "/138",
-                            "model": "ap_gauge_control_unit"
-                        }
-                    ]
+            "Time": {
+                "name": "Time",
+                "aspects": {
+                    "isPrimaryKey": false
                 },
-                "Label2": "",
-                "PartsList": [
-                    {
-                        "ModelName": "ap_gauge_control_unit",
-                        "AffectedPartID": "OYFNVXK8SF",
-                        "FileName": "/Crv/AffectedPart/gauge_control_unit.pvz",
-                        "MetadataID": "/138",
-                        "source": "demo",
-                        "MetadataPropertyName": "path",
-                        "tags": [],
-                        "PartName": "GAUGE_CONTROL_UNIT.PRT",
-                        "sourceType": "User",
-                        "DisplayName": "GAUGE_CONTROL_UNIT.PRT",
-                        "location": {
-                            "latitude": 0,
-                            "longitude": 0,
-                            "elevation": 0
-                        },
-                        "key": "OYFNVXK8SF/138",
-                        "timestamp": "2023-12-20T21:19:02.363Z"
-                    }
-                ],
-                "WorkID": "WIB1028",
-                "StepDetail": "Turn the ignition switch OFF, and then back ON"
+                "description": "",
+                "baseType": "STRING",
+                "ordinal": 3
+            },
+            "WorkInstructions": {
+                "name": "WorkInstructions",
+                "aspects": {
+                    "isPrimaryKey": false,
+                    "dataShape": "AutoARWorkInstruction_DS"
+                },
+                "description": "",
+                "baseType": "INFOTABLE",
+                "ordinal": 6
+            },
+            "WorkID": {
+                "name": "WorkID",
+                "aspects": {
+                    "isPrimaryKey": true
+                },
+                "description": "",
+                "baseType": "STRING",
+                "ordinal": 1
             }
-        ],
-        "_isSelected": true
+        }
     }
+}

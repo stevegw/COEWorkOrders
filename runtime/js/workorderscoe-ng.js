@@ -93,6 +93,12 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
           if (scope.workpackageField != undefined && scope.workpackageField != '') {
             scope.$parent.fireEvent("workpackagereceieved");
             scope.$parent.$applyAsync();
+            if (scope.autolaunchField == "true") {
+
+              executeWidget("BuildWorkPackage");
+              
+            }
+
 
           }
 
@@ -131,6 +137,11 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
               executeWidget("GetWorkPackage");
 
             };
+            delegate.buildwp = function () {
+              executeWidget("BuildWorkPackage");
+
+            };
+
             delegate.displaywo = function () {
               executeWidget("GetWorkOrders");
 
