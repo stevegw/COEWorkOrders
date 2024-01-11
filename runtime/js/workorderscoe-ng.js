@@ -14,6 +14,9 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
       restrict: 'EA',
       scope: {
         heroidField : '=',
+        herorxField : '=',
+        heroryField : '=',
+        herorzField : '=',
         workpackageidField : '=',
         herofolderField : '=',
         heromodelField: '=',

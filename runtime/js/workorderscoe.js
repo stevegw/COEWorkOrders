@@ -83,6 +83,7 @@ class WorkOrderscoe {
 
         let http = this.vuforiaScope.http;
         var URL = '/Thingworx/Things' + '/AutoARServiceHelper/Services/GetHeroData';
+        try {
         var headers = {
             Accept: 'application/json',
             "Content-Type": 'application/json',
@@ -111,6 +112,9 @@ class WorkOrderscoe {
                     vs.heromtguideviewField = data.data.rows[0].MTGuideView;
                     vs.heromtidField = data.data.rows[0].MTID;
                     vs.herofolderField = data.data.rows[0].Folder;
+                    vs.herorxField = data.data.rows[0].MTRx;
+                    vs.heroryField = data.data.rows[0].MTRy;
+                    vs.herorzField = data.data.rows[0].MTRz;
 
                     vs.$parent.fireEvent('herodatareturned');
 
@@ -122,7 +126,16 @@ class WorkOrderscoe {
               vs.$parent.fireEvent('message');
               vs.$parent.fireEvent('failure');
             }
+            
           )
+
+        } catch (e) {
+    
+                vs.$parent.fireEvent('Check application key ' + e );
+                vs.$parent.fireEvent('failure');
+ 
+
+        }
 
 
 

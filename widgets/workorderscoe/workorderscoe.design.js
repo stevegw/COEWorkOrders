@@ -77,6 +77,33 @@
           isBindingSource: true,
           showInput: false
         },
+        {
+          name: 'herorx',
+          label: 'Herodata  Rotation X',
+          datatype: 'string',
+          default: '',
+          isBindingTarget: false,
+          isBindingSource: true,
+          showInput: false
+        },
+        {
+          name: 'herory',
+          label: 'Herodata  Rotation Y',
+          datatype: 'string',
+          default: '',
+          isBindingTarget: false,
+          isBindingSource: true,
+          showInput: false
+        },
+        {
+          name: 'herorz',
+          label: 'Herodata  Rotation Z',
+          datatype: 'string',
+          default: '',
+          isBindingTarget: false,
+          isBindingSource: true,
+          showInput: false
+        },
 
         {
           name: 'workpackageid',
@@ -280,7 +307,7 @@
       },
   
       runtimeTemplate: function (props) {
-        var tmpl = '<div ng-workorderscoe  workpackage-field="me.workpackage"  workpackagedata-field="me.workpackagedata" heroid-field="me.heroid" workpackageid-field="me.workpackageid"  heromtfolder-field="me.herofolder" heromodel-field="me.heromodel" heromtdataset-field="me.heromtdataset" heromtguideview-field="me.heromtguideview" heromtid-field="me.heromtid"  affectedparts-field="me.affectedparts"  selectedwo-field="me.selectedwo" selectedwi-field="me.selectedwi" autolaunch-field={{me.autolaunch}}  incomingid-field={{me.incomingid}} wowidth-field={{me.wowidth}} woheight-field={{me.woheight}} wiwidth-field={{me.wiwidth}} wiheight-field={{me.wiheight}} wobottomoffset-field={{me.wobottomoffset}} wibottomoffset-field={{me.wibottomoffset}} leftoffset-field={{me.leftoffset}}  delegate-field="delegate"></div>' ; 
+        var tmpl = '<div ng-workorderscoe  workpackage-field="me.workpackage"  workpackagedata-field="me.workpackagedata" heroid-field="me.heroid" workpackageid-field="me.workpackageid"  heromtfolder-field="me.herofolder" heromodel-field="me.heromodel" heromtdataset-field="me.heromtdataset" heromtguideview-field="me.heromtguideview" heromtid-field="me.heromtid" herorx-field="me.herorx" herory-field="me.herory" herorz-field="me.herorz"  affectedparts-field="me.affectedparts"  selectedwo-field="me.selectedwo" selectedwi-field="me.selectedwi" autolaunch-field={{me.autolaunch}}  incomingid-field={{me.incomingid}} wowidth-field={{me.wowidth}} woheight-field={{me.woheight}} wiwidth-field={{me.wiwidth}} wiheight-field={{me.wiheight}} wobottomoffset-field={{me.wobottomoffset}} wibottomoffset-field={{me.wibottomoffset}} leftoffset-field={{me.leftoffset}}  delegate-field="delegate"></div>' ; 
         return tmpl;
       }
     };

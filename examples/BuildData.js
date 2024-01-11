@@ -39,7 +39,7 @@ function makeid(length) {
 }
 
 
-function CreateHeroPart ( folder  , mtid, dataset, guideview , model , vin) {
+function CreateHeroPart ( folder  , mtid, dataset, guideview , model , vin ,rx,ry,rz) {
     
     logger.debug("CreateHeroPart vin="+vin + "folder="+ "mtid="+  mtid);
     let HPValues = Things["AutoARHeroPart_DT"].CreateValues();
@@ -49,6 +49,9 @@ function CreateHeroPart ( folder  , mtid, dataset, guideview , model , vin) {
     HPValues.MTDataset =  dataset; 
     HPValues.MTGuideView =  guideview; 
     HPValues.Model = model; 
+        HPValues.MTRx = rx; 
+        HPValues.MTRy = ry; 
+        HPValues.MTRz = rz; 
 
     let hpresultid =  Things["AutoARHeroPart_DT"].AddOrUpdateDataTableEntry({
         sourceType: undefined /* STRING */,
@@ -164,7 +167,7 @@ Things["AutoARAffectedParts_DT"].PurgeDataTableEntries();
 
 let vin = "12345678910111213";
 // folder  , mtid, dataset, guideview , model 
-CreateHeroPart('Ford'  , 'Ford_F150', 'Ford_F150',  'Ford_F150_viewpoint_0001.png', 'Ford_F150.pvz' , vin);
+CreateHeroPart('Ford'  , 'Ford_F150', 'Ford_F150',  'Ford_F150_viewpoint_0001.png', 'Ford_F150.pvz' , vin ,0,0,0);
 
 createWorkOrder( 'WI000001', "Battery sensor Install ", "Gather Tools and Saftey instructions and install sensor "+ lorumData, "Low" , Math.floor(Math.random() * 10) + 1 , vin); 
 createWorkOrder( 'WI000002', "Headlight Install", "Gather Tools and Saftey instructions and install headelight " + lorumData, "Med" , Math.floor(Math.random() * 10) + 1 , vin); 
@@ -184,7 +187,7 @@ createWorkOrder( 'WI000005', "Inspect Brake Hydraulics", "Gather Tools and Safte
 
 vin = "00123456789101112";
 // folder  , mtid, dataset, guideview , model 
-CreateHeroPart('Ford'  , 'Ford_F150', 'Ford_F150',  'F150_GUIDE.png', 'Ford_F150.pvz' , vin);
+CreateHeroPart('Ford'  , 'Ford_F150', 'Ford_F150',  'F150_GUIDE.png', 'Ford_F150.pvz' , vin ,0,0,0);
 
 
 createWorkOrder( 'WI000006', "Battery sensor Install "       , "Gather Tools and Saftey instructions and install sensor         " + lorumData, "Low"    , Math.floor(Math.random() * 10) + 1 , vin); 
@@ -206,7 +209,7 @@ createWorkOrder( 'WI000010', "Inspect Brake Hydraulics"      , "Gather Tools and
 
 vin = "00012345678910111";
 // folder  , mtid, dataset, guideview , model 
-CreateHeroPart('Creality'  , 'EnderProMain_Low', 'EnderProMain_Low',  'EnderProMain_Low_GuideView_0000_2.png', 'EnderProMain_Low.pvz' , vin);
+CreateHeroPart('Creality'  , 'EnderProMain_Low', 'EnderProMain_Low',  'EnderProMain_Low_GuideView_0000_2.png', 'EnderProMain_Low.pvz' , vin , 0,0,0);
 
 createWorkOrder( 'WI000101', "Battery sensor Install "       , "Gather Tools and Saftey instructions and install sensor         " +lorumData, "Low"    , Math.floor(Math.random() * 10) + 1 , vin); 
 createWorkOrder( 'WI000102', "Headlight Install"             , "Gather Tools and Saftey instructions and install headelight     " +lorumData, "Med"    , Math.floor(Math.random() * 10) + 1 , vin); 
@@ -228,7 +231,7 @@ createWorkOrder( 'WI000105', "Inspect Brake Hydraulics"      , "Gather Tools and
 
 vin = "00012345678910222";
 // folder  , mtid, dataset, guideview , model 
-CreateHeroPart('Polaris'  , 'toy_polaris_mt', 'toy_polaris_mt',  'toy_polaris_mt_GuideView_0000_2.png', 'toy_polaris_mt.pvz' , vin);
+CreateHeroPart('Polaris'  , 'toy_polaris_mt', 'toy_polaris_mt',  'toy_polaris_mt_GuideView_0000_2.png', 'toy_polaris_mt.pvz' , vin ,0,0,0);
 
 createWorkOrder( 'WI000101', "Battery sensor Install "       , "Gather Tools and Saftey instructions and install sensor         " +lorumData, "Low"    , Math.floor(Math.random() * 10) + 1 , vin); 
 createWorkOrder( 'WI000102', "Headlight Install"             , "Gather Tools and Saftey instructions and install headelight     " +lorumData, "Med"    , Math.floor(Math.random() * 10) + 1 , vin); 
@@ -288,7 +291,7 @@ vin = "00012345678910333";
 
 //CreateHeroPart('Polaris'  , 'toy_polaris_mt', 'toy_polaris_mt',  'toy_polaris_mt_GuideView_0000_2.png', 'toy_polaris_mt.pvz' , vin);
 //CreateHeroPart('Polaris'  , 'ServiceSeq_ST_Med_reduced', 'ServiceSeq_ST_Med_reduced',  'ServiceSeq_ST_Med_reduced_GuideView_0000_2.png', 'ServiceSeq_ST_Med_reduced.pvz' , vin);
-CreateHeroPart('Polaris'  ,'polaris_toy_low', 'polaris_toy_low',  'polaris_toy_low_GuideView_0000_2.png', 'polaris_toy_low.pvz' , vin);
+CreateHeroPart('Polaris'  ,'polaris_toy_low', 'polaris_toy_low',  'polaris_toy_low_GuideView_0000_2.png', 'polaris_toy_low.pvz' , vin , 0,0,0);
 createWorkOrder_WI000131( 'WI000131', "Battery sensor Install "       , "Gather Tools and Saftey instructions and install sensor         " +lorumData, "Low"    , Math.floor(Math.random() * 10) + 1 , vin); 
 
 
@@ -319,31 +322,60 @@ function createWorkOrderDTC_B1028 (id, title,overview,difficulty,time , vin) {
     
  // create 5 steps for the work id and an affectedID for 3 Affected Parts
 
-    let apDTC_B1028_1 = CreateWi(id,'Please make sure all safety options have been worked through.',1,'Safety');
+    let apDTC_B1028_1 = CreateWi(id,'Please make sure all safety options have been worked through. and check connections',1,'Safety');
     // id, metadataID, metadataPropertyName, modelWidgetName (the widget will be created i.e. modelAffected1,2,3 etc one for each pvz) , displayName , partName , fileName 
-    createAffectedPart(apDTC_B1028_1,  "/134", "path", "ap_rear_wiper_motor" , "REAR_WIPER_MOTOR.PRT" , "REAR_WIPER_MOTOR.PRT" , "/Crv/AffectedPart/rear_wiper_motor.pvz" ); 
-    createAffectedPart(apDTC_B1028_1,  "/68/85/@@PV-AUTO-ID@@010", "path", "tailgate_wireharness" , "BUNDLE_1" , "BUNDLE_1" , "/Crv/AffectedPart/tailgate_wireharness.pvz" ); 
-    createAffectedPart(apDTC_B1028_1,  ":5/134", "path", "ap_underDashFuseRelayBox" , "UNDERDASHFUSERELAYBOX.PRT" , "UNDERDASHFUSERELAYBOX.PRT" , "/Crv/AffectedPart/underDashFuseRelayBox.pvz" );  
-    createAffectedPart(apDTC_B1028_1,  "/138", "path", "ap_gauge_control_unit" , "GAUGE_CONTROL_UNIT.PRT" , "GAUGE_CONTROL_UNIT.PRT" , "/Crv/AffectedPart/gauge_control_unit.pvz" );
- 
+    createAffectedPart(apDTC_B1028_1,  "/134", "path", "ap_rear_wiper_motor" , "REAR_WIPER_MOTOR.PRT" , "REAR_WIPER_MOTOR.PRT" , "/Crv/AffectedPart/rear_wiper_motor.pvz" );
+    createAffectedPart(apDTC_B1028_1,  "/68/35", "path", "tailgate_wireharness" , "CONN_MOTOR.PRT" , "CONN_MOTOR.PRT" , "/Crv/AffectedPart/tailgate_wireharness.pvz" ); 
+    createAffectedPart(apDTC_B1028_1,  "/68/85/@@PV-AUTO-ID@@004", "path", "tailgate_wireharness" , "W-5" , "W-5" , "/Crv/AffectedPart/tailgate_wireharness.pvz" ); 
+    createAffectedPart(apDTC_B1028_1,  "/68/85/@@PV-AUTO-ID@@007", "path", "tailgate_wireharness" , "W-8" , "W-8" , "/Crv/AffectedPart/tailgate_wireharness.pvz" ); 
+    createAffectedPart(apDTC_B1028_1,  "/68/85/@@PV-AUTO-ID@@006", "path", "tailgate_wireharness" , "W-7" , "W-7" , "/Crv/AffectedPart/tailgate_wireharness.pvz" ); 
+    createAffectedPart(apDTC_B1028_1,  "/68/85/@@PV-AUTO-ID@@009", "path", "tailgate_wireharness" , "W-10" , "W-10" , "/Crv/AffectedPart/tailgate_wireharness.pvz" );   
+    createAffectedPart(apDTC_B1028_1,  "/68/85/@@PV-AUTO-ID@@008", "path", "tailgate_wireharness" , "W-10" , "W-10" , "/Crv/AffectedPart/tailgate_wireharness.pvz" );   
+    createAffectedPart(apDTC_B1028_1,  "/68/37", "path", "tailgate_wireharness" , "TAILGATE_HANDLE_SWITCH.PRT" , "TAILGATE_HANDLE_SWITCH.PRT" , "/Crv/AffectedPart/tailgate_wireharness.pvz" );   
+    createAffectedPart(apDTC_B1028_1,  "/68/26", "path", "tailgate_wireharness" , "TLIGHT_LICENSEPLATE.PRT" , "LIGHT_LICENSEPLATE.PRT" , "/Crv/AffectedPart/tailgate_wireharness.pvz" );   
+    createAffectedPart(apDTC_B1028_1,  "/68/43", "path", "tailgate_wireharness" , "TAILGATE_LATCH_SWITCH.PRT" , "TAILGATE_LATCH_SWITCH.PRT" , "/Crv/AffectedPart/tailgate_wireharness.pvz" );   
+    createAffectedPart(apDTC_B1028_1,  "/68/45", "path", "tailgate_wireharness" , "TAILGATE_RELEASE_ACTUATOR.PRT" , "TAILGATE_RELEASE_ACTUATOR.PRT" , "/Crv/AffectedPart/tailgate_wireharness.pvz" );   
+    createAffectedPart(apDTC_B1028_1,  "/68/36", "path", "tailgate_wireharness" , "CAMERA_REAR.PRT" , "CAMERA_REAR.PRT" , "/Crv/AffectedPart/tailgate_wireharness.pvz" );   
+    createAffectedPart(apDTC_B1028_1,  "/115", "path", "ap_underDashFuseRelayBox" , "UNDERDASHFUSERELAYBOX.PRT" , "UNDERDASHFUSERELAYBOX.PRT" , "/Crv/AffectedPart/underDashFuseRelayBox.pvz" ); 
+    
+   
     let apDTC_B1028_2 = CreateWi(id,'Clear the DTCs with the HDS. Turn the ignition switch OFF, and then back ON (11). Operate the rear window wiper for 15 seconds or more, then turn the rear window wiper switch OFF. Does the rear window wiper stop in the normal park position?',2,'Clear registers');
     createAffectedPart(apDTC_B1028_2,  "/138", "path", "ap_gauge_control_unit" , "GAUGE_CONTROL_UNIT.PRT" , "GAUGE_CONTROL_UNIT.PRT" , "/Crv/AffectedPart/gauge_control_unit.pvz" ); 
+    createAffectedPart(apDTC_B1028_2,  "/134", "path", "ap_rear_wiper_motor" , "REAR_WIPER_MOTOR.PRT" , "REAR_WIPER_MOTOR.PRT" , "/Crv/AffectedPart/rear_wiper_motor.pvz" );
+    createAffectedPart(apDTC_B1028_2,  "/68/35", "path", "tailgate_wireharness" , "CONN_MOTOR.PRT" , "CONN_MOTOR.PRT" , "/Crv/AffectedPart/tailgate_wireharness.pvz" ); 
+    createAffectedPart(apDTC_B1028_2,  "/68/85/@@PV-AUTO-ID@@004", "path", "tailgate_wireharness" , "W-5" , "W-5" , "/Crv/AffectedPart/tailgate_wireharness.pvz" ); 
+    createAffectedPart(apDTC_B1028_2,  "/68/85/@@PV-AUTO-ID@@007", "path", "tailgate_wireharness" , "W-8" , "W-8" , "/Crv/AffectedPart/tailgate_wireharness.pvz" ); 
+    createAffectedPart(apDTC_B1028_2,  "/68/85/@@PV-AUTO-ID@@006", "path", "tailgate_wireharness" , "W-7" , "W-7" , "/Crv/AffectedPart/tailgate_wireharness.pvz" ); 
+    createAffectedPart(apDTC_B1028_2,  "/68/85/@@PV-AUTO-ID@@009", "path", "tailgate_wireharness" , "W-10" , "W-10" , "/Crv/AffectedPart/tailgate_wireharness.pvz" );   
+    createAffectedPart(apDTC_B1028_2,  "/68/85/@@PV-AUTO-ID@@008", "path", "tailgate_wireharness" , "W-10" , "W-10" , "/Crv/AffectedPart/tailgate_wireharness.pvz" );   
+
 
     let apDTC_B1028_3 = CreateWi(id,'Do the rear window wiper motor test (see page 22-217).',3,'Is the rear window wiper motor OK?');
     createAffectedPart(apDTC_B1028_3,  "/138", "path", "ap_gauge_control_unit" , "GAUGE_CONTROL_UNIT.PRT" , "GAUGE_CONTROL_UNIT.PRT" , "/Crv/AffectedPart/gauge_control_unit.pvz" ); 
+    createAffectedPart(apDTC_B1028_3,  "/68/37", "path", "tailgate_wireharness" , "TAILGATE_HANDLE_SWITCH.PRT" , "TAILGATE_HANDLE_SWITCH.PRT" , "/Crv/AffectedPart/tailgate_wireharness.pvz" );   
+    createAffectedPart(apDTC_B1028_3,  "/68/43", "path", "tailgate_wireharness" , "TAILGATE_LATCH_SWITCH.PRT" , "TAILGATE_LATCH_SWITCH.PRT" , "/Crv/AffectedPart/tailgate_wireharness.pvz" );   
+    createAffectedPart(apDTC_B1028_3,  "/68/45", "path", "tailgate_wireharness" , "TAILGATE_RELEASE_ACTUATOR.PRT" , "TAILGATE_RELEASE_ACTUATOR.PRT" , "/Crv/AffectedPart/tailgate_wireharness.pvz" );   
 
 
     let apDTC_B1028_4 = CreateWi(id,'Operate the rear window wiper for 15 seconds or more, then turn the rear window wiper switch OFF. Does the rear window wiper stop in the normal park position?',4,'Baseline');
-    createAffectedPart(apDTC_B1028_4,  "/115", "path", "ap_underDashFuseRelayBox" , "UNDERDASHFUSERELAYBOX.PRT" , "UNDERDASHFUSERELAYBOX.PRT" , "/Crv/AffectedPart/underDashFuseRelayBox.pvz" ); 
+    createAffectedPart(apDTC_B1028_4,  "/115", "path", "ap_underDashFuseRelayBox" , "UNDERDASHFUSERELAYBOX.PRT" , "UNDERDASHFUSERELAYBOX.PRT" , "app/resources/Uploaded/underDashFuseRelayBox.pvz" ); 
+    createAffectedPart(apDTC_B1028_4,  "/42/63/@@PV-AUTO-ID@@002", "path", "roof_wireharness2" , "W-3" , "W-3" , "app/resources/Uploaded/roof_wireharness2.pvz" ); 
+    createAffectedPart(apDTC_B1028_4,  "/42/63/@@PV-AUTO-ID@@001", "path", "roof_wireharness2" , "W-2" , "W-2" , "app/resources/Uploaded/roof_wireharness2.pvz" ); 
+    createAffectedPart(apDTC_B1028_4,  "/42/63/@@PV-AUTO-ID@@000", "path", "roof_wireharness2" , "W-1" , "W-1" , "app/resources/Uploaded/roof_wireharness2.pvz" ); 
+    createAffectedPart(apDTC_B1028_4,  "/42/54", "path", "roof_wireharness2" , "CONNF2.PRT" , "CONNF2.PRT" , "app/resources/Uploaded/roof_wireharness2.pvz" ); 
+    createAffectedPart(apDTC_B1028_4,  "/42/55", "path", "roof_wireharness2" , "CONNF2.PRT" , "CONNF2.PRT" , "app/resources/Uploaded/roof_wireharness2.pvz" ); 
+    createAffectedPart(apDTC_B1028_4,  "/42/56", "path", "roof_wireharness2" , "CONNF2.PRT" , "CONNF2.PRT" , "app/resources/Uploaded/roof_wireharness2.pvz" ); 
+
+    
     let apDTC_B1028_5 = CreateWi(id,'Turn the ignition switch OFF, and then back ON',5,'Baseline');
-    createAffectedPart(apDTC_B1028_5,  "/138", "path", "ap_gauge_control_unit" , "GAUGE_CONTROL_UNIT.PRT" , "GAUGE_CONTROL_UNIT.PRT" , "/Crv/AffectedPart/gauge_control_unit.pvz" ); 
+    createAffectedPart(apDTC_B1028_5,  "/42/63/@@PV-AUTO-ID@@002", "path", "ap_gauge_control_unit" , "GAUGE_CONTROL_UNIT.PRT" , "GAUGE_CONTROL_UNIT.PRT" , "/Crv/AffectedPart/gauge_control_unit.pvz" ); 
 
 }
 
 
 
 let crvVin = "123456789";
-CreateHeroPart('Crv'  , 'crv_outer', 'crv_outer-360',  'crv_outer_GuideView_0000_2.png', 'crv_outer.pvz' , crvVin);
+CreateHeroPart('Crv'  , 'crv_outer', 'crv_outer-360',  'crv_outer_GuideView_0000_2.png', 'crv_outer.pvz' , crvVin , 0,0,0);
 createWorkOrderDTC_B1028( 'WIB1028', "Rear Window Wiper Motor. As Signal Error" , "Rear Window Wiper Motor (As) Signal Error : If you are troubleshooting multiple DTCs, be sure to follow the instructions in B-CAN System Diagnosis Test Mode A" , "Medium"    , Math.floor(Math.random() * 10) + 1 , crvVin); 
 //createWorkOrderDTC_1079( 'WIB1028', "Check Rear wiper operation"             , "Operate the rear window wiper for 15 seconds or more, then turn the rear window wiper switch OFF. Does the rear window wiper stop in the normal park position?", "Med"    , Math.floor(Math.random() * 10) + 1 , vin); 
 //createWorkOrderDTC_1175( 'WIB1028', "Check DTC"            , "Check for DTCs with the HDS. Is DTC B1028 indicated?", "Medium" , Math.floor(Math.random() * 10) + 1 , vin ); 
@@ -400,7 +432,7 @@ function createWorkOrderF150_FrontEnd (id, title,overview,difficulty,time , vin)
 
 
 let F150FrontEndVin = "F150123456789";
-CreateHeroPart('F150FRONTEND'  , 'F150_Front_End_MT_Med', 'F150_Front_End_MT_Med',  'F150_Front_End_MT_Med_GuideView_0000_2', 'F150_Front_End_MT_Med.pvz' , F150FrontEndVin);
+CreateHeroPart('F150FRONTEND'  , 'F150_Front_End_MT_Med', 'F150_Front_End_MT_Med',  'F150_Front_End_MT_Med_GuideView_0000_2', 'F150_Front_End_MT_Med.pvz' , F150FrontEndVin , -90 , 0, 0);
 createWorkOrderF150_FrontEnd( 'WIF150FE', "MU connection error" , "This is a functional error consistent with loose connection" , "Easy"    , Math.floor(Math.random() * 10) + 1 , F150FrontEndVin); 
 //createWorkOrderDTC_1079( 'WIB1028', "Check Rear wiper operation"             , "Operate the rear window wiper for 15 seconds or more, then turn the rear window wiper switch OFF. Does the rear window wiper stop in the normal park position?", "Med"    , Math.floor(Math.random() * 10) + 1 , vin); 
 //createWorkOrderDTC_1175( 'WIB1028', "Check DTC"            , "Check for DTCs with the HDS. Is DTC B1028 indicated?", "Medium" , Math.floor(Math.random() * 10) + 1 , vin ); 
