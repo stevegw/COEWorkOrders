@@ -54,7 +54,7 @@ class WorkOrderscoe {
         }
         else if (actionid == 'BuildWorkPackage') {
             let selectedWOIndex = 0; // for now allows select first work order when starting
-            this.buildWorkPackage (workpackage , selectedWOIndex , PanelSelector , widgetRegister ); 
+            this.buildWorkPackage (workpackage , selectedWOIndex , PanelSelector , widgetRegister , this.vuforiaScope); 
         }
 
         else if (actionid == 'GetWorkOrders') {
@@ -83,6 +83,7 @@ class WorkOrderscoe {
 
         let http = this.vuforiaScope.http;
         var URL = '/Thingworx/Things' + '/AutoARServiceHelper/Services/GetHeroData';
+        let self = this;
         try {
         var headers = {
             Accept: 'application/json',
@@ -104,7 +105,6 @@ class WorkOrderscoe {
               if (data && data.data) {
 
                 rc("GetHeroData data.data >>>" + JSON.stringify(data.data.rows));
-
                 if (data.data.rows.length > 0 ) {
 
                     vs.heromodelField = data.data.rows[0].Model;
@@ -198,9 +198,10 @@ class WorkOrderscoe {
 
     }
 
-    buildWorkPackage = function (workpackage, selectedWOIndex,  panelSelector , widgetRegister) {
+    buildWorkPackage = function (workpackage, selectedWOIndex,  panelSelector , widgetRegister , vscope) {
 
         let WPVISIBLE = true;
+        let self = this;
         let currentStep = 1; 
         let steps = workpackage[selectedWOIndex].WorkInstructions.rows.length ;
 
@@ -388,6 +389,7 @@ class WorkOrderscoe {
         WorkOrderList.id = "wo-picklistpanel";
         WorkOrderList.className = 'wo-picklistpanel'; 
         let listscope = this.vuforiaScope;
+
         function listSelection (e) {
 
             selectedWOIndex = this.value;
@@ -419,6 +421,9 @@ class WorkOrderscoe {
                         x: "0",
                         y:"0",
                         z:"0",
+                        rx: element.MTRx,
+                        ry: element.MTRy,
+                        rz: element.MTRz,
                         visible : "false",
                         events:[{name:"modelLoaded", value: "someExample()"}]
                       })
@@ -687,9 +692,12 @@ class WorkOrderscoe {
                         originalWidget: "twx-dt-model",
                         id: element.model,
                         src: "/Thingworx/FileRepositories/AutoARRepo"+element.src ,  //"app/resources/Uploaded/remote-control.pvz",
-                        x: "0",
+                        x:"0",
                         y:"0",
                         z:"0",
+                        rx:element.MTRx,
+                        ry:element.MTRy,
+                        rz:element.MTRz,
                         visible : "false",
                         events:[{name:"modelLoaded", value: "someExample()"}]
                       })

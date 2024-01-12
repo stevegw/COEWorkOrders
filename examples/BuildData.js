@@ -414,18 +414,27 @@ function createWorkOrderF150_FrontEnd (id, title,overview,difficulty,time , vin)
 
     let apF150Front_end_1 = CreateWi(id,'Check connections on this component.',1,'Connection check 1');
     // id, metadataID, metadataPropertyName, modelWidgetName (the widget will be created i.e. modelAffected1,2,3 etc one for each pvz) , displayName , partName , fileName 
-    createAffectedPart(apF150Front_end_1,  "/1/17/1/1/9/1/1/1/29/2", "path", "FrontEngineHarness" , "8U5T-14A464-LA/2-SLV ASY WIR CONN FEM" , "8U5T-14A464-LA/2-SLV ASY WIR CONN FEM" , "/F150FRONTEND/AffectedPart/FrontEngineHarness.pvz" ); 
-    //createAffectedPart(apF150Front_end_1,  "/1/17/1/1/9/1/1/1/28/1", "path", "FrontEngineHarness" , "ML3T-12A581-GB055MB-01/2-ML3T-12A581-GB055MB-01" , "ML3T-12A581-GB055MB-01/2-ML3T-12A581-GB055MB-01" , "/F150FRONTEND/AffectedPart/FrontEngineHarness.pvz" );  
-    //createAffectedPart(apF150Front_end_1,  "/1/17/1/1/9/1/1/1/28/6", "path", "FrontEngineHarness" , "9L3T-14A464-B/2-SLV ASY-WIR CONN MLE" , "9L3T-14A464-B/2-SLV ASY-WIR CONN MLE" , "/F150FRONTEND/AffectedPart/FrontEngineHarness.pvz" );  
+    createAffectedPart(apF150Front_end_1,  "/1/17/1/1/9/1/1/1/1/23", "path", "FrontEngineHarness" , "JU5T-14A459-C/3-SLV WIR CONN MLE" , "JU5T-14A459-C/3-SLV WIR CONN MLE" , "/F150FRONTEND/AffectedPart/FrontEngineHarness.pvz" ); 
+    createAffectedPart(apF150Front_end_1,  "/1/17/1/1/9/1/1/1/1/21", "path", "FrontEngineHarness" , "FU5T-14A459-E/2-SLV WIR CONN MLE" , "FU5T-14A459-E/2-SLV WIR CONN MLE" , "/F150FRONTEND/AffectedPart/FrontEngineHarness.pvz" ); 
+    createAffectedPart(apF150Front_end_1,  "/1/17/1/1/9/1/1/1/1/15", "path", "FrontEngineHarness" , "ML3T-12A581-GB011MB-03/17-ML3T-12A581-GB011MB-03" , "ML3T-12A581-GB011MB-03/17-ML3T-12A581-GB011MB-03" , "/F150FRONTEND/AffectedPart/FrontEngineHarness.pvz" ); 
+    createAffectedPart(apF150Front_end_1,  "/1/17/1/1/9/1/1/1/1/9", "path", "FrontEngineHarness" , "CU5T-14489-T/1-SLV WIR CONN FEM" , "CU5T-14489-T/1-SLV WIR CONN FEM" , "/F150FRONTEND/AffectedPart/FrontEngineHarness.pvz" ); 
+    createAffectedPart(apF150Front_end_1,  "/1/17/1/1/9/1/1/1/1/10", "path", "FrontEngineHarness" , "CU5T-14N003-E/1-CVR-WIR CONN" , "CU5T-14N003-E/1-CVR-WIR CONN" , "/F150FRONTEND/AffectedPart/FrontEngineHarness.pvz" ); 
+    createAffectedPart(apF150Front_end_1,  "/1/17/1/1/9/1/1/1/1/12", "path", "FrontEngineHarness" , "ML3T-12A581-GB011MB-01/17-ML3T-12A581-GB011MB-01" , "ML3T-12A581-GB011MB-01/17-ML3T-12A581-GB011MB-01" , "/F150FRONTEND/AffectedPart/FrontEngineHarness.pvz" ); 
+    createAffectedPart(apF150Front_end_1,  "/1/17/1/1/9/1/1/1/1/5", "path", "FrontEngineHarness" , "9U5T-14A459-LV WIR CONN B/11-SMLE" , "9U5T-14A459-LV WIR CONN B/11-SMLE" , "/F150FRONTEND/AffectedPart/FrontEngineHarness.pvz" ); 
 
-    let apF150Front_end_2 = CreateWi(id,'Look here at main end.',2,'Connection check 2');
-    // id, metadataID, metadataPropertyName, modelWidgetName (the widget will be created i.e. modelAffected1,2,3 etc one for each pvz) , displayName , partName , fileName 
-    //createAffectedPart(apF150Front_end_2,  "1/17/1/1/9/1/1/1/28/9", "path", "FrontEngineHarness" , "MU5T-14N003-E/4-CVR WIR CONN" , "MU5T-14N003-E/4-CVR WIR CONN" , "/F150FRONTEND/AffectedPart/FrontEngineHarness.pvz" ); 
+    let apF150Front_end_2 = CreateWi(id,'Look here at main end 1.',2,'Connection check 1, look for damage or general wear and possble cracks');
     createAffectedPart(apF150Front_end_2,  "/1/17/1/1/9/1/1/1/1/23", "path", "FrontEngineHarness" , "JU5T-14A459-C/3-SLV WIR CONN MLE" , "JU5T-14A459-C/3-SLV WIR CONN MLE" , "/F150FRONTEND/AffectedPart/FrontEngineHarness.pvz" );  
+    createAffectedPart(apF150Front_end_2,  "/1/17/1/1/9/1/1/1/1/15", "path", "FrontEngineHarness" , "ML3T-12A581-GB011MB-03/17-ML3T-12A581-GB011MB-03" , "ML3T-12A581-GB011MB-03/17-ML3T-12A581-GB011MB-03" , "/F150FRONTEND/AffectedPart/FrontEngineHarness.pvz" ); 
 
-    let apF150Front_end_3 = CreateWi(id,'Look here at the conection',3,'Connection check 3');
-    // id, metadataID, metadataPropertyName, modelWidgetName (the widget will be created i.e. modelAffected1,2,3 etc one for each pvz) , displayName , partName , fileName 
+    let apF150Front_end_3 = CreateWi(id,'Look here at main end 2',3,'Connection check 2, look for damage or general wear and possble cracks');
     createAffectedPart(apF150Front_end_3,  "/1/17/1/1/9/1/1/1/1/21", "path", "FrontEngineHarness" , "FU5T-14A459-E/2-SLV WIR CONN MLE" , "FU5T-14A459-E/2-SLV WIR CONN MLE" , "/F150FRONTEND/AffectedPart/FrontEngineHarness.pvz" );  
+    createAffectedPart(apF150Front_end_3,  "/1/17/1/1/9/1/1/1/1/15", "path", "FrontEngineHarness" , "ML3T-12A581-GB011MB-03/17-ML3T-12A581-GB011MB-03" , "ML3T-12A581-GB011MB-03/17-ML3T-12A581-GB011MB-03" , "/F150FRONTEND/AffectedPart/FrontEngineHarness.pvz" ); 
+
+    let apF150Front_end_4 = CreateWi(id,'Look here at the conection',4,'Connection check  has been latch off');
+    createAffectedPart(apF150Front_end_1,  "/1/17/1/1/9/1/1/1/1/10", "path", "FrontEngineHarness" , "CU5T-14N003-E/1-CVR-WIR CONN" , "CU5T-14N003-E/1-CVR-WIR CONN" , "/F150FRONTEND/AffectedPart/FrontEngineHarness.pvz" ); 
+    createAffectedPart(apF150Front_end_4,  "/1/17/1/1/9/1/1/1/1/9", "path", "FrontEngineHarness" , "CU5T-14489-T/1-SLV WIR CONN FEM" , "CU5T-14489-T/1-SLV WIR CONN FEM" , "/F150FRONTEND/AffectedPart/FrontEngineHarness.pvz" ); 
+    createAffectedPart(apF150Front_end_3,  "/1/17/1/1/9/1/1/1/1/15", "path", "FrontEngineHarness" , "ML3T-12A581-GB011MB-03/17-ML3T-12A581-GB011MB-03" , "ML3T-12A581-GB011MB-03/17-ML3T-12A581-GB011MB-03" , "/F150FRONTEND/AffectedPart/FrontEngineHarness.pvz" ); 
+
 
 }
 
@@ -433,7 +442,7 @@ function createWorkOrderF150_FrontEnd (id, title,overview,difficulty,time , vin)
 
 let F150FrontEndVin = "F150123456789";
 CreateHeroPart('F150FRONTEND'  , 'F150_Front_End_MT_Med', 'F150_Front_End_MT_Med',  'F150_Front_End_MT_Med_GuideView_0000_2', 'F150_Front_End_MT_Med.pvz' , F150FrontEndVin , -90 , 0, 0);
-createWorkOrderF150_FrontEnd( 'WIF150FE', "MU connection error" , "This is a functional error consistent with loose connection" , "Easy"    , Math.floor(Math.random() * 10) + 1 , F150FrontEndVin); 
+createWorkOrderF150_FrontEnd( 'WIF150FE', "MU connection error" , "This is a functional error consistent with loose connection. Walk through the steps and location connections and following instructions." , "Easy"    , Math.floor(Math.random() * 10) + 1 , F150FrontEndVin); 
 //createWorkOrderDTC_1079( 'WIB1028', "Check Rear wiper operation"             , "Operate the rear window wiper for 15 seconds or more, then turn the rear window wiper switch OFF. Does the rear window wiper stop in the normal park position?", "Med"    , Math.floor(Math.random() * 10) + 1 , vin); 
 //createWorkOrderDTC_1175( 'WIB1028', "Check DTC"            , "Check for DTCs with the HDS. Is DTC B1028 indicated?", "Medium" , Math.floor(Math.random() * 10) + 1 , vin ); 
 
