@@ -46,36 +46,38 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
       template: '<div></div>',
       link: function (scope, element, attr) {
 
-        console.log(config.appKey);
-
-        let workorderscoe = undefined ;
-        let widgetRegister ;
-
-        
+        //let workorderscoe = undefined ;
 
         scope.renderer = $window.cordova ? vuforia : $injector.get('threeJsTmlRenderer');
         scope.http = $http;
+
+        scope.data = {
+          widgetRegister: undefined,
+          workorderscoe: undefined 
+        }
                      
         var executeWidget = function(actionid) {
           console.log('Working on action ' + actionid);
-          if (workorderscoe == undefined) {
+          if (scope.data.workorderscoe == undefined) {
             try {
-              widgetRegister = new WidgetRegister( scope.renderer , $injector , scope );
-              workorderscoe = new WorkOrderscoe(config.appKey, scope, widgetRegister,  scope.wowidthField, scope.woheightField , scope.wiwidthField, scope.wiheightField , scope.wobottomoffsetField , scope.wibottomoffsetField ,scope.leftoffsetField , scope.modelidField);
+
+              scope.data.widgetRegister = new WidgetRegister( scope.renderer , $injector , scope );
+              scope.data.workorderscoe = new WorkOrderscoe(scope,  scope.wowidthField, scope.woheightField , scope.wiwidthField, scope.wiheightField , scope.wobottomoffsetField , scope.wibottomoffsetField ,scope.leftoffsetField , scope.modelidField);
             }catch(ex) {
               console.log('When creating the class WorkOrderscoe - something went wrong! The exception is >>'+ ex);
             }
           }
 
-          workorderscoe.doAction(actionid, scope.heroidField, scope.workpackageidField, scope.workpackageField,  scope.workordersField, scope.workinstructionsField , widgetRegister);
-          
+          if (actionid != undefined && actionid != "") {
+            scope.data.workorderscoe.doAction(actionid, scope.workordersField, scope.workinstructionsField );
+          }
           
         };
 
         var stop = function() {
           console.log('Stopping');
           scope.$parent.fireEvent('stopped');
-          if (workorderscoe != undefined) {
+          if (scope.data.workorderscoe != undefined) {
    
           }
         }
@@ -93,7 +95,7 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
         });
         scope.$watch('workpackageField', function () {
           console.log('dataField='+ scope.workpackageField);
-          if (scope.workpackageField != undefined && scope.workpackageField != '') {
+          if (scope.workpackageField != undefined && scope.workpackageField != '' && scope.workpackageField.length > 0 ) {
             scope.$parent.fireEvent("workpackagereceieved");
             scope.$parent.$applyAsync();
             if (scope.autolaunchField == "true") {
@@ -136,10 +138,10 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
               executeWidget("GetWorkPackageFromID");
 
             };
-            delegate.displaywp = function () {
-              executeWidget("GetWorkPackage");
+            // delegate.displaywp = function () {
+            //   executeWidget("GetWorkPackage");
 
-            };
+            // };
             delegate.buildwp = function () {
               executeWidget("BuildWorkPackage");
 
