@@ -46,8 +46,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
       template: '<div></div>',
       link: function (scope, element, attr) {
 
-        //let workorderscoe = undefined ;
-
         scope.renderer = $window.cordova ? vuforia : $injector.get('threeJsTmlRenderer');
         scope.http = $http;
 
@@ -81,15 +79,12 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
    
           }
         }
-        //
-        // workPackageField has both a WO id and Title plus WorkInstrunction steps 
-        // Step 0 holds all the details of the Work Order 
-        // This is to makes it easy to work with and step through from baisc work order summary to each step
-        //
         scope.$watch('heroidField', function () {
           console.log('dataField='+ scope.heroidField);
-          if (scope.heroidField != undefined && scope.heroidField != '') {
-            executeWidget("GetHeroFromID");
+          if (scope.autolaunchField == "true") {
+            if (scope.heroidField != undefined && scope.heroidField != '') {
+              executeWidget("GetHeroFromID");
+            }
           }
 
         });
@@ -103,8 +98,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
               executeWidget("BuildWorkPackage");
               
             }
-
-
           }
 
         });
@@ -131,7 +124,11 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
         scope.$watch('delegateField', function (delegate) {
           if (delegate) {
             delegate.getherodata = function () {
-              executeWidget("GetHeroFromID");
+
+              $timeout(function(){
+                executeWidget("GetHeroFromID");
+              }, 200);
+             
 
             };
             delegate.getwpfromid = function () {
@@ -163,8 +160,9 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
 
         // Use this initially to see if your extension get deployed
         // If you don't see this message its not deployed
-        // Comment out once you have it working
+        
         scope.$watch( function() {
+          //Comment out once you have it working
           //console.log("workorderscoe Any watch "); 
         });
       }

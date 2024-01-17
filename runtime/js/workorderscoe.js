@@ -11,7 +11,13 @@ class WorkOrderscoe {
 //scope.wowidthField, scope.woheightField , scope.wiwidthField, scope.wiheightField , scope.wobottomoffsetField , scope.wibottomoffsetField ,scope.leftoffsetField , scope.modelidField
     constructor( vuforiaScope ) {
         // Not using the topoffset, leftoffset yet
-        this.thxappkey = "a9e0c42a-266d-4c4e-86ed-d346825540ae";
+        try {
+            this.thxappkey =  config.appKey //"a9e0c42a-266d-4c4e-86ed-d346825540ae";
+        } catch (error) {
+            console.log("using default appKey");
+            this.thxappkey =  "a9e0c42a-266d-4c4e-86ed-d346825540ae";
+        }
+        
         this.wowidth = vuforiaScope.wowidthField;
         this.woheight = vuforiaScope.woheightField;
         this.wiwidth = vuforiaScope.wiwidthField;
@@ -25,9 +31,9 @@ class WorkOrderscoe {
     }
 
     writetoConsole = function(message) {
-        //if ( config.debugToConsole) {
+        if ( config.debugToConsole) {
           console.log(message);
-        //}
+        }
     }
 
     doAction (actionid, scope ) {
