@@ -8,19 +8,18 @@ class WorkOrderscoe {
     PanelSelector ; 
     CurrentWorkID;
 
-
-    constructor( vuforiaScope, wowidth, woheight , wiwidth, wiheight , wobottom , wibottom ,  left , modelid ) {
+//scope.wowidthField, scope.woheightField , scope.wiwidthField, scope.wiheightField , scope.wobottomoffsetField , scope.wibottomoffsetField ,scope.leftoffsetField , scope.modelidField
+    constructor( vuforiaScope ) {
         // Not using the topoffset, leftoffset yet
         this.thxappkey = "a9e0c42a-266d-4c4e-86ed-d346825540ae";
-        this.vuforiaScope  = vuforiaScope;
-        this.wowidth = wowidth;
-        this.woheight = woheight;
-        this.wiwidth = wiwidth;
-        this.wiheight = wiheight;
-        this.wobottom = wobottom;
-        this.wibottom = wibottom;
-        this.left = left;
-        this.modelid = modelid;
+        this.wowidth = vuforiaScope.wowidthField;
+        this.woheight = vuforiaScope.woheightField;
+        this.wiwidth = vuforiaScope.wiwidthField;
+        this.wiheight = vuforiaScope.wiheightField;
+        this.wobottom = vuforiaScope.wobottomoffsetField;
+        this.wibottom = vuforiaScope.wibottomoffsetField;
+        this.left = vuforiaScope.leftoffsetField;
+        this.modelid = vuforiaScope.modelidField;
         this.UIContainerWI = undefined;
         
     }
@@ -31,7 +30,7 @@ class WorkOrderscoe {
         //}
     }
 
-    doAction (actionid ,  workorders , workinstructions ) {
+    doAction (actionid, scope ) {
 
         let PanelQuery = 'body > ion-side-menus > ion-side-menu-content > ion-nav-view > ion-view > ion-content > twx-widget > twx-widget-content > \n' +
 		'twx-container-content > twx-widget:nth-child(2) > twx-widget-content > div > twx-container-content';
@@ -42,11 +41,11 @@ class WorkOrderscoe {
 
         if (actionid == 'GetHeroFromID') {
             let selectedWOIndex = 0; // for now allows select first work order when starting
-            this.getHeroFromID ( ); 
+            this.getHeroFromID(scope ); 
         }
         else if (actionid == 'GetWorkPackageFromID') {
             let selectedWOIndex = 0; // for now allows select first work order when starting
-            this.getWorkPackageFromID ( ); 
+            this.getWorkPackageFromID(scope ); 
         }
 
         // else if (actionid == 'GetWorkPackage') {
@@ -56,14 +55,14 @@ class WorkOrderscoe {
         else if (actionid == 'BuildWorkPackage') {
             let selectedWOIndex = 0; // for now allows select first work order when starting
 
-            if (this.CurrentWorkID != this.vuforiaScope.workpackagedataField[0].WorkID) {
-                this.buildWorkPackage (selectedWOIndex  , this.vuforiaScope);
+            if (this.CurrentWorkID != scope.workpackagedataField[0].WorkID) {
+                this.buildWorkPackage (selectedWOIndex  , scope);
             }
             
         }
 
         else if (actionid == 'GetWorkOrders') {
-            this.getWorkOrders (workorders); 
+            this.getWorkOrders(scope.workordersField); 
         }
         else if (actionid == 'GetWorkInstructions') {
             if (this.UIContainerWI != undefined) {
@@ -74,7 +73,7 @@ class WorkOrderscoe {
                 }
 
             }
-            this.UIContainerWI = this.getWorkInstructionsSteps (workinstructions ); 
+            this.UIContainerWI = this.getWorkInstructionsSteps (scope.workinstructionsField , scope ); 
         }
         else  {
             // add more functions here with else if 
@@ -82,73 +81,79 @@ class WorkOrderscoe {
 
     }
 
-    getHeroFromID  () {
+    getHeroFromID  (scope) {
 
-        this.writetoConsole("WorkPackage ID="+this.vuforiaScope.heroidField );
+        if (scope.heroidField != null && scope.heroidField != '') {
+            this.writetoConsole("WorkPackage ID="+scope.heroidField );
 
-        let heroid = this.vuforiaScope.heroidField ;
-        let http = this.vuforiaScope.http;
-        let URL = '/Thingworx/Things' + '/AutoARServiceHelper/Services/GetHeroData';
-        let self = this;
-        try {
-        let headers = {
-            Accept: 'application/json',
-            "Content-Type": 'application/json',
-            appKey: this.thxappkey
-          };
-          
-          // Body
-          let params = {
-            "vin": heroid
-          };
-          let rc = this.writetoConsole;
-          let vs = this.vuforiaScope;
-          http.post(URL, params, {
-            headers: headers,
-          })
-          .then(
-            function (data) {
-              if (data && data.data) {
-
-                rc("GetHeroData data.data >>>" + JSON.stringify(data.data.rows));
-                if (data.data.rows.length > 0 ) {
-
-                    vs.heromodelField = data.data.rows[0].Model;
-                    vs.heromtdatasetField = data.data.rows[0].MTDataset;
-                    vs.heromtguideviewField = data.data.rows[0].MTGuideView;
-                    vs.heromtidField = data.data.rows[0].MTID;
-                    vs.herofolderField = data.data.rows[0].Folder;
-                    vs.herorxField = data.data.rows[0].MTRx;
-                    vs.heroryField = data.data.rows[0].MTRy;
-                    vs.herorzField = data.data.rows[0].MTRz;
-
-                    vs.$parent.fireEvent('herodatareturned');
-
+            let heroid = scope.heroidField ;
+            let http = scope.http;
+            let URL = '/Thingworx/Things' + '/AutoARServiceHelper/Services/GetHeroData';
+            let self = this;
+            try {
+            let headers = {
+                Accept: 'application/json',
+                "Content-Type": 'application/json',
+                appKey: this.thxappkey
+              };
+              
+              // Body
+              let params = {
+                "vin": heroid
+              };
+              let rc = this.writetoConsole;
+              let vs = scope;
+              http.post(URL, params, {
+                headers: headers,
+              })
+              .then(
+                function (data) {
+                  if (data && data.data) {
+    
+                    rc("GetHeroData data.data >>>" + JSON.stringify(data.data.rows));
+                    if (data.data.rows.length > 0 ) {
+    
+                        vs.heromodelField = data.data.rows[0].Model;
+                        vs.heromtdatasetField = data.data.rows[0].MTDataset;
+                        vs.heromtguideviewField = data.data.rows[0].MTGuideView;
+                        vs.heromtidField = data.data.rows[0].MTID;
+                        vs.herofolderField = data.data.rows[0].Folder;
+                        vs.herorxField = data.data.rows[0].MTRx;
+                        vs.heroryField = data.data.rows[0].MTRy;
+                        vs.herorzField = data.data.rows[0].MTRz;
+    
+                        vs.$parent.fireEvent('herodatareturned');
+    
+                    }
+                  }
+                },
+                function (status) {
+                  vs.messageField = "Thingworx AutoARServiceHelper:GetHeroData service failed!"+ "\n" + "The status returned was:  "+ status + "\n" ; 
+                  vs.$parent.fireEvent('message');
+                  vs.$parent.fireEvent('failure');
                 }
-              }
-            },
-            function (status) {
-              vs.messageField = "Thingworx AutoARServiceHelper:GetHeroData service failed!"+ "\n" + "The status returned was:  "+ status + "\n" ; 
-              vs.$parent.fireEvent('message');
-              vs.$parent.fireEvent('failure');
+                
+              )
+            } catch (e) {
+                    vs.messageField = 'Check application key ' + e  ; 
+                    vs.$parent.fireEvent('message');
+                    vs.$parent.fireEvent('failure');
+     
+    
             }
-            
-          )
-        } catch (e) {
-                vs.messageField = 'Check application key ' + e  ; 
-                vs.$parent.fireEvent('message');
-                vs.$parent.fireEvent('failure');
- 
+
 
         }
+
+
     }
 
-    getWorkPackageFromID () {
+    getWorkPackageFromID (scope) {
 
-        this.writetoConsole("WorkPackage/Hero ID="+this.vuforiaScope.heroidField);
+        this.writetoConsole("WorkPackage/Hero ID="+scope.heroidField);
 
-        let heroid = this.vuforiaScope.heroidField;
-        let http = this.vuforiaScope.http;
+        let heroid = scope.heroidField;
+        let http = scope.http;
         let URL = '/Thingworx/Things' + '/AutoARServiceHelper/Services/GetWorkPackage';
         let headers = {
             Accept: 'application/json',
@@ -161,7 +166,7 @@ class WorkOrderscoe {
             "vin": heroid
           };
           let rc = this.writetoConsole;
-          let vs = this.vuforiaScope;
+          let vs = scope;
           http.post(URL, params, {
             headers: headers,
           })
@@ -199,13 +204,13 @@ class WorkOrderscoe {
 
     }
 
-    buildWorkPackage ( selectedWOIndex  , vscope) {
+    buildWorkPackage ( selectedWOIndex  , scope) {
 
         let WPVISIBLE = true;
-        let workpackage = vscope.workpackagedataField
-        this.CurrentWorkID = vscope.workpackagedataField[0].WorkID;
+        let workpackage = scope.workpackagedataField
+        this.CurrentWorkID = scope.workpackagedataField[0].WorkID;
         let currentStep = 1; 
-        let steps = vscope.workpackagedataField[selectedWOIndex].WorkInstructions.rows.length ;
+        let steps = scope.workpackagedataField[selectedWOIndex].WorkInstructions.rows.length ;
 
         let WPContainer = document.createElement('div');
         WPContainer.id = 'wi-uicontainer';
@@ -237,11 +242,7 @@ class WorkOrderscoe {
         WPOpenButton.className = 'wp-showbutton'; 
 
         WPCloseButton.addEventListener("click",  () => { 
-            try { 
-                //this.markupCanvas.vuforiaScope.$parent.fireEvent('markCancelled');
-            } catch (ex) {
 
-            }
             this.PanelSelector.removeChild(WPContainer);
             WPVISIBLE = false;
             this.PanelSelector.appendChild(WPOpenButton);
@@ -249,11 +250,7 @@ class WorkOrderscoe {
         });
 
         WPOpenButton.addEventListener("click",  () => { 
-            try { 
-                //this.markupCanvas.vuforiaScope.$parent.fireEvent('markCancelled');
-            } catch (ex) {
 
-            }
             this.PanelSelector.removeChild(WPOpenButton);
             WPVISIBLE = true;
             this.PanelSelector.appendChild(WPContainer);
@@ -318,9 +315,9 @@ class WorkOrderscoe {
                 WPDetailsLabel3.innerText = workpackage[selectedWOIndex].WorkInstructions.rows[currentStep-1].Label3;
                 WPText.innerText = workpackage[selectedWOIndex].WorkInstructions.rows[currentStep-1].StepDetail;        
 
-                this.vuforiaScope.affectedpartsField = this.getAffectedParts(currentStep , workpackage[selectedWOIndex].WorkInstructions);
-                this.vuforiaScope.$parent.fireEvent('workinstructionselected');
-                this.vuforiaScope.$parent.$applyAsync();
+                scope.affectedpartsField = this.getAffectedParts(currentStep , workpackage[selectedWOIndex].WorkInstructions );
+                scope.$parent.fireEvent('workinstructionselected');
+                scope.$parent.$applyAsync();
 
             } catch (ex) {
                 console.log("Error in click event back button >>" + ex);
@@ -356,9 +353,9 @@ class WorkOrderscoe {
                 WPDetailsLabel3.innerText = workpackage[selectedWOIndex].WorkInstructions.rows[currentStep-1].Label3;    
                 WPText.innerText = workpackage[selectedWOIndex].WorkInstructions.rows[currentStep-1].StepDetail; 
 
-                this.vuforiaScope.affectedpartsField = this.getAffectedParts(currentStep , workpackage[selectedWOIndex].WorkInstructions.rows);
-                this.vuforiaScope.$parent.fireEvent('workinstructionselected');
-                this.vuforiaScope.$parent.$applyAsync();
+                scope.affectedpartsField = this.getAffectedParts(currentStep , workpackage[selectedWOIndex].WorkInstructions.rows);
+                scope.$parent.fireEvent('workinstructionselected');
+                scope.$parent.$applyAsync();
 
             } catch (ex) {
                 console.log("Error in click event forward button >>" + ex);
@@ -390,7 +387,7 @@ class WorkOrderscoe {
         let WorkOrderList = document.createElement("select");
         WorkOrderList.id = "wo-picklistpanel";
         WorkOrderList.className = 'wo-picklistpanel'; 
-        let listscope = this.vuforiaScope;
+        let listscope = scope;
 
         function listSelection (e) {
 
@@ -416,7 +413,7 @@ class WorkOrderscoe {
 
                 for (let index = 0; index < modelsJSON.array.length; index++) {
                     const element = modelsJSON.array[index];
-                    vscope.data.widgetRegister.addWidget({
+                    scope.data.widgetRegister.addWidget({
                         originalWidget: "twx-dt-model",
                         id: element.model,
                         src: "/Thingworx/FileRepositories/AutoARRepo"+element.src ,  //"app/resources/Uploaded/remote-control.pvz",
@@ -476,281 +473,8 @@ class WorkOrderscoe {
 
     }
 
-    // getWorkPackage (workpackage, selectedWOIndex,   widgetRegister) {
 
-    //     let WPVISIBLE = true;
-    //     let currentStep = 1; 
-    //     let steps = workpackage[selectedWOIndex].WorkInstructions.length ;
-
-    //     let WPContainer = document.createElement('div');
-    //     WPContainer.id = 'wi-uicontainer';
-    //     WPContainer.className = 'wi-uicontainer'; 
-    //     WPContainer.style.bottom = this.wibottom;
-
-    //     let WPInstructionsPanel = document.createElement('div');
-    //     WPInstructionsPanel.id = 'wi-instructionpanel';
-    //     WPInstructionsPanel.className = 'wi-instructionpanel'; 
-
-    //     WPContainer.appendChild(WPInstructionsPanel);
-
-    //     let WPHeaderContainer = document.createElement('div');
-    //     WPHeaderContainer.id = 'wi-headercontainer';
-    //     WPHeaderContainer.className = 'wi-headercontainer'; 
-        
-    //     let WPInstructionSteps = document.createElement('div');
-    //     WPInstructionSteps.id = 'wi-instructionsteps';
-    //     WPInstructionSteps.className = 'wi-instructionsteps'; 
-
-    //     let WPCloseButton = document.createElement('img');
-    //     WPCloseButton.src = "extensions/images/workorderscoe_hidewp.png"; 
-    //     WPCloseButton.id = 'wi-closebutton';
-    //     WPCloseButton.className = 'wi-closebutton'; 
-
-    //     let WPOpenButton = document.createElement('img');
-    //     WPOpenButton.src = "extensions/images/workorderscoe_showwp.png"; 
-    //     WPOpenButton.id = 'wp-showbutton';
-    //     WPOpenButton.className = 'wp-showbutton'; 
-
-    //     WPCloseButton.addEventListener("click",  () => { 
-    //         try { 
-    //             //this.markupCanvas.vuforiaScope.$parent.fireEvent('markCancelled');
-    //         } catch (ex) {
-
-    //         }
-    //         this.PanelSelector.removeChild(WPContainer);
-    //         WPVISIBLE = false;
-    //         this.PanelSelector.appendChild(WPOpenButton);
-            
-    //     });
-
-    //     WPOpenButton.addEventListener("click",  () => { 
-    //         try { 
-    //             //this.markupCanvas.vuforiaScope.$parent.fireEvent('markCancelled');
-    //         } catch (ex) {
-
-    //         }
-    //         this.PanelSelector.removeChild(WPOpenButton);
-    //         WPVISIBLE = true;
-    //         this.PanelSelector.appendChild(WPContainer);
-            
-    //     });
-
-    //     WPHeaderContainer.appendChild(WPInstructionSteps);
-    //     WPHeaderContainer.appendChild(WPCloseButton);
-
-    //     let WPDetailsContainer = document.createElement('div');
-    //     WPDetailsContainer.id = 'wi-details';
-    //     WPDetailsContainer.className = 'wi-details'; 
-
-    //     let WPDetailsLabel1 = document.createElement('div');
-    //     WPDetailsLabel1.id = 'wi-label1';
-    //     WPDetailsLabel1.className = 'wi-label1'; 
-
-    //     let WPDetailsLabel2 = document.createElement('div');
-    //     WPDetailsLabel2.id = 'wi-label2';
-    //     WPDetailsLabel2.className = 'wi-label2'; 
-
-    //     let WPDetailsLabel3 = document.createElement('div');
-    //     WPDetailsLabel3.id = 'wi-label3';
-    //     WPDetailsLabel3.className = 'wi-label3'; 
-
-    //     WPDetailsContainer.appendChild(WPDetailsLabel1);
-    //     WPDetailsContainer.appendChild(WPDetailsLabel2);
-    //     WPDetailsContainer.appendChild(WPDetailsLabel3);
-
-    //     let WPText = document.createElement('div');
-    //     WPText.id = 'wi-text';
-    //     WPText.className = 'wi-text'; 
-
-    //     let WPBackForwardContainer = document.createElement('div');
-    //     WPBackForwardContainer.id = 'wi-backforwardcontainer';
-    //     WPBackForwardContainer.className = 'wi-backforwardcontainer'; 
-
-    //     let WPBackButton = document.createElement('img');
-    //     WPBackButton.id = 'wi-backbutton';
-    //     WPBackButton.className = 'wi-backbutton'; 
-    //     WPBackButton.src = "extensions/images/workorderscoe_back.png"; 
-
-    //     if (currentStep == 1)  {
-    //         WPBackButton.style.visibility = "hidden";
-    //     }
-    //     WPBackButton.addEventListener("click",  () => { 
-    //         try { 
-
-
-    //             if (currentStep > 1 ) { 
-    //                 currentStep--;
-    //             } 
-    //             if (currentStep === 1)  {
-    //                 WPBackButton.style.visibility = "hidden";
-    //                 WOButton.style.visibility = "visible";
-    //                 WOSelectcontainerContainer.style.visibility = "visible";
-    //             }
-
-    //             WPInstructionSteps.innerText = (currentStep ) +" OF " + (steps); 
-    //             WPDetailsLabel1.innerText = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label1;
-    //             WPDetailsLabel2.innerText = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label2;
-    //             WPDetailsLabel3.innerText = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label3;
-    //             WPText.innerText = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].StepDetail;        
-
-    //             this.vuforiaScope.affectedpartsField = this.getAffectedParts(currentStep , workpackage[selectedWOIndex].WorkInstructions);
-    //             this.vuforiaScope.$parent.fireEvent('workinstructionselected');
-    //             this.vuforiaScope.$parent.$applyAsync();
-
-    //         } catch (ex) {
-    //             console.log("Error in click event back button >>" + ex);
-    //         }
-    
-    //     });
-
-    //     let WPForwardButton = document.createElement('img');
-    //     WPForwardButton.id = 'wi-nextbutton';
-    //     WPForwardButton.className = 'wi-nextbutton'; 
-    //     WPForwardButton.src = "extensions/images/workorderscoe_next.png"; 
-    //     WPForwardButton.addEventListener("click",  () => { 
-
-    //         try { 
-
-    //             if (currentStep   < workpackage[selectedWOIndex].WorkInstructions.length ) { 
-    //                 currentStep++;
-    //                 WPBackButton.style.visibility = "visible";
-    //             } else {
-    //                 currentStep = 1;
-    //                 WPBackButton.style.visibility = "hidden";
-    //             }
-    //             if (currentStep > 1) {
-    //                 WOButton.style.visibility = "hidden";
-    //                 WOSelectcontainerContainer.style.visibility = "hidden";
-    //             } else {
-    //                 WOButton.style.visibility = "visible";
-    //                 WOSelectcontainerContainer.style.visibility = "visible";
-    //             }
-    //             WPInstructionSteps.innerText = (currentStep ) +" OF " + (steps); 
-    //             WPDetailsLabel1.innerText = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label1;
-    //             WPDetailsLabel2.innerText = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label2;
-    //             WPDetailsLabel3.innerText = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label3;    
-    //             WPText.innerText = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].StepDetail; 
-
-    //             this.vuforiaScope.affectedpartsField = this.getAffectedParts(currentStep , workpackage[selectedWOIndex].WorkInstructions);
-    //             this.vuforiaScope.$parent.fireEvent('workinstructionselected');
-    //             this.vuforiaScope.$parent.$applyAsync();
-
-    //         } catch (ex) {
-    //             console.log("Error in click event forward button >>" + ex);
-    //         }
-    
-    //     });
-
-    //     WPBackForwardContainer.appendChild(WPBackButton);
-    //     WPBackForwardContainer.appendChild(WPForwardButton);
-
-    //     let WPButtonBarContainer = document.createElement('div');
-    //     WPButtonBarContainer.id = 'wi-buttonbarcontainer';
-    //     WPButtonBarContainer.className = 'wi-buttonbarcontainer'; 
-
-    //     let WOButton = document.createElement('img');
-    //     WOButton.id = 'wo-workorders-img';
-    //     WOButton.className = 'wo-workorders-img'; 
-    //     WOButton.src = "extensions/images/workorderscoe_wo.png"; 
-
-
-    //     let WOSelectcontainerContainer = document.createElement('div');
-    //     WOSelectcontainerContainer.id = 'wo-selectcontainer';
-    //     WOSelectcontainerContainer.className = 'wo-selectcontainer'; 
-
-    //     let WorkOrderLabel = document.createElement("label");
-    //     WorkOrderLabel.className = 'wo-selectlabel'; 
-    //     WorkOrderLabel.innerHTML = "Work Order:";
-
-    //     let WorkOrderList = document.createElement("select");
-    //     WorkOrderList.id = "wo-picklistpanel";
-    //     WorkOrderList.className = 'wo-picklistpanel'; 
-    //     let listscope = this.vuforiaScope;
-    //     function listSelection (e) {
-
-    //         selectedWOIndex = this.value;
-    //         listscope.selectedwoField =  workpackage[selectedWOIndex].WorkID;
-    //         listscope.$parent.fireEvent('workorderselected');
-    //         listscope.$parent.$applyAsync();
-
-    //         console.log("selected WorkID " + workpackage[selectedWOIndex].WorkID);
-    //         currentStep = 1; 
-    //         steps = workpackage[selectedWOIndex].WorkInstructions.length ;
-    //         WPInstructionSteps.innerText = (currentStep) +" OF " + (steps); 
-    //         WPDetailsLabel1.innerText = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label1;
-    //         WPDetailsLabel2.innerText = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label2;
-    //         WPDetailsLabel3.innerText = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].Label3;
-    //         WPText.innerText = workpackage[selectedWOIndex].WorkInstructions[currentStep-1].StepDetail;  
-            
-    //         let modelsJSON = workpackage[selectedWOIndex].Models; 
-
-
-    //         try {
-
-
-    //             for (let index = 0; index < modelsJSON.array.length; index++) {
-    //                 const element = modelsJSON.array[index];
-    //                 widgetRegister.addWidget({
-    //                     originalWidget: "twx-dt-model",
-    //                     id: element.model,
-    //                     src: "/Thingworx/FileRepositories/AutoARRepo"+element.src ,  //"app/resources/Uploaded/remote-control.pvz",
-    //                     x:"0",
-    //                     y:"0",
-    //                     z:"0",
-    //                     rx:element.MTRx,
-    //                     ry:element.MTRy,
-    //                     rz:element.MTRz,
-    //                     visible : "false",
-    //                     events:[{name:"modelLoaded", value: "someExample()"}]
-    //                   })
-    //                     console.log("Model" + element.src);
-                    
-    //             }
-                
-    //         } catch (error) {
-    //             console.log("Issues with widgetRegister error=" + error);
-    //         }
-    
-
-
-
-    //     }
-        
-    //     //Create and append the options
-    //     let  option = document.createElement("option");
-    //     option.value = "None";
-    //     option.text = "None";
-    //     WorkOrderList.appendChild(option);
-
-    //     for (let i = 0; i < workpackage.length; i++) {
-    //         let  option = document.createElement("option");
-    //         option.value = i;
-    //         option.text = workpackage[i].Title;
-    //         WorkOrderList.appendChild(option);
-
-    //     }
-
-    //     WorkOrderList.addEventListener("change",  listSelection );
-
-    //     WOSelectcontainerContainer.appendChild(WorkOrderLabel);
-    //     WOSelectcontainerContainer.appendChild(WorkOrderList);
-    //     WPButtonBarContainer.appendChild(WOSelectcontainerContainer);
-
-    //     WPInstructionsPanel.appendChild(WPHeaderContainer);
-    //     WPInstructionsPanel.appendChild(WPDetailsContainer);
-    //     WPInstructionsPanel.appendChild(WPText);
-    //     WPInstructionsPanel.appendChild(WPBackForwardContainer);
-    //     WPInstructionsPanel.appendChild(WPButtonBarContainer);
-
-    //     this.PanelSelector.appendChild(WPContainer);
- 
-    //     return WPContainer;
-
-
-
-    // }
-
-    getWorkOrders (workorders ) {
+    getWorkOrders (workorders ,scope ) {
 
         this.WorkOrders = workorders; 
         let UIContainerWO = document.createElement('div');
@@ -794,7 +518,7 @@ class WorkOrderscoe {
           
         WorkOrderPicklist.appendChild(WorkOrderList);
 
-        let listscope = this.vuforiaScope;
+        let listscope = scope;
 
         function listSelection (e) {
             //alert('value ' + this.value);
@@ -828,15 +552,7 @@ class WorkOrderscoe {
         CloseButton.style.left = this.left; 
         CloseButton.src = "extensions/images/workorders_close.png";
         CloseButton.addEventListener("click",  () => { 
-
-            try { 
-                //this.markupCanvas.vuforiaScope.$parent.fireEvent('markCancelled');
-            } catch (ex) {
-
-            }
-
             this.PanelSelector.removeChild(UIContainerWO);
-    
         });
 
         WorkOrderHeaderPanel.appendChild(WorkOrderButton);
@@ -846,7 +562,7 @@ class WorkOrderscoe {
 
     }
 
-    getAffectedParts  (step , workinstructions) {
+    getAffectedParts  (step , workinstructions ) {
 
         let affectedParts = [];
         let models =[];
@@ -881,7 +597,7 @@ class WorkOrderscoe {
 
         } 
 
-        this.vuforiaScope.$parent.$applyAsync();
+        
         return affectedParts;
     }
     
@@ -897,7 +613,7 @@ class WorkOrderscoe {
         return {"model" : modelName , "path" : uniquepartid  };
     }
 
-    getWorkOrderSummary (uiContainerWI) {
+    getWorkOrderSummary (uiContainerWI , scope) {
  
         let found =  document.getElementById("wos-uicontainer");
 
@@ -915,7 +631,7 @@ class WorkOrderscoe {
         let selectedIndex = 0;
         for (let i = 0; i < this.WorkOrders.length; i++) {
             
-            if ( this.vuforiaScope.selectedwoField === this.WorkOrders[i].WorkID) {
+            if ( scope.selectedwoField === this.WorkOrders[i].WorkID) {
                 selectedIndex = i; 
                 break;
             };
@@ -1045,7 +761,7 @@ class WorkOrderscoe {
         this.PanelSelector.appendChild(WOContainer);
 
     }
-    getWorkInstructionsSteps (workinstructions ) {
+    getWorkInstructionsSteps (workinstructions , scope ) {
 
         let currentStep = 1; 
         let steps = workinstructions.length ;
@@ -1116,9 +832,9 @@ class WorkOrderscoe {
                 WIDetailsType.innerText = workinstructions[currentStep-1].StepType;//"This is the header text";
                 WIDetailsText.innerText = workinstructions[currentStep-1].StepDetail;//"This is the work instruction text";  
 
-                this.vuforiaScope.outgoingdataField = this.getAffectedParts(currentStep, workinstructions);
-                this.vuforiaScope.$parent.fireEvent('workinstructionselected');
-                this.vuforiaScope.$parent.$applyAsync();
+                scope.outgoingdataField = this.getAffectedParts(currentStep, workinstructions );
+                scope.$parent.fireEvent('workinstructionselected');
+                scope.$parent.$applyAsync();
 
             } catch (ex) {
 
@@ -1144,9 +860,9 @@ class WorkOrderscoe {
                 WIDetailsType.innerText = workinstructions[currentStep-1].StepType;//"This is the header text";
                 WIDetailsText.innerText = workinstructions[currentStep-1].StepDetail;//"This is the work instruction text";  
 
-                this.vuforiaScope.affectedpartsField = this.getAffectedParts(currentStep , workinstructions);
-                this.vuforiaScope.$parent.fireEvent('workinstructionselected');
-                this.vuforiaScope.$parent.$applyAsync();
+                scope.affectedpartsField = this.getAffectedParts(currentStep , workinstructions);
+                scope.$parent.fireEvent('workinstructionselected');
+                scope.$parent.$applyAsync();
 
             } catch (ex) {
 
@@ -1178,7 +894,7 @@ class WorkOrderscoe {
         let WorkOrderList = document.createElement("select");
         WorkOrderList.id = "workorderslist";
         WorkOrderList.className = 'workorderpicklist'; 
-        let listscope = this.vuforiaScope;
+        let listscope = scope;
         function listSelection (e) {
             //alert('value ' + this.value);
 
@@ -1202,7 +918,7 @@ class WorkOrderscoe {
 
         }
 
-        this.getWorkOrderSummary(  WIContainer );
+        this.getWorkOrderSummary(  WIContainer , scope );
 
 
         return WIContainer;

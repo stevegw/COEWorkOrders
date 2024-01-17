@@ -62,14 +62,14 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
             try {
 
               scope.data.widgetRegister = new WidgetRegister( scope.renderer , $injector , scope );
-              scope.data.workorderscoe = new WorkOrderscoe(scope,  scope.wowidthField, scope.woheightField , scope.wiwidthField, scope.wiheightField , scope.wobottomoffsetField , scope.wibottomoffsetField ,scope.leftoffsetField , scope.modelidField);
+              scope.data.workorderscoe = new WorkOrderscoe(scope);
             }catch(ex) {
               console.log('When creating the class WorkOrderscoe - something went wrong! The exception is >>'+ ex);
             }
           }
 
           if (actionid != undefined && actionid != "") {
-            scope.data.workorderscoe.doAction(actionid, scope.workordersField, scope.workinstructionsField );
+            scope.data.workorderscoe.doAction(actionid,scope );
           }
           
         };
