@@ -39,7 +39,7 @@ function makeid(length) {
 }
 
 
-function CreateHeroPart ( folder  , mtid, dataset, guideview , model , vin ,rx,ry,rz) {
+function CreateHeroPart ( folder  , mtid, dataset,dataxml, guideview , model , vin ,rx,ry,rz) {
     
     logger.debug("CreateHeroPart vin="+vin + "folder="+ "mtid="+  mtid);
     let HPValues = Things["AutoARHeroPart_DT"].CreateValues();
@@ -47,6 +47,8 @@ function CreateHeroPart ( folder  , mtid, dataset, guideview , model , vin ,rx,r
     HPValues.Folder = folder;
     HPValues.MTID = mtid;
     HPValues.MTDataset =  dataset; 
+    HPValues.MTdatURL =  dataset;
+    HPValues.MTxmlURL =  dataxml;
     HPValues.MTGuideView =  guideview; 
     HPValues.Model = model; 
         HPValues.MTRx = rx; 
@@ -166,8 +168,9 @@ Things["AutoARAffectedParts_DT"].PurgeDataTableEntries();
 
 
 let vin = "12345678910111213";
-// folder  , mtid, dataset, guideview , model 
-CreateHeroPart('Ford'  , 'Ford_F150', 'Ford_F150',  'Ford_F150_viewpoint_0001.png', 'Ford_F150.pvz' , vin ,0,0,0);
+// folder  , mtid, dataset, dataxml, guideview , model 
+
+CreateHeroPart('Ford'  , 'Ford_F150', 'Ford_F150.dat', 'Ford_F150.xml',  'Ford_F150_viewpoint_0001.png', 'Ford_F150.pvz' , vin ,0,0,0);
 
 createWorkOrder( 'WI000001', "Battery sensor Install ", "Gather Tools and Saftey instructions and install sensor "+ lorumData, "Low" , Math.floor(Math.random() * 10) + 1 , vin); 
 createWorkOrder( 'WI000002', "Headlight Install", "Gather Tools and Saftey instructions and install headelight " + lorumData, "Med" , Math.floor(Math.random() * 10) + 1 , vin); 
@@ -187,7 +190,7 @@ createWorkOrder( 'WI000005', "Inspect Brake Hydraulics", "Gather Tools and Safte
 
 vin = "00123456789101112";
 // folder  , mtid, dataset, guideview , model 
-CreateHeroPart('Ford'  , 'Ford_F150', 'Ford_F150',  'F150_GUIDE.png', 'Ford_F150.pvz' , vin ,0,0,0);
+CreateHeroPart('Ford'  , 'Ford_F150', 'Ford_F150.dat', 'Ford_F150.xml', 'F150_GUIDE.png', 'Ford_F150.pvz' , vin ,0,0,0);
 
 
 createWorkOrder( 'WI000006', "Battery sensor Install "       , "Gather Tools and Saftey instructions and install sensor         " + lorumData, "Low"    , Math.floor(Math.random() * 10) + 1 , vin); 
@@ -199,25 +202,6 @@ createWorkOrder( 'WI000010', "Inspect Brake Hydraulics"      , "Gather Tools and
 //   
 
 
-
-// *****************************************************************************************************************************************
-//
-// Ender Pro Data
-//
-// *****************************************************************************************************************************************
-
-
-vin = "00012345678910111";
-// folder  , mtid, dataset, guideview , model 
-CreateHeroPart('Creality'  , 'EnderProMain_Low', 'EnderProMain_Low',  'EnderProMain_Low_GuideView_0000_2.png', 'EnderProMain_Low.pvz' , vin , 0,0,0);
-
-createWorkOrder( 'WI000101', "Battery sensor Install "       , "Gather Tools and Saftey instructions and install sensor         " +lorumData, "Low"    , Math.floor(Math.random() * 10) + 1 , vin); 
-createWorkOrder( 'WI000102', "Headlight Install"             , "Gather Tools and Saftey instructions and install headelight     " +lorumData, "Med"    , Math.floor(Math.random() * 10) + 1 , vin); 
-createWorkOrder( 'WI000103', "Tail Light Install"            , "Gather Tools and Saftey instructions and instll tail light      ", "Medium" , Math.floor(Math.random() * 10) + 1 , vin ); 
-createWorkOrder( 'WI000104', "Rewire internal dashboard light", "Gather Tools and Saftey instruction and rewire dashboard lighting" +lorumData, "High"  , Math.floor(Math.random() * 10) + 1 , vin); 
-createWorkOrder( 'WI000105', "Inspect Brake Hydraulics"      , "Gather Tools and Saftey instruction and do inspection            ", "High"  , Math.floor(Math.random() * 10) + 1 , vin ); 
-//
-//  
 
 
 
@@ -231,7 +215,7 @@ createWorkOrder( 'WI000105', "Inspect Brake Hydraulics"      , "Gather Tools and
 
 vin = "00012345678910222";
 // folder  , mtid, dataset, guideview , model 
-CreateHeroPart('Polaris'  , 'toy_polaris_mt', 'toy_polaris_mt',  'toy_polaris_mt_GuideView_0000_2.png', 'toy_polaris_mt.pvz' , vin ,0,0,0);
+CreateHeroPart('Polaris'  , 'toy_polaris_mt', 'toy_polaris_mt.dat', 'toy_polaris_mt.xml', 'toy_polaris_mt_GuideView_0000_2.png', 'toy_polaris_mt.pvz' , vin ,0,0,0);
 
 createWorkOrder( 'WI000101', "Battery sensor Install "       , "Gather Tools and Saftey instructions and install sensor         " +lorumData, "Low"    , Math.floor(Math.random() * 10) + 1 , vin); 
 createWorkOrder( 'WI000102', "Headlight Install"             , "Gather Tools and Saftey instructions and install headelight     " +lorumData, "Med"    , Math.floor(Math.random() * 10) + 1 , vin); 
@@ -291,7 +275,7 @@ vin = "00012345678910333";
 
 //CreateHeroPart('Polaris'  , 'toy_polaris_mt', 'toy_polaris_mt',  'toy_polaris_mt_GuideView_0000_2.png', 'toy_polaris_mt.pvz' , vin);
 //CreateHeroPart('Polaris'  , 'ServiceSeq_ST_Med_reduced', 'ServiceSeq_ST_Med_reduced',  'ServiceSeq_ST_Med_reduced_GuideView_0000_2.png', 'ServiceSeq_ST_Med_reduced.pvz' , vin);
-CreateHeroPart('Polaris'  ,'polaris_toy_low', 'polaris_toy_low',  'polaris_toy_low_GuideView_0000_2.png', 'polaris_toy_low.pvz' , vin , 0,0,0);
+CreateHeroPart('Polaris'  ,'polaris_toy_low', 'polaris_toy_low.dat', 'polaris_toy_low.xml',  'polaris_toy_low_GuideView_0000_2.png', 'polaris_toy_low.pvz' , vin , 0,0,0);
 createWorkOrder_WI000131( 'WI000131', "Battery sensor Install "       , "Gather Tools and Saftey instructions and install sensor         " +lorumData, "Low"    , Math.floor(Math.random() * 10) + 1 , vin); 
 
 
@@ -375,7 +359,7 @@ function createWorkOrderDTC_B1028 (id, title,overview,difficulty,time , vin) {
 
 
 let crvVin = "123456789";
-CreateHeroPart('Crv'  , 'crv_outer', 'crv_outer-360',  'crv_outer_GuideView_0000_2.png', 'crv_outer.pvz' , crvVin , 0,0,0);
+CreateHeroPart('Crv'  , 'crv_outer', 'crv_outer-360.dat', 'crv_outer-360.xml', 'crv_outer_GuideView_0000_2.png', 'crv_outer.pvz' , crvVin , 0,0,0);
 createWorkOrderDTC_B1028( 'WIB1028', "Rear Window Wiper Motor. As Signal Error" , "Rear Window Wiper Motor (As) Signal Error : If you are troubleshooting multiple DTCs, be sure to follow the instructions in B-CAN System Diagnosis Test Mode A" , "Medium"    , Math.floor(Math.random() * 10) + 1 , crvVin); 
 //createWorkOrderDTC_1079( 'WIB1028', "Check Rear wiper operation"             , "Operate the rear window wiper for 15 seconds or more, then turn the rear window wiper switch OFF. Does the rear window wiper stop in the normal park position?", "Med"    , Math.floor(Math.random() * 10) + 1 , vin); 
 //createWorkOrderDTC_1175( 'WIB1028', "Check DTC"            , "Check for DTCs with the HDS. Is DTC B1028 indicated?", "Medium" , Math.floor(Math.random() * 10) + 1 , vin ); 
@@ -441,7 +425,7 @@ function createWorkOrderF150_FrontEnd (id, title,overview,difficulty,time , vin)
 
 
 let F150FrontEndVin = "F150123456789";
-CreateHeroPart('F150FRONTEND'  , 'F150_Front_End_MT_Med', 'F150_Front_End_MT_Med',  'F150_Front_End_MT_Med_GuideView_0000_2', 'F150_Front_End_MT_Med.pvz' , F150FrontEndVin , -90 , 0, 0);
+CreateHeroPart('F150FRONTEND'  ,'F150_Front_End_MT_Med',  'F150_Front_End_MT_Med.dat', 'F150_Front_End_MT_Med.xml',  'F150_Front_End_MT_Med_GuideView_0000_2', 'F150_Front_End_MT_Med.pvz' , F150FrontEndVin , -90 , 0, 0);
 createWorkOrderF150_FrontEnd( 'WIF150FE', "MU connection error" , "This is a functional error consistent with loose connection. Walk through the steps and location connections and following instructions." , "Easy"    , Math.floor(Math.random() * 10) + 1 , F150FrontEndVin); 
 //createWorkOrderDTC_1079( 'WIB1028', "Check Rear wiper operation"             , "Operate the rear window wiper for 15 seconds or more, then turn the rear window wiper switch OFF. Does the rear window wiper stop in the normal park position?", "Med"    , Math.floor(Math.random() * 10) + 1 , vin); 
 //createWorkOrderDTC_1175( 'WIB1028', "Check DTC"            , "Check for DTCs with the HDS. Is DTC B1028 indicated?", "Medium" , Math.floor(Math.random() * 10) + 1 , vin ); 

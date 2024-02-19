@@ -25,6 +25,7 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
         heromtidField: '=',
         workpackageField : '=',
         workpackagedataField : '=',
+        sxsldataField : '=',
         workordersField : '=',
         messageField : '=',
         workinstructionsField : '=',
@@ -33,6 +34,7 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
         selectedwiField: '=',
         actionidField : '@',
         autolaunchField: '@',
+        autosxslField: '@',
         wowidthField : '@',
         woheightField : '@',
         wobottomoffsetField : '@',
@@ -85,6 +87,11 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
             if (scope.heroidField != undefined && scope.heroidField != '') {
               executeWidget("GetHeroFromID");
             }
+          } else if (scope.autosxslField == "true") {
+            if (scope.heroidField != undefined && scope.heroidField != '') {
+              executeWidget("GetWorkPackageAsSXSL");
+            }
+
           }
 
         });
@@ -135,10 +142,11 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
               executeWidget("GetWorkPackageFromID");
 
             };
-            // delegate.displaywp = function () {
-            //   executeWidget("GetWorkPackage");
+            delegate.getwpfromidassxsl = function () {
+              executeWidget("GetWorkPackageAsSXSL");
 
-            // };
+            };
+
             delegate.buildwp = function () {
               executeWidget("BuildWorkPackage");
 

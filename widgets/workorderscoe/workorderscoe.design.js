@@ -154,6 +154,27 @@
           showInput: true
         },
         {
+          name: 'autosxsl',
+          label: 'Auto return SXSL',
+          datatype: 'boolean',
+          default: false,
+          isBindingTarget: true,
+          isBindingSource: false,
+          showInput: true
+        },
+        {
+          name: 'sxsldata',
+          label: 'SXS Url',
+          datatype: 'resource_url',
+          allowedPatterns: ['.json'],
+          default: '',
+          isBindingSource: true,
+          isBindingTarget: false,
+          showInput: true
+        },
+
+
+        {
           name: 'selectedwo',
           label: 'Selected WorkOrder',
           datatype: 'string',
@@ -256,6 +277,10 @@
           label: 'Get WorkPackage from ID'
         },
         {
+          name: 'getwpfromidassxsl',
+          label: 'Get SXSL from ID'
+        },
+        {
           name: 'buildwp',
           label: 'Build and Display WorkPackage'
         },
@@ -283,6 +308,10 @@
           label: 'WorkPackage Receieved'
         },
         {
+          name: 'sxslurlreturned',
+          label: 'SXSL Url Returned'
+        },
+        {
           name: 'completed',
           label: 'Completed action'
         },
@@ -297,7 +326,7 @@
       ],
 
       dependencies: {
-        files         : ['js/workorderscoe-ng.js','js/workorderscoe.js', 'js/widgetcreator.js', 'images/workorderscoe_steps.png', 'images/workorderscoe_wo.png', 'images/images/workorderscoe_wi.png' , 'images/workorderscoe_close.png' ,'images/workorderscoe_back.png' ,'images/workorderscoe_next.png' ,'images/workorderscoe_expand.png' , 'images/workorderscoe_showwp.png' , 'images/workorderscoe_hidewp.png'],
+        files         : ['js/workorderscoe-ng.js','js/workorderscoe.js', 'js/widgetcreator.js', 'images/workorderscoe_steps.png', 'images/workorderscoe_wo.png', 'images/workorderscoe_wi.png' , 'images/workorderscoe_close.png' ,'images/workorderscoe_back.png' ,'images/workorderscoe_next.png' ,'images/workorderscoe_expand.png' , 'images/workorderscoe_showwp.png' , 'images/workorderscoe_hidewp.png'],
         angularModules: ['workorderscoe-ng']
       },
 
@@ -307,7 +336,7 @@
       },
   
       runtimeTemplate: function (props) {
-        var tmpl = '<div ng-workorderscoe  workpackage-field="me.workpackage"  workpackagedata-field="me.workpackagedata" heroid-field="me.heroid" workpackageid-field="me.workpackageid"  heromtfolder-field="me.herofolder" heromodel-field="me.heromodel" heromtdataset-field="me.heromtdataset" heromtguideview-field="me.heromtguideview" heromtid-field="me.heromtid" herorx-field="me.herorx" herory-field="me.herory" herorz-field="me.herorz"  affectedparts-field="me.affectedparts"  selectedwo-field="me.selectedwo" selectedwi-field="me.selectedwi" autolaunch-field={{me.autolaunch}}  incomingid-field={{me.incomingid}} wowidth-field={{me.wowidth}} woheight-field={{me.woheight}} wiwidth-field={{me.wiwidth}} wiheight-field={{me.wiheight}} wobottomoffset-field={{me.wobottomoffset}} wibottomoffset-field={{me.wibottomoffset}} leftoffset-field={{me.leftoffset}}  delegate-field="delegate"></div>' ; 
+        var tmpl = '<div ng-workorderscoe  workpackage-field="me.workpackage" workpackagedata-field="me.workpackagedata"  sxsldata-field="me.sxsldata"  heroid-field="me.heroid" workpackageid-field="me.workpackageid"  heromtfolder-field="me.herofolder" heromodel-field="me.heromodel" heromtdataset-field="me.heromtdataset" heromtguideview-field="me.heromtguideview" heromtid-field="me.heromtid" herorx-field="me.herorx" herory-field="me.herory" herorz-field="me.herorz"  affectedparts-field="me.affectedparts"  selectedwo-field="me.selectedwo" selectedwi-field="me.selectedwi" autolaunch-field={{me.autolaunch}}  autosxsl-field={{me.autosxsl}}  incomingid-field={{me.incomingid}} wowidth-field={{me.wowidth}} woheight-field={{me.woheight}} wiwidth-field={{me.wiwidth}} wiheight-field={{me.wiheight}} wobottomoffset-field={{me.wobottomoffset}} wibottomoffset-field={{me.wibottomoffset}} leftoffset-field={{me.leftoffset}}  message-field="me.message" delegate-field="delegate"></div>' ; 
         return tmpl;
       }
     };

@@ -31,9 +31,16 @@ class WorkOrderscoe {
     }
 
     writetoConsole = function(message) {
-        if ( config.debugToConsole) {
-          console.log(message);
+        try {
+            
+            if ( config.debugToConsole) {
+                console.log(message);
+              }
+        } catch (error) {
+            console.log(message);
+            console.log("Note the debugToConsole property in the config file was not able to be read - error=" +error);
         }
+
     }
 
     doAction (actionid, scope ) {
@@ -53,6 +60,12 @@ class WorkOrderscoe {
             let selectedWOIndex = 0; // for now allows select first work order when starting
             this.getWorkPackageFromID(scope ); 
         }
+
+        else if (actionid == 'GetWorkPackageAsSXSL') {
+            let selectedWOIndex = 0; // for now allows select first work order when starting
+            this.getSXSLdataAsURL(scope ); 
+        }
+        
 
         // else if (actionid == 'GetWorkPackage') {
         //     let selectedWOIndex = 0; // for now allows select first work order when starting
@@ -141,13 +154,10 @@ class WorkOrderscoe {
                 
               )
             } catch (e) {
-                    vs.messageField = 'Check application key ' + e  ; 
+                    vs.messageField = 'Check application key or if server is running or error was ' + e  ; 
                     vs.$parent.fireEvent('message');
                     vs.$parent.fireEvent('failure');
-     
-    
             }
-
 
         }
 
@@ -201,6 +211,51 @@ class WorkOrderscoe {
             function (status) {
     
                 vs.messageField = "Thingworx AutoARServiceHelper:GetWorkPackage service failed!"+ "\n" + "The status returned was:  "+ status + "\n" ; 
+                vs.$parent.fireEvent('message');
+                vs.$parent.fireEvent('failure');
+            }
+          )
+
+
+
+    }
+
+    getSXSLdataAsURL (scope) {
+
+        this.writetoConsole("WorkPackage/Hero ID="+scope.heroidField);
+
+        let heroid = scope.heroidField;
+        let http = scope.http;
+        let URL = '/Thingworx/Things' + '/AutoARServiceHelper/Services/GetWorkPackageAsSXSL';
+        let headers = {
+            Accept: 'application/json',
+            "Content-Type": 'application/json',
+            appKey: this.thxappkey
+          };
+          
+          // Body
+          let params = {
+            "vin": heroid
+          };
+          let rc = this.writetoConsole;
+          let vs = scope;
+          http.post(URL, params, {
+            headers: headers,
+          })
+          .then(
+            function (data) {
+              if (data && data.data && data.data.rows.length > 0  ) {
+
+                    vs.sxsldataField = data.data.rows[0].result;
+                    vs.$parent.fireEvent('sxslurlreturned');
+                    vs.$parent.$applyAsync();
+                    rc('sxslurlreturned url=' + vs.sxsldataField  );
+                
+              }
+            },
+            function (status) {
+    
+                vs.messageField = "Thingworx AutoARServiceHelper:GetWorkPackageAsSXSL service failed!"+ "\n" + "The status returned was:  "+ JSON.stringify(status) + "\n" ; 
                 vs.$parent.fireEvent('message');
                 vs.$parent.fireEvent('failure');
             }
