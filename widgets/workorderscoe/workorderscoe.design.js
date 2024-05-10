@@ -1,11 +1,11 @@
 // This widget definition will get combined into combined-widgets.js file along with all other widget definitions
 // use of anonymous func ensures nothing here leaks into global scope
 (function() {
-  function twxWorkorderscoe() {
+  function wdgworkorderscoe() {
     return {
       // Required, this will be used as the top level tag when it's dropped on the Canvas
       // use a custom prefix to so the name won't collide with other widgets
-      elementTag: 'twx-workorderscoe',
+      elementTag: 'wdg-workorderscoe',
 
       // Text displayed for the widget in the Palette
       label: 'WorkOrders COE',
@@ -344,6 +344,6 @@
 
   // registers the widget in Studio so that it gets displayed in the Widget Palette, it will only show up in the
   // Widget Palette for views that this widget is registered for (as determined by category property)
-  twxAppBuilder.widget('twxWorkorderscoe', twxWorkorderscoe);
+  twxAppBuilder.widget('wdg-workorderscoe', wdgworkorderscoe);
 
 }());
